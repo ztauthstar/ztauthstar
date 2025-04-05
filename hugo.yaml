@@ -69,7 +69,7 @@ menu:
         type: search
     - name: GitHub
       weight: 4
-      url: "https://github.com/ztauthstar/ztauthstar-specs"
+      url: "https://github.com/ztauthstar/ztauthstar"
       params:
         icon: github
 
