@@ -1,0 +1,64 @@
+# Hugo configuration file
+title: ZTAuth* Specification
+
+# import hextra as module
+module:
+  imports:
+    - path: github.com/imfing/hextra
+
+menu:
+  main:
+    - name: Specification
+      pageRef: /specification
+      weight: 1
+    - name: Resources
+      pageRef: /resources
+      weight: 2
+    - name: Search
+      weight: 3
+      params:
+        type: search
+    - name: GitHub
+      weight: 4
+      url: "https://github.com/ztauthstar/ztauthstar-specs"
+      params:
+        icon: github
+
+params:
+  navbar:
+    displayTitle: false
+    displayLogo: true
+    logo:
+      path: images/light.svg
+      dark: images/dark.svg
+      link: /
+      width: 130
+      height: 10
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: false
+  extensions:
+    definitionList: true
+    footnote: true
+    linkify: true
+    linkifyProtocol: https
+    strikethrough: true
+    table: true
+    typographer:
+      apostrophe: "&rsquo;"
+      disable: false
+      ellipsis: "&hellip;"
+      emDash: "&mdash;"
+      enDash: "&ndash;"
+      leftAngleQuote: "&laquo;"
+      leftDoubleQuote: "&ldquo;"
+      leftSingleQuote: "&lsquo;"
+      rightAngleQuote: "&raquo;"
+      rightDoubleQuote: "&rdquo;"
+      rightSingleQuote: "&rsquo;"
+  highlight:
+    noClasses: false
+
+enableInlineShortcodes: true
