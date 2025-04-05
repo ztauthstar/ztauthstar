@@ -1,8 +1,18 @@
 # Hugo configuration file
 title: ZTAuth* Specification
 
+enableRobotsTXT: true
+# Parse Git commit
+enableGitInfo: true
+# enableEmoji: false
+hasCJKLanguage: true
+
 # import hextra as module
 module:
+  hugoVersion:
+    extended: true
+    min: "0.134.0"
+
   imports:
     - path: github.com/imfing/hextra
 
