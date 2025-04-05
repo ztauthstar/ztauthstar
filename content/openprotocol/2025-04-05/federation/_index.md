@@ -1,5 +1,5 @@
 ---
-title: Federation Protocol
+title: Federation
 cascade:
   type: docs
 weight: 40

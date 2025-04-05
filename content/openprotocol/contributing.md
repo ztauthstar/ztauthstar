@@ -49,7 +49,7 @@ Types:
 
 ## Submitting pull requests
 
-{{< callout type="info" >}} Please note we accept pull requests from forks only. {{< /callout >}}
+{{< callout type="important" >}} Please note we accept pull requests from forks only. {{< /callout >}}
 
 Before creating a pull request, please ensure that your changes are tested and that the documentation is updated accordingly.
 

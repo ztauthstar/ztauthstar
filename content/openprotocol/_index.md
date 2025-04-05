@@ -10,3 +10,5 @@ weight: 1
 
 - **Transferable**, **Versionable**, **Immutable**, and **Resilient**.
 - Enable **trusted models** and Zero Trust security.
+
+{{< cards >}} {{< card link="/latest" title="Latest Spec" icon="book-open" >}}{{< /cards >}}
