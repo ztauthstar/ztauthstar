@@ -3,7 +3,7 @@ title: ZTAuth* Specification
 toc: false
 ---
 
-Welcome to the official **Zero Trust Auth\*** (`ZTAuth*`) specification.
+Welcome to the official **Zero Trust Auth\*** (`ZTAuth*`) open protocol specification.
 
 **ZTAuth\*** *ensures secure, identity-based execution of actions on resources by enforcing least privilege at the application boundary. Built for eventual consistency, the security model is incrementally synchronized across applicative nodes in an immutable, versioned manner*.
 

@@ -6,8 +6,6 @@ cascade:
 breadcrumbs: false
 ---
 
-# Contributing to ZTAuth*
-
 Thank you sincerely for considering contributing to the ZTAuth* open protocol specification. We highly value the input and engagement of our community members.
 
 Please make sure to review our set guidelines detailed in the [conduct protocol](CODE_OF_CONDUCT.md) that governs interactions within this project's sphere.
