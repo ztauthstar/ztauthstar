@@ -1,5 +1,5 @@
 ---
-title: Federation Protocol
+title: Trusted Models
 cascade:
   type: docs
 weight: 30

@@ -1,8 +1,8 @@
 ---
-title: Specification
+title: Versioning
 type: docs
 prev: /
-next: specification/versioning/
+next: openprotocol/versioning/
 weight: 1
 ---
 

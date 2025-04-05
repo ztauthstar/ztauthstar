@@ -1,17 +1,20 @@
 ---
-title: ZTAuth* Specification
+title: ZTAuth* Open Protocol Specification
 toc: false
 ---
-
 Welcome to the official **Zero Trust Auth\*** (`ZTAuth*`) open protocol specification.
 
-**ZTAuth\*** *ensures secure, identity-based execution of actions on resources by enforcing least privilege at the application boundary. Built for eventual consistency, the security model is incrementally synchronized across applicative nodes in an immutable, versioned manner*.
+> **ZTAuth\*** *delivers secure, identity-driven resource access with least privilege enforced at the app edge. Designed for eventual consistency, it syncs a tamper-proof, versioned security model across nodes.*
 
-Made for real-world problems. Shaped by people who build real-world systems. Welcome to `ZTAuth*`.
+**Zero Trust Auth\*** blends "Zero Trust" rigor with `Auth*`—covering authentication (AuthN), authorization (AuthZ), and more, like trusted elevation and delegation.
+
+Pronounce it `Zee-Tee-Auth-Star`. The `star` is a wildcard, hinting at extras like `trusted elevation` or `delegation`.
+
+For short, use `ZTAStar` (`Zee-Tee-Ei-Star`). It’s snappy, keeps the vibe, and might just stick as the go-to name.
 
 ## Explore
 
 {{< cards >}}
   {{< card link="specification" title="Specification" icon="book-open" >}}
-  {{< card link="resources" title="Resources" icon="newspaper" >}}
+  {{< card link="adoptions" title="Adoptions" icon="badge-check" >}}
 {{< /cards >}}

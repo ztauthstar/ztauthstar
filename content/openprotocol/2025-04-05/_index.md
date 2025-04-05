@@ -16,6 +16,8 @@ aliases:
 Explore the detailed specification for each protocol component:
 
 {{< cards >}} {{< card link="architecture" title="Architecture" icon="template" >}}
-{{< card link="basic" title="Base Protocol" icon="code" >}}
-{{< card link="server" title="Federation" icon="server" >}}
+{{< card link="basic" title="Base Protocol" icon="puzzle" >}}
+{{< card link="basic" title="Trusted Models" icon="share" >}}
+{{< card link="server" title="Federation" icon="office-building" >}}
+{{< card link="server" title="Data Spaces" icon="database" >}}
 {{< /cards >}}
