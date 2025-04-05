@@ -3,7 +3,7 @@ title: "Additional Resources"
 type: resources
 ---
 
-The **Zero Trust Authentication Model** (`ZTAuth*`) represents a security paradigm implemented across the following projects:
+The **Zero Trust Auth* Model** (`ZTAuth*`) represents a security paradigm implemented across the following projects:
 
 | **Project**  | **Description**                                                                 | **Link**                              |
 |--------------|---------------------------------------------------------------------------------|---------------------------------------|

@@ -1,7 +1,7 @@
 ---
 title: Principles
 type: docs
-prev: specification/
+prev: principles/
 ---
 
 ZTAuth* redefines authentication (AuthN) and authorization (AuthZ).

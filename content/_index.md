@@ -3,14 +3,17 @@ title: ZTAuth* Specification
 toc: false
 ---
 
-**ZTAuth*** redefines authentication (AuthN) and authorization (AuthZ) with models that are:
+Welcome to the official Zero Trust Auth* (ZTAuth*) specification.
 
-- **Transferable**, **Versionable**, **Immutable**, and **Resilient**.
-- Enable **trusted models** and Zero Trust security.
+---
+
+Made for real-world problems.  
+Shaped by people who build real-world systems.  
+Welcome to ZTAuth\*.
 
 ## Explore
 
 {{< cards >}}
   {{< card link="specification" title="Specification" icon="book-open" >}}
-  {{< card link="resources" title="Resources" icon="database" >}}
+  {{< card link="resources" title="Resources" icon="newspaper" >}}
 {{< /cards >}}
