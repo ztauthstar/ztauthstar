@@ -1,18 +1,11 @@
 ---
 title: Specification
-next: first-page
+type: docs
+prev: /
+next: principles/
 ---
 
-This is a demo of the theme's documentation layout.
+**ZTAuth*** redefines authentication (AuthN) and authorization (AuthZ) with models that are:
 
-## Hello, World!
-
-```go {filename="main.go"}
-package main
-
-import "fmt"
-
-func main() {
-    fmt.Println("Hello, World!")
-}
-```
+- **Transferable**, **Versionable**, **Immutable**, and **Resilient**.
+- Enable **trusted models** and Zero Trust security.
