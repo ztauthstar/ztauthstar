@@ -1,6 +1,6 @@
 ---
 linkTitle: 2025-04-05 (Latest)
-title: ZTAuth* specification
+title: ZTAuth* Open Protocol Specification
 cascade:
   type: docs
 breadcrumbs: false

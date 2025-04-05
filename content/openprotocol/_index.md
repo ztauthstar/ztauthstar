@@ -1,5 +1,5 @@
 ---
-title: Versioning
+title: ZTAuth* Open Protocol Specification
 type: docs
 prev: /
 next: openprotocol/versioning/

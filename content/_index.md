@@ -1,6 +1,5 @@
 ---
-title: ZTAuth* Open Protocol Specification
-toc: false
+title: Zero Trust Auth*
 ---
 Welcome to the official **Zero Trust Auth\*** (`ZTAuth*`) open protocol specification.
 
@@ -15,6 +14,6 @@ For short, use `ZTAStar` (`Zee-Tee-Ei-Star`). It’s snappy, keeps the vibe, and
 ## Explore
 
 {{< cards >}}
-  {{< card link="specification" title="Specification" icon="book-open" >}}
+  {{< card link="openprotocol" title="Open Protocol Specification" icon="book-open" >}}
   {{< card link="adoptions" title="Adoptions" icon="badge-check" >}}
 {{< /cards >}}
