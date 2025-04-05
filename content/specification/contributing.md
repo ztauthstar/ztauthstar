@@ -50,9 +50,7 @@ Types:
 
 ## Submitting pull requests
 
-Once you wish to get started contributing to the code base, please refer to our [development guide](DEVELOPMENT.md) for a how-to.
-
-> Please note we accept pull requests from forks only.
+{{< callout type="info" >}} Please note we accept pull requests from forks only. {{< /callout >}}
 
 Before creating a pull request, please ensure that your changes are tested and that the documentation is updated accordingly.
 

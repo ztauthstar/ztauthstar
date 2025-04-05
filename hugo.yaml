@@ -60,8 +60,8 @@ menu:
     - name: Specification
       pageRef: /specification
       weight: 1
-    - name: Resources
-      pageRef: /resources
+    - name: Implementations
+      pageRef: /implementations
       weight: 2
     - name: Search
       weight: 3

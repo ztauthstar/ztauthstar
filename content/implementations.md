@@ -1,10 +1,10 @@
 ---
-title: "Additional Resources"
-type: resources
+title: "Implementations"
+type: implementations
 weight: 1
 ---
 
-The **Zero Trust Auth* Model** (`ZTAuth*`) represents a security paradigm implemented across the following projects:
+The **Zero Trust Auth* Model** (`ZTAuth*`) is an open protocol implemented in the following projects.
 
 | **Project**  | **Description**                       | **Link**                                   |
 |--------------|---------------------------------------|--------------------------------------------|
