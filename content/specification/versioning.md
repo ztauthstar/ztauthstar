@@ -1,6 +1,8 @@
 ---
 title: Versioning
 type: docs
+prev: specification/
+next: specification/contributions/
 weight: 10
 ---
 

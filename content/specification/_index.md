@@ -2,7 +2,7 @@
 title: Specification
 type: docs
 prev: /
-next: principles/
+next: specification/versioning/
 weight: 1
 ---
 

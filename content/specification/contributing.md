@@ -1,9 +1,8 @@
 ---
-title: "Contributions"
+title: Contributing
+type: docs
+prev: specification/versioning
 weight: 20
-cascade:
-  type: docs
-breadcrumbs: false
 ---
 
 Thank you sincerely for considering contributing to the ZTAuth* open protocol specification. We highly value the input and engagement of our community members.
