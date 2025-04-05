@@ -1,8 +1,8 @@
 ---
 title: Versioning
 type: docs
-prev: openprotocol/
-next: openprotocol/contributions/
+prev: openprotocolspec/
+next: openprotocolspec/contributions/
 weight: 10
 ---
 

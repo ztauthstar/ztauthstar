@@ -2,7 +2,7 @@
 title: ZTAuth* Open Protocol Specification
 type: docs
 prev: /
-next: openprotocol/versioning/
+next: openprotocolspec/versioning/
 weight: 1
 ---
 
