@@ -1,8 +1,8 @@
 ---
-title: Federation
+title: Pillars
 cascade:
   type: docs
-weight: 50
+weight: 20
 prev: openprotocolspec/2025-04-05/
 ---
 
