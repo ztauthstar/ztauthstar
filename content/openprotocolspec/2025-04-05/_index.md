@@ -17,7 +17,7 @@ Explore the detailed specification for each protocol component:
 
 {{< cards >}} {{< card link="architecture" title="Architecture" icon="template" >}}
 {{< card link="identities" title="Identities" icon="finger-print" >}}
-{{< card link="actormodels" title="Actor Models" icon="badge-check" >}}
+{{< card link="actormodels" title="Actor Models" icon="color-swatch" >}}
 {{< card link="authstarmodels" title="Auth* Models" icon="cube" >}}
 {{< card link="trustedmodels" title="Trusted Models" icon="cube-transparent" >}}
 {{< card link="federation" title="Federation" icon="office-building" >}}
