@@ -2,7 +2,7 @@
 title: Auth* Models
 cascade:
   type: docs
-weight: 30
+weight: 40
 prev: openprotocolspec/2025-04-05/
 ---
 

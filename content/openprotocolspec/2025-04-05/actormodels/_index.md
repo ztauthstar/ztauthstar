@@ -2,7 +2,7 @@
 title: Actor Models
 cascade:
   type: docs
-weight: 40
+weight: 30
 prev: openprotocolspec/2025-04-05/
 ---
 
