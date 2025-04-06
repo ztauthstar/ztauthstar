@@ -1,12 +1,12 @@
 ---
-linkTitle: 2025-04-05 (Latest)
+linkTitle: 2025-04-05 (Draft)
 title: ZTAuth* Open Protocol Specification
 cascade:
   type: docs
 breadcrumbs: false
 weight: 3
 aliases:
-  - /latest
+  - /draft
 ---
 
 {{< callout type="info" >}} **Protocol Revision**: 2025-04-05 {{< /callout >}}

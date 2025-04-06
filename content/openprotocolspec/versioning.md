@@ -18,4 +18,4 @@ Protocol revisions are categorized as follows:
 - **Current**: The active protocol iteration, fully usable and subject to ongoing backwards-compatible refinements.
 - **Final**: Archived specifications, finalized and immutable.
 
-The **current** protocol iteration is [**2025-04-05**](/latest).
+The **current** protocol iteration is [**2025-04-05**](/draft).
