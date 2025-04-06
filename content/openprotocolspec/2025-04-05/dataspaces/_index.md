@@ -2,7 +2,7 @@
 title: Data Spaces
 cascade:
   type: docs
-weight: 60
+weight: 70
 prev: openprotocolspec/2025-04-05/
 ---
 

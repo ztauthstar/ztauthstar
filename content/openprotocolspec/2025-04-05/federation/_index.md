@@ -2,7 +2,7 @@
 title: Federation
 cascade:
   type: docs
-weight: 50
+weight: 60
 prev: openprotocolspec/2025-04-05/
 ---
 

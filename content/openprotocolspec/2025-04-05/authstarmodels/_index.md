@@ -1,8 +1,8 @@
 ---
-title: Trusted Models
+title: Auth* Models
 cascade:
   type: docs
-weight: 50
+weight: 30
 prev: openprotocolspec/2025-04-05/
 ---
 

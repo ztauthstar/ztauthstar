@@ -1,5 +1,5 @@
 ---
-title: Pillars
+title: Identities
 cascade:
   type: docs
 weight: 20
