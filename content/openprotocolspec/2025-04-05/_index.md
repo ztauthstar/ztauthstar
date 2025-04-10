@@ -20,7 +20,6 @@ Explore the detailed specification for each protocol component:
 {{< card link="actormodels" title="Actor Models" icon="color-swatch" >}}
 {{< card link="authstarmodels" title="Auth* Models" icon="cube" >}}
 {{< card link="trustedmodels" title="Trusted Models" icon="cube-transparent" >}}
-{{< card link="federation" title="Federation" icon="office-building" >}}
-{{< card link="dataspaces" title="Data Spaces" icon="database" >}}
 {{< card link="portablemodels" title="Portable Models" icon="portable-model" >}}
-{{< /cards >}}
+{{< card link="federation" title="Federation" icon="office-building" >}}
+{{< card link="dataspaces" title="Data Spaces" icon="share" >}}{{< /cards >}}

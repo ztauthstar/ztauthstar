@@ -2,7 +2,7 @@
 title: Portable Models
 cascade:
   type: docs
-weight: 70
+weight: 60
 prev: openprotocolspec/2025-04-05/
 ---
 
