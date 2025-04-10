@@ -22,4 +22,5 @@ Explore the detailed specification for each protocol component:
 {{< card link="trustedmodels" title="Trusted Models" icon="cube-transparent" >}}
 {{< card link="federation" title="Federation" icon="office-building" >}}
 {{< card link="dataspaces" title="Data Spaces" icon="database" >}}
+{{< card link="portablemodels" title="Portable Models" icon="arrow-down-on-square-stack" >}}
 {{< /cards >}}
