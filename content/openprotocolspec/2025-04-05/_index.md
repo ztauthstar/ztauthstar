@@ -9,7 +9,7 @@ aliases:
   - /draft
 ---
 
-{{< callout type="info" >}} **Protocol Revision**: 2025-04-05 {{< /callout >}}
+`ZTAuth*`  is an open protocol specification composed of multiple components to deliver secure, identity-driven resource access with least privilege enforced at the app edge. Designed for eventual consistency, it syncs a tamper-proof, versioned security model across nodes.
 
 ## Learn More
 
