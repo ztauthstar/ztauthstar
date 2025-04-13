@@ -14,6 +14,6 @@ For short, use `ZTAStar` (`Zee-Tee-Ei-Star`). It’s snappy, keeps the vibe, and
 ## Explore
 
 {{< cards >}}
-  {{< card link="openprotocolspec" title="Open Protocol Specification" icon="template" >}}
+  {{< card link="/openprotocolspec" title="Open Protocol Specification" icon="template" >}}
   {{< card link="adoptions" title="Adoptions" icon="badge-check" >}}
 {{< /cards >}}

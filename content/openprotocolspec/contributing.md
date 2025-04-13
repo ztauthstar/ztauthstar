@@ -1,7 +1,7 @@
 ---
 title: Contributing
 type: docs
-prev: specification/versioning
+prev: /openprotocolspec/versioning
 weight: 502
 ---
 

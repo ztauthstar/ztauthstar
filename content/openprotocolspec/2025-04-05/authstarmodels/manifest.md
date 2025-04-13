@@ -3,8 +3,8 @@ title: Manifest
 cascade:
   type: docs
 weight: 42
-prev: openprotocolspec/2025-04-05/authstarmodels/model/model
-next: openprotocolspec/2025-04-05/trustedmodels
+prev: /openprotocolspec/2025-04-05/authstarmodels/model/model
+next: /openprotocolspec/2025-04-05/trustedmodels
 ---
 
 An `Auth*` model is linked to a specific runtime, which includes the `engine` and `language` used to interpret and evaluate the model. For this reason, a **manifest** must be provided to describe the model.
