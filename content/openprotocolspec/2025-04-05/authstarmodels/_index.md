@@ -13,4 +13,5 @@ Each model must meet the following requirements:
 
 - **Transferable**: It can be moved easily between systems and locations without issues.
 - **Versionable and Immutable**: It must be tamper-proof, versioned, reviewable at any time.
+- **Valid**: It must contain only valid data. Invalid or corrupted information must not be allowed.
 - **Resilient to Disconnection**: It must stay available even when offline and sync later to stay consistent. This means being eventually consistent.
