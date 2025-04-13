@@ -22,7 +22,7 @@ A manifest may include metadata such as `name`, `description`, `author`, and `li
         "kind": "authz",
         "name": "oms-authz-model",
         "description": "A zero trust authz model to manage orders.",
-        "author": "",
+        "author": "Nitro Agility Srl",
         "license": "Apache-2.0"
     }
 }
@@ -36,7 +36,7 @@ Models are designed to contain `objects`, and each `model` can be divided into `
         "kind": "authz",
         "name": "oms-authz-model",
         "description": "A zero trust authz model to manage orders.",
-        "author": "",
+        "author": "Nitro Agility Srl",
         "license": "Apache-2.0"
     },
     "partitions": {
@@ -55,7 +55,7 @@ The runtime can include the language, its version, and the engine to be used.
         "kind": "authz",
         "name": "oms-authz-model",
         "description": "A zero trust authz model to manage orders.",
-        "author": "",
+        "author": "Nitro Agility Srl",
         "license": "Apache-2.0"
     },
     "runtimes": {
