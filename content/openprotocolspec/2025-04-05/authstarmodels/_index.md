@@ -12,5 +12,5 @@ The `ZTAuth*` security model requires specific models for `AuthN` (authenticatio
 Each model must meet the following requirements:
 
 - **Transferable**: It can be moved easily between systems and locations without issues.
-- **Versionable and Immutable**: It must be tamper-proof, versioned, reviewable at any time, and compatible with older versions.
+- **Versionable and Immutable**: It must be tamper-proof, versioned, reviewable at any time.
 - **Resilient to Disconnection**: It must stay available even when offline and sync later to stay consistent. This means being eventually consistent.
