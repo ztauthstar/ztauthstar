@@ -7,6 +7,8 @@ breadcrumbs: false
 weight: 3
 aliases:
   - /draft
+prev: openprotocolspec/
+next: openprotocolspec/2025-04-05/architecture
 ---
 
 `ZTAuth*`  is an open protocol specification composed of multiple components to deliver secure, identity-driven resource access with least privilege enforced at the app edge. Designed for eventual consistency, it syncs a tamper-proof, versioned security model across nodes.

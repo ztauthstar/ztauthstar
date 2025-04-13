@@ -1,7 +1,6 @@
 ---
 title: "Adoptions"
-type: Adoptions
-weight: 1
+type: adoptions
 ---
 
 Below is a list of implementations of the `ZTAuth*` open protocol specification, listed in chronological order of adoption.

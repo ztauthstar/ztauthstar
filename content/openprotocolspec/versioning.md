@@ -1,9 +1,8 @@
 ---
 title: Versioning
 type: docs
-prev: openprotocolspec/
-next: openprotocolspec/contributions/
-weight: 10
+prev: openprotocolspec/2025-04-05/dataspaces/
+weight: 501
 ---
 
 The `ZTAuth*` employs string-based version identifiers in the `YYYY-MM-DD` format, reflecting the most recent date when backwards-incompatible modifications were introduced.

@@ -2,7 +2,7 @@
 title: Model
 cascade:
   type: docs
-weight: 20
+weight: 41
 prev: openprotocolspec/2025-04-05/authstarmodels/
 next: openprotocolspec/2025-04-05/authstarmodels/manifest
 ---

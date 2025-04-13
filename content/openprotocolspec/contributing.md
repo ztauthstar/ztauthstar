@@ -2,7 +2,7 @@
 title: Contributing
 type: docs
 prev: specification/versioning
-weight: 20
+weight: 502
 ---
 
 Thank you sincerely for considering contributing to the ZTAuth* open protocol specification. We highly value the input and engagement of our community members.
