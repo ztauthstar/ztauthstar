@@ -7,4 +7,4 @@ prev: /openprotocolspec/2025-04-05/federation
 next: /openprotocolspec/versioning
 ---
 
-{{< callout type="info" >}} **Protocol Revision**: 2025-04-05 {{< /callout >}}
+{{< callout type="info" >}}**Protocol To Be Implemented** {{< /callout >}}

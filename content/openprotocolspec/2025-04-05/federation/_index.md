@@ -7,4 +7,4 @@ prev: /openprotocolspec/2025-04-05/portablemodels
 next: /openprotocolspec/2025-04-05/dataspaces
 ---
 
-{{< callout type="info" >}} **Protocol Revision**: 2025-04-05 {{< /callout >}}
+{{< callout type="info" >}}**Protocol To Be Implemented** {{< /callout >}}
