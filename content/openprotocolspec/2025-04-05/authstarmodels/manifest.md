@@ -19,6 +19,7 @@ A manifest may include metadata such as `name`, `description`, `author`, and `li
 ```json
 {
     "metadata": {
+        "kind": "authz",
         "name": "oms-authz-model",
         "description": "A zero trust authz model to manage orders.",
         "author": "",
@@ -32,6 +33,7 @@ Models are designed to contain `objects`, and each `model` can be divided into `
 ```json
 {
     "metadata": {
+        "kind": "authz",
         "name": "oms-authz-model",
         "description": "A zero trust authz model to manage orders.",
         "author": "",
@@ -50,6 +52,7 @@ The runtime can include the language, its version, and the engine to be used.
 ```json
 {
     "metadata": {
+        "kind": "authz",
         "name": "oms-authz-model",
         "description": "A zero trust authz model to manage orders.",
         "author": "",
