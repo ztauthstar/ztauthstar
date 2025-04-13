@@ -3,7 +3,7 @@ title: Zero Trust Auth*
 ---
 Welcome to the official **Zero Trust Auth\*** (`ZTAuth*`) open protocol specification.
 
-> **ZTAuth\*** *delivers secure, identity-driven resource access with least privilege enforced at the app edge. Designed for eventual consistency, it syncs a tamper-proof, versioned security model across nodes.*
+> **ZTAuth\*** is a Zero Trust-compliant security protocol that enforces identity-based, least-privilege access at the application edge. Built for distributed environments, it ensures integrity through a tamper-proof, versioned, model compliant security model that stays consistent across nodes, even under disconnection.
 
 **Zero Trust Auth\*** blends "Zero Trust" rigor with `Auth*`—covering authentication (AuthN), authorization (AuthZ), and more, like trusted elevation and delegation.
 
