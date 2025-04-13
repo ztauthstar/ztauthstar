@@ -4,10 +4,13 @@ cascade:
   type: docs
 weight: 40
 prev: openprotocolspec/2025-04-05/
+next: openprotocolspec/2025-04-05/authstarmodels/model
 ---
 
-The `Auth Models*`, where `Auth*` covers both Authentication (`AuthN`) and Authorization (`Authz`), are built for a Zero Trust setup. In this kind of system, these models need to have certain features:
+The `ZTAuth*` security model requires specific models for `AuthN` (authentication) and `AuthZ` (authorization). These are referred to as `Auth*` models. They are designed to follow the principles of `Zero Trust` and represent the foundation of the `ZTAuth*` protocol.  
 
-- **Transferable**: Meaning they can move easily between different systems and places without trouble.
-- **Versionable and Immutable**: So the data stays safe, can be checked later, and works with older versions if needed.
-- **Resilient to Disconnection**: Keeping things consistent even when there’s no connection, catching up later when they reconnect.
+Each model must satisfy the following features:
+
+- **Transferable**: They can move easily between different systems and locations without issues.
+- **Versionable and Immutable**: The data must be tamper-proof, versioned, reviewable at any time, and compatible with older versions.
+- **Resilient to Disconnection**: They stay consistent even when offline, and sync when the connection is restored.
