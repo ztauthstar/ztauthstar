@@ -2,8 +2,8 @@
 title: Manifest
 cascade:
   type: docs
-weight: 42
-prev: /openprotocolspec/2025-04-05/authstarmodels/model/model
+weight: 43
+prev: /openprotocolspec/2025-04-05/authstarmodels/features
 next: /openprotocolspec/2025-04-05/trustedmodels
 ---
 

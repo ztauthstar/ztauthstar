@@ -4,7 +4,7 @@ cascade:
   type: docs
 weight: 40
 prev: /openprotocolspec/2025-04-05/actormodels
-next: /openprotocolspec/2025-04-05/authstarmodels/model
+next: /openprotocolspec/2025-04-05/authstarmodels/objects
 ---
 
 The `ZTAuth*` security model requires specific models for `AuthN` (authentication) and `AuthZ` (authorization). These are referred to as `Auth*` models. They are designed to follow `Zero Trust` principles and form the foundation of the `ZTAuth*` protocol.
