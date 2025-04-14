@@ -14,6 +14,8 @@ An `Auth*` model is linked to a specific runtime, which includes the `engine` an
 
 The manifest includes metadata and defines the runtime and other settings for each model.
 
+## Metadata
+
 A manifest has to include metadata such as `kind`, `name`, `description`, `author`, and `license`.
 
 ```json
@@ -27,6 +29,8 @@ A manifest has to include metadata such as `kind`, `name`, `description`, `autho
     }
 }
 ```
+
+## Partitions
 
 Models are designed to contain `objects`, and each `model` can be divided into `partitions`. The `root` partition, defined as `/`, is used for all paths where no specific partition is provided.
 
@@ -45,6 +49,8 @@ Models are designed to contain `objects`, and each `model` can be divided into `
     }
 }
 ```
+
+## Runtimes
 
 Each `partition` has its own settings, such as runtime and schema.  
 The runtime has to include the language, its version, and the engine to be used.
