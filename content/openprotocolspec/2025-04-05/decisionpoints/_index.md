@@ -4,7 +4,7 @@ cascade:
   type: docs
 weight: 60
 prev: /openprotocolspec/2025-04-05/trustedmodels
-next: /openprotocolspec/2025-04-05/decisionpoints/portable-models
+next: /openprotocolspec/2025-04-05/decisionpoints/accesstokens
 ---
 
 `ZTAuth*` implements `Auth*` and `Trusted` models that are designed to be immutable, versionable, and transferable. For certain targets, such as instances of thin clients (e.g., web applications or hardware), it’s not feasible to port the entire model history.

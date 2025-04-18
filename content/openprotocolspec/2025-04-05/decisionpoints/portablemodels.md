@@ -3,7 +3,7 @@ title: Portable Models
 cascade:
   type: docs
 weight: 60
-prev: /openprotocolspec/2025-04-05/decisionpoints
+prev: /openprotocolspec/2025-04-05/decisionpoints/accesstokens
 next: /openprotocolspec/2025-04-05/federation
 ---
 
