@@ -20,9 +20,8 @@ Explore the detailed specification for each protocol component:
 {{< cards >}} {{< card link="architecture" title="Architecture" icon="template" >}}
 {{< card link="identities" title="Identities" icon="finger-print" >}}
 {{< card link="actormodels" title="Actor Models" icon="color-swatch" >}}
-{{< card link="authstarmodels" title="Auth* Models" icon="cube" >}}
+{{< card link="authstarmodels" title="Auth* Models" icon="authstar-model" >}}
 {{< card link="trustedmodels" title="Trusted Models" icon="cube-transparent" >}}
 {{< card link="decisionpoint" title="Decision Points" icon="decision-point" >}}
-{{< card link="portablemodels" title="Portable Models" icon="portable-model" >}}
-{{< card link="federation" title="Federation" icon="office-building" >}}
-{{< card link="dataspaces" title="Data Spaces" icon="share" >}}{{< /cards >}}
+{{< card link="federation" title="Federation" icon="federation" >}}
+{{< card link="dataspaces" title="Data Spaces" icon="dataspace" >}}{{< /cards >}}
