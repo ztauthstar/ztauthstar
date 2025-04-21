@@ -65,7 +65,7 @@ The runtime has to include the language, its version, and the engine to be used.
         "license": "Apache-2.0"
     },
     "runtimes": {
-        "cedar0.0+": {
+        "cedar[0.0+]": {
             "language": {
                 "name": "cedar",
                 "version": "0.0+"
@@ -79,7 +79,7 @@ The runtime has to include the language, its version, and the engine to be used.
     },
     "partitions": {
         "/": {
-            "runtime": "cedar0.0+",
+            "runtime": "cedar[0.0+]",
             "schema": false
         }
     }
