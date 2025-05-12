@@ -10,20 +10,19 @@ next: /openprotocolspec/2025-04-05/trustedmodels
 An `Auth*` model is linked to a specific runtime, which includes the `engine` and the `language` to be used to interpret and evaluate the model. For this reason, a **manifest** must be provided to describe the model requirements.
 
 > [!IMPORTANT]
-> This document uses an `AuthZ` model as an example, but the same applies to any other `Auth*` model.
+> This document uses an `Auth*` model as an example.
 
 The manifest includes metadata and defines the runtime and other settings for each model.
 
 ## Metadata
 
-A manifest has to include metadata such as `kind`, `name`, `description`, `author`, and `license`.
+A manifest has to include metadata such as `name`, `description`, `author`, and `license`.
 
 ```json
 {
     "metadata": {
-        "kind": "authz",
-        "name": "oms-authz-model",
-        "description": "A zero trust authz model to manage orders.",
+        "name": "oms-model",
+        "description": "A zero trust auth* model to manage orders.",
         "author": "Nitro Agility Srl",
         "license": "Apache-2.0"
     }
@@ -37,9 +36,8 @@ Models are designed to contain `objects`, and each `model` can be divided into `
 ```json
 {
     "metadata": {
-        "kind": "authz",
-        "name": "oms-authz-model",
-        "description": "A zero trust authz model to manage orders.",
+        "name": "oms-model",
+        "description": "A zero trust auth* model to manage orders.",
         "author": "Nitro Agility Srl",
         "license": "Apache-2.0"
     },
@@ -58,9 +56,8 @@ The runtime has to include the language, its version, and the engine to be used.
 ```json
 {
     "metadata": {
-        "kind": "authz",
-        "name": "oms-authz-model",
-        "description": "A zero trust authz model to manage orders.",
+        "name": "oms-model",
+        "description": "A zero trust auth* model to manage orders.",
         "author": "Nitro Agility Srl",
         "license": "Apache-2.0"
     },
