@@ -1,7 +1,7 @@
 ---
 title: Versioning
 type: docs
-prev: /openprotocolspec/2025-04-05/dataspaces/
+prev: /openprotocolspec/2025-04-05/base-protcol/decision-points
 weight: 501
 ---
 
