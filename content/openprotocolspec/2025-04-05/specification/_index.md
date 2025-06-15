@@ -12,7 +12,7 @@ next: /openprotocolspec/2025-04-05/architecture
 - **Transferable**, **Versionable**, **Immutable**, and **Resilient**.
 - Enable **trusted models** and Zero Trust security.
 
-The specification outlines several key concepts including the following sections.
+This specification defines several foundational concepts, as detailed below.
 
 ## ZTDomain
 
