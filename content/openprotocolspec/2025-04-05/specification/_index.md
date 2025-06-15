@@ -30,16 +30,14 @@ A valid trust domain is defined as the **authority component** of a URI using th
 
 ## ZTZone
 
-A `ZTZone` is a trust a trust zone which defines a logical boundary within a Trust Domain. It may represent a specific area of trust, such as a network segment, region, or an isolated group of resources.
+A `ZTZone` is a trust zone that defines a logical boundary within a Trust Domain.  
+It may represent a specific area of trust, such as a network segment, region, or an isolated group of resources.
 
 A valid trusted zone identifier **MUST** meet the following constraints:
 
-- The zone identifier **MUST consist only of lowercase ASCII letters (`a–z`), digits (`0–9`), dashes (`-`), and underscores (`_`)**.
-- The zone identifier **MUST NOT contain dots (`.`)**.
-- The zone identifier **MUST NOT contain uppercase characters**.
-- The zone identifier **MUST NOT contain percent-encoded characters**.
-- The zone identifier **MUST be non-empty**.
-- The zone identifier **MUST be normalized** prior to comparison.
+- The zone identifier **MUST be a numeric value**.
+- The value **MUST be between `100000000000` and `999999999999`** (inclusive).
+- The identifier **MUST be unique within the same Trust Domain**.
 
 ## ZTID
 
