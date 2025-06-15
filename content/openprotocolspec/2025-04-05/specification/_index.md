@@ -13,3 +13,11 @@ next: /openprotocolspec/2025-04-05/architecture
 - Enable **trusted models** and Zero Trust security.
 
 The specification outlines several key concepts as in the following sections.
+
+## Trusted Domain
+
+{{< callout type="info" >}}**Protocol To Be Implemented** {{< /callout >}}
+
+## Trusted Zones
+
+{{< callout type="info" >}}**Protocol To Be Implemented** {{< /callout >}}
