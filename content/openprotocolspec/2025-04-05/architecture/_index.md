@@ -45,12 +45,12 @@ graph LR
     end
 
     subgraph "Remote Node"
-        ATS["Access Token Service"]
+        STS["Secure Token Service<br>STS"]
         MR[("Auth* Models")]
-        DL[Decision Logs]
+        DL[(Decision Logs)]
 
-        C1 --> ATS
-        C2 --> ATS
+        C1 --> STS
+        C2 --> STS
         S1 <-- "NOTP" -->  MR
         S1 --> DL
     end
