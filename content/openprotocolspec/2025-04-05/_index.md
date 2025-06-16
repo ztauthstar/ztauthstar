@@ -23,5 +23,5 @@ Explore the detailed specification for each protocol component:
 {{< card link="authstarmodels" title="Auth* Models" icon="authstar-model" >}}
 {{< card link="trustedmodels" title="Trusted Models" icon="cube-transparent" >}}
 {{< card link="decisionpoints" title="Decision Points" icon="decision-point" >}}
-{{< card link="federation" title="Federation" icon="federation" >}}
-{{< card link="dataspaces" title="Data Spaces" icon="dataspace" >}}{{< /cards >}}
+<!-- {{< card link="federation" title="Federation" icon="federation" >}}
+{{< card link="dataspaces" title="Data Spaces" icon="dataspace" >}}{{< /cards >}} -->
