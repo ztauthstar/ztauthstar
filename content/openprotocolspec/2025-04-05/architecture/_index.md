@@ -34,23 +34,23 @@ graph LR
         H[Host]
         C1[Client 1 <br> PEP]
         C2[Client 2 <br> PEP]
-        C3[Client 3 <br> PEP]
         H --> C1
         H --> C2
-        H --> C3
     end
 
     subgraph "Proximity Node"
         S1[Server <br> PDP]
         C1 --> S1
         C2 --> S1
-        C3 --> S1
     end
 
     subgraph "Remote Node"
+        ATS["Access Token Service"]
         MR[("Auth* Models")]
         DL[Decision Logs]
 
+        C1 --> ATS
+        C2 --> ATS
         S1 <-- "NOTP" -->  MR
         S1 --> DL
     end
