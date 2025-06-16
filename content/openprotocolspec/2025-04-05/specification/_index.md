@@ -10,9 +10,9 @@ next: /openprotocolspec/2025-04-05/architecture
 **ZTAuth*** redefines authentication (AuthN) and authorization (AuthZ) with models that are:
 
 - **Transferable**, **Versionable**, **Immutable**, and **Resilient**.
-- Enable **trusted models** and Zero Trust security.
+- Enable **Trust Models** and Zero Trust security.
 
-This specification defines several foundational concepts, as detailed below.
+This specification defines several foundational concepts, including, but not limited to, the following.
 
 ## ZTDomain
 

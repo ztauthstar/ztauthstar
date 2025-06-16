@@ -9,6 +9,6 @@ weight: 1
 **ZTAuth*** redefines authentication (AuthN) and authorization (AuthZ) with models that are:
 
 - **Transferable**, **Versionable**, **Immutable**, **Valid**  and **Resilient**.
-- Enable **trusted models** and Zero Trust security.
+- Enable **trust models** and Zero Trust security.
 
 {{< cards >}} {{< card link="/draft" title="Latest Spec" icon="book-open" >}}{{< /cards >}}
