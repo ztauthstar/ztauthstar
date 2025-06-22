@@ -60,7 +60,7 @@ The **Proximity PDP** must synchronize the **Auth\*** models using the **Negotia
 
 **ZTAuth*** is designed for distributed systems and takes into account the constraints imposed by the CAP Theorem.
 
-A common scenario involves an application initiating an asynchronous process that is distributed via a message broker. The application holds the access token of the target identity but **cannot propagate it** through the broker due to security, isolation, and propagation limitations.
+A common scenario involves an application initiating an asynchronous process that is distributed via a message broker. The application holds the access token of the target identity but cannot propagate it through the broker due to security, isolation, and propagation limitations. Moreover, since the process may be executed at an undefined later time, there is no guarantee that the original token will still be valid when the action takes place.
 
 Instead, the application **delegates the execution** to a downstream service. The service performs the following steps:
 
