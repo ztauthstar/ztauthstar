@@ -11,7 +11,7 @@ next: /openprotocolspec/2025-04-05/base-protcol
 - The **host** is where the client runs (for example: a server, container, or edge device).
 - The **client** is the system, application, or workload that needs to be protected. It must have the correct permissions to do its job.
 - The **server** is the authorization server. It checks requests and returns decisions.
-- The **transaction token service** implements the [oauth transaction token specification](https://datatracker.ietf.org/doc/draft-ietf-oauth-transaction-tokens/). It gives the client the tokens needed to make authorization decisions.
+- The **transaction token service** implements the [oauth transaction token specification](https://drafts.oauth.net/oauth-transaction-tokens/draft-ietf-oauth-transaction-tokens.html). It gives the client the tokens needed to make authorization decisions.
 
 In this setup:
 
