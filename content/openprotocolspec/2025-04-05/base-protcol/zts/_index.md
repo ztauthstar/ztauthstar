@@ -3,7 +3,7 @@ title: Zero Trust Token Service
 cascade:
   type: docs
 weight: 3400
-prev: /openprotocolspec/2025-04-05/base-protcol/authstar-models/language-object
+prev: /openprotocolspec/2025-04-05/base-protcol/authstar-models/language-blob
 next: /openprotocolspec/2025-04-05/base-protcol/decision-points
 ---
 

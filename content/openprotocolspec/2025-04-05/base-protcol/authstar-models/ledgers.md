@@ -4,10 +4,10 @@ cascade:
   type: docs
 weight: 3201
 prev: /openprotocolspec/2025-04-05/base-protcol/authstar-models
-next: /openprotocolspec/2025-04-05/base-protcol/object-model
+next: /openprotocolspec/2025-04-05/base-protcol/object-types
 ---
 
-An **Auth\*** model must be stored in a Git-like object storage system. A **ledger** is a collection of `Objects` that conform to a specific [`Object Model`](/openprotocolspec/2025-04-05/base-protcol/authstar-models/object-model/).
+An **Auth\*** model must be stored in a Git-like object storage system. A **ledger** is a collection of `Objects` that conform to a specific [`Object Model`](/openprotocolspec/2025-04-05/base-protcol/authstar-models/object-types/).
 
 > Each `ZTZone` contains one or more ledgers.
 
