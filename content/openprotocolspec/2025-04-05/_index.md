@@ -18,7 +18,7 @@ next: /openprotocolspec/2025-04-05/architecture
 Explore the detailed specification for each protocol component:
 
 {{< cards >}}
-{{< card link="manifest" title="Manifest" icon="template" >}}
+{{< card link="manifest" title="Manifest" icon="manifest" >}}
 {{< card link="architecture" title="Architecture" icon="template" >}}
 <!-- {{< card link="identities" title="Identities" icon="finger-print" >}}
 {{< card link="actormodels" title="Actor Models" icon="color-swatch" >}} -->
