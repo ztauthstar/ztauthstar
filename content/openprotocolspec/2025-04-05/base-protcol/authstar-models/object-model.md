@@ -3,8 +3,8 @@ title: Object Model
 cascade:
   type: docs
 weight: 3202
-prev: /openprotocolspec/2025-04-05/authstarmodels/manifest
-next: /openprotocolspec/2025-04-05/base-protcol/notp
+prev: /openprotocolspec/2025-04-05/base-protcol/authstarmodels/manifest
+next: /openprotocolspec/2025-04-05/base-protcol/zts
 ---
 
 An `Auth*` model must be self-consistent. All model data should be persisted and kept in a consistent state. The data are represented as objects, following a Git-like object model.
