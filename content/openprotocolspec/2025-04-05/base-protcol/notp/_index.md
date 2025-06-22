@@ -2,7 +2,7 @@
 title: Negotiated Object Transfer Protocol
 cascade:
   type: docs
-weight: 3300
+weight: 3400
 prev: /openprotocolspec/2025-04-05/base-protcol/authstar-models/
 next: /openprotocolspec/2025-04-05/base-protcol/decision-points
 ---

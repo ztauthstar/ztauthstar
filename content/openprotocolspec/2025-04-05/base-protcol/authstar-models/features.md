@@ -2,7 +2,7 @@
 title: Features
 cascade:
   type: docs
-weight: 42
+weight: 3302
 prev: /openprotocolspec/2025-04-05/authstarmodels/objects
 next: /openprotocolspec/2025-04-05/authstarmodels/manifest
 ---

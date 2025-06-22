@@ -3,30 +3,30 @@ title: Architecture
 cascade:
   type: docs
 weight: 2000
-prev: /openprotocolspec/2025-04-05/specification
+prev: /openprotocolspec/2025-04-05/manifest
 next: /openprotocolspec/2025-04-05/base-protcol/
 ---
 ZTAuth* uses a client-host-server architecture:
 
-- The **host** is the application or system that needs to be protected.
-- The **client** is the workload that sends a request and needs permission to do something.
+- The **host** is the environment where the client runs, such as a server, container, or edge device.
+- The **client** is either the system, application or workload that needs to be protected and must ensure it has the correct permissions to perform its actions.
 - The **server** is the authorization service that checks the request and returns a decision.
+- The **zero trust token service (zts)** is the service that provides the necessary tokens and models to help the client make authorization decisions.
 
 In this setup:
 
-- The **client** is also called the **Policy Enforcement Point (PEP)**. It sends the request and applies the decision.
-- The **server** is called the **Policy Decision Point (PDP)**. It checks the policies and makes the decision.
-- The **host** is where the PEP runs.
+- The **client** is also called the **policy enforcement point (pep)**. It sends the request and applies the decision.
+- The **server** is also called the **policy decision point (pdp)**. It checks the policies and makes the decision.
+- The **host** is where the client runs.
 
 The PDP can be deployed in two ways:
 
 - As a **central authorization server**, running remotely and shared across services.
-- As a **proximity PDP**, running close to the workload on the same node or local network. This enables low-latency checks and local decision-making, even in offline or degraded environments.
+- As a **proximity pdp**, running close to the workload on the same node or local network. This enables low-latency checks and local decision-making, even in offline or degraded environments.
 
 > In hardware-constrained setups, the PEP and PDP can run on the same node to reduce latency and simplify deployment.
 
-ZTAuth* supports disconnected or partially connected environments.  
-The protocol is designed to be **eventually consistent**: AuthN, AuthZ, and trust models are periodically synchronized from the central authorization server.
+ZTAuth* supports disconnected or partially connected environments. It is therefore designed to be **eventually consistent**: authorization and trust models — also known as `Auth* Models` — are periodically synchronized from the central authorization server.
 
 ```mermaid
 graph LR
@@ -45,12 +45,12 @@ graph LR
     end
 
     subgraph "Remote Node"
-        STS["Secure Token Service<br>STS"]
+        ZTS["Zero Trust Token Service<br>ZTS"]
         MR[("Auth* Models")]
         DL[(Decision Logs)]
 
-        C1 --> STS
-        C2 --> STS
+        C1 --> ZTS
+        C2 --> ZTS
         S1 <-- "NOTP" -->  MR
         S1 --> DL
     end

@@ -2,8 +2,8 @@
 title: Identities and Actors
 cascade:
   type: docs
-weight: 3100
-prev: /openprotocolspec/2025-04-05/base-protcol
+weight: 3200
+prev: /openprotocolspec/2025-04-05/base-protcol/domains-zones
 next: /openprotocolspec/2025-04-05/base-protcol/authstar-models/
 ---
 
