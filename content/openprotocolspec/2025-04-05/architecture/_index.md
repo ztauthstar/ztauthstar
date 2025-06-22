@@ -45,7 +45,7 @@ graph LR
     end
 
     subgraph "Remote Node"
-        TTS["Transaction Token Service <br> OAuth Spec"]
+        TTS["Transaction Token Service <br> OAuth spec"]
         MR[("Auth* Models")]
         DL[(Decision Logs)]
 
@@ -87,7 +87,7 @@ graph LR
         C1 -- (2) authz check --> S1
     end
 
-    TTS["Transaction Token Service <br> OAuth Spec"]
+    TTS["Transaction Token Service <br> OAuth spec"]
     C1 -- (1) request txn-token --> TTS
     C2 -- (4) request txn-token --> TTS
 
