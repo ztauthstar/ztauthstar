@@ -35,7 +35,7 @@ Infrastructure is moving towards **Zero Trust security** using models like **Zer
 
 The **application layer** must follow this evolution — and **ZTAuth*** is designed to be the missing piece.
 
-## Human Identity vs Non Human Identity
+## Human vs Non Human Identities
 
 Human identity is already well-managed using [OpenID Connect](https://openid.net/specs/openid-connect-core-1_0.html) and [OAuth 2.0](https://datatracker.ietf.org/doc/html/rfc6749).
 
