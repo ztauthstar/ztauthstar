@@ -58,4 +58,47 @@ graph LR
 
 The **Proximity PDP** must synchronize the **Auth\*** models using the **Negotiated Object Transfer Protocol (NOTP)**. This ensures it always has the latest models and can make decisions based on them.
 
+**ZTAuth*** is designed for distributed systems and takes into account the constraints imposed by the CAP Theorem.
+
+A common scenario involves an application initiating an asynchronous process that is distributed via a message broker. The application holds the access token of the target identity but **cannot propagate it** through the broker due to security, isolation, and propagation limitations.
+
+Instead, the application **delegates the execution** to a downstream service. The service performs the following steps:
+
+1. **Authenticates itself** using its own non-human identity,
+2. **Requests a ZTS token** from the Zero Trust Token Service (ZTS), scoped to the intended request context,
+3. The **proximity PDP retrieves the relevant Auth\*** models,
+4. **Uses the ZTS token** to construct the appropriate **authorization context**,
+5. **An authorization decision is made** based on the current authorization context.
+
+This mechanism ensures that authorization is applied securely and consistently, even across asynchronous and decoupled components. It enables safe and verifiable delegation without requiring direct propagation of end-user credentials or tokens.
+
+```mermaid
+graph LR
+    subgraph "Application "
+        C1[Application Client <br> PEP]
+        S1[Server <br> PDP]
+        C1 --> S1
+    end
+
+    ZTS["Zero Trust Token Service<br>ZTS"]
+    C1 -- request zts-token --> ZTS
+    C2 -- request zts-token --> ZTS
+
+    subgraph "Service"
+        C2[Service Client <br> PEP]
+        S2[Server <br> PDP]
+        C2 --> S2
+    end
+
+    C1 -- async request via message --> C2
+    
+```
+
 Every decision made by the PDP is recorded in the **decision logs**. These logs should be sent to the **Remote Node** for storage, so they can be used later for **auditing** and **compliance**.
+
+Centralized management of **Auth\*** models and decision logs enables:
+
+- **Governance**: Policies are applied consistently across distributed components.
+- **Compliance**: Facilitates adherence to regulatory and organizational requirements.
+- **Auditing**: All authorization decisions are traceable and verifiable.
+- **Risk Management**: Historical data supports detection and mitigation of security or operational risks.
