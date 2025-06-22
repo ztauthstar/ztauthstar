@@ -10,7 +10,7 @@ ZTAuth* uses a client-host-server architecture:
 
 - The **host** is the environment where the client runs, such as a server, container, or edge device.
 - The **client** is either the system, application or workload that needs to be protected and must ensure it has the correct permissions to perform its actions.
-- The **server** is the authorization service that checks the request and returns a decision.
+- The **server** is the authorization server that checks the request and returns a decision.
 - The **zero trust token service (zts)** is the service that provides the necessary tokens and models to help the client make authorization decisions.
 
 In this setup:
@@ -21,7 +21,7 @@ In this setup:
 
 The PDP can be deployed in two ways:
 
-- As a **central authorization server**, running remotely and shared across services.
+- As a **central authorization server**, running remotely and shared across clients.
 - As a **proximity pdp**, running close to the workload on the same node or local network. This enables low-latency checks and local decision-making, even in offline or degraded environments.
 
 > In hardware-constrained setups, the PEP and PDP can run on the same node to reduce latency and simplify deployment.
@@ -62,35 +62,35 @@ The **Proximity PDP** must synchronize the **Auth\*** models using the **Negotia
 
 A common scenario involves an application initiating an asynchronous process that is distributed via a message broker. The application holds the access token of the target identity but cannot propagate it through the broker due to security, isolation, and propagation limitations. Moreover, since the process may be executed at an undefined later time, there is no guarantee that the original token will still be valid when the action takes place.
 
-Instead, the application **delegates the execution** to a downstream service. The service performs the following steps:
+Instead, the application **delegates the execution** to a downstream workload. The following steps are performed across the two components:
 
-1. **Authenticates itself** using its own non-human identity,
-2. **Requests a ZTS token** from the Zero Trust Token Service (ZTS), scoped to the intended request context,
-3. The **proximity PDP retrieves the relevant Auth\*** models,
-4. **Uses the ZTS token** to construct the appropriate **authorization context**,
-5. **An authorization decision is made** based on the current authorization context.
+1. The **Requesting Application** requests a **ZTS token** from the Zero Trust Token Service (ZTS), scoped to the intended request context.
+2. It performs an **authorization check** locally via its own PDP.
+3. It sends an **asynchronous message** to the downstream **Delegated Workload**.
+4. The delegated **Workload Client** requests a **ZTS token** from the ZTS for the incoming request, authenticating with its own non-human identity.
+5. The **Workload PDP** performs an **authorization check**, reconstructing the appropriate authorization context based on the ZTS token and relevant Auth\* models.
 
-This mechanism ensures that authorization is applied securely and consistently, even across asynchronous and decoupled components. It enables safe and verifiable delegation without requiring direct propagation of end-user credentials or tokens.
+This mechanism ensures that authorization is applied securely and consistently across asynchronous and decoupled components. It enables safe and verifiable delegation without the need to propagate end-user credentials or tokens.
 
 ```mermaid
 graph LR
-    subgraph "Application "
+    subgraph "Requesting Application "
         C1[Application Client <br> PEP]
         S1[Server <br> PDP]
-        C1 --> S1
+        C1 -- (2) authz check --> S1
     end
 
     ZTS["Zero Trust Token Service<br>ZTS"]
-    C1 -- request zts-token --> ZTS
-    C2 -- request zts-token --> ZTS
+    C1 -- (1) request zts-token --> ZTS
+    C2 -- (4) request zts-token --> ZTS
 
-    subgraph "Service"
-        C2[Service Client <br> PEP]
+    subgraph "Delegated Workload"
+        C2[Workload Client <br> PEP]
         S2[Server <br> PDP]
-        C2 --> S2
+        C2 -- (5) authz check --> S2
     end
 
-    C1 -- async request via message --> C2
+    C1 -- (3) send message --> C2
     
 ```
 
