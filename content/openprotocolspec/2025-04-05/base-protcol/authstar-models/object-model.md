@@ -10,9 +10,7 @@ next: /openprotocolspec/2025-04-05/base-protcol/authstarmodels/manifest
 An `Auth*` model must be **self-consistent**. All data in the model must be saved and kept in a **valid and consistent state**. The data is stored as objects, using a structure similar to **Git**.
 
 > [!IMPORTANT]
-> Git itself is not suitable for production use in this context.  
-> It allows any kind of file and does not check structure or content.  
-> For this reason, a **custom Git-like object model** is used. This model accepts only valid `Auth*` models and rejects anything invalid.
+> Git itself is not suitable for production use in this context. It allows any kind of file and does not check structure or content. For this reason, a **custom Git-like object model** is used. This model accepts only valid `Auth*` models and rejects anything invalid.
 
 There are three types of objects:
 
