@@ -108,7 +108,7 @@ In doing so, **ZTAuth*** enables secure, auditable delegation in distributed env
 
 > It does not replace existing standards, but extends them with a dedicated layer focused on **fine-grained, verifiable, and transferable authorization**, designed to support both **Zero Trust architectures** and **autonomous execution models** such as agents, workflows, and services.
 
-## Evolution of Data Spaces and Orchestration Models
+## Evolution of Data Spaces and Orchestration
 
 In federated ecosystems such as Data Spaces, organizations must enforce **precise and verifiable control** over who can access data and how it is used. Traditional approaches often rely on point-to-point agreements or infrastructure-level restrictions, which are difficult to scale or audit across multiple participants.
 
