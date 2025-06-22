@@ -11,7 +11,7 @@ next: /openprotocolspec/2025-04-05/base-protcol
 - The **host** is where the client runs (for example: a server, container, or edge device).
 - The **client** is the system, application, or workload that needs to be protected. It must have the correct permissions to do its job.
 - The **server** is the authorization server. It checks requests and returns decisions.
-- The **Transaction Token Service** follows the [OAuth Transaction Token specification](https://datatracker.ietf.org/doc/draft-ietf-oauth-transaction-tokens/). It gives the client the tokens needed to make authorization decisions.
+- The **transaction token service** follows the [OAuth Transaction Token specification](https://datatracker.ietf.org/doc/draft-ietf-oauth-transaction-tokens/). It gives the client the tokens needed to make authorization decisions.
 
 In this setup:
 
@@ -61,7 +61,9 @@ This makes sure it always has the latest version of the model for making decisio
 
 **ZTAuth*** is made for distributed systems and follows the ideas of the **CAP Theorem**.
 
-``` Delegation Example
+All decisions from the PDP must be saved in **Decision Logs**. These logs should go to the **Remote Node**, where they can be used for **auditing** and **compliance**.
+
+### Delegation Example
 
 Sometimes, an application starts a process that runs later, using a message broker.  
 The application has a token that represents the target identity, but it **cannot send this token** through the broker — for security and isolation reasons.  
@@ -98,9 +100,7 @@ graph LR
     C1 -- (3) send message --> C2
 ```
 
-All decisions from the PDP must be saved in **Decision Logs**. These logs should go to the **Remote Node**, where they can be used for **auditing** and **compliance**.
-
-``` Why Centralized Management Helps
+### Why Centralized Management Helps
 
 Having central control of **Auth\*** models and logs brings many benefits:
 
