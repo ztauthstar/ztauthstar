@@ -12,7 +12,7 @@ An `Auth*` model is associagted to a specific [`ledger`](/openprotocolspec/2025-
 > [!IMPORTANT]
 > Each `Auth*` model must include a single mandatory `manifest`. This manifest is required for the model to be considered valid and usable within the `ZTAuth*` protocol.
 
-The manifest includes metadata and defines the runtime and other settings for each model.
+The `manifest` is a blob object that contains metadata and defines the runtime configuration and other relevant settings for the model.
 
 ## Metadata
 
