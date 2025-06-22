@@ -11,7 +11,7 @@ next: /openprotocolspec/2025-04-05/base-protcol
 - The **host** is where the client runs (for example: a server, container, or edge device).
 - The **client** is the system, application, or workload that needs to be protected. It must have the correct permissions to do its job.
 - The **server** is the authorization server. It checks requests and returns decisions.
-- The **transaction token service** follows the [OAuth Transaction Token specification](https://datatracker.ietf.org/doc/draft-ietf-oauth-transaction-tokens/). It gives the client the tokens needed to make authorization decisions.
+- The **transaction token service** implements the [oauth transaction token specification](https://datatracker.ietf.org/doc/draft-ietf-oauth-transaction-tokens/). It gives the client the tokens needed to make authorization decisions.
 
 In this setup:
 
@@ -45,12 +45,12 @@ graph LR
     end
 
     subgraph "Remote Node"
-        OTT["OAuth Transaction Token Service"]
+        TTS["Transaction Token Service <br> OAuth Spec"]
         MR[("Auth* Models")]
         DL[(Decision Logs)]
 
-        C1 --> OTT
-        C2 --> OTT
+        C1 --> TTS
+        C2 --> TTS
         S1 <-- "NOTP" --> MR
         S1 --> DL
     end
@@ -87,9 +87,9 @@ graph LR
         C1 -- (2) authz check --> S1
     end
 
-    OTT["OAuth Transaction Token Service"]
-    C1 -- (1) request txn-token --> OTT
-    C2 -- (4) request txn-token --> OTT
+    TTS["Transaction Token Service <br> OAuth Spec"]
+    C1 -- (1) request txn-token --> TTS
+    C2 -- (4) request txn-token --> TTS
 
     subgraph "Delegated Workload"
         C2[Workload Client <br> PEP]
