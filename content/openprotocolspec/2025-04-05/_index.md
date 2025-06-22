@@ -7,7 +7,7 @@ breadcrumbs: false
 weight: 3
 aliases:
   - /draft
-prev: /openprotocolspec/
+prev: /openprotocolspec
 next: /openprotocolspec/2025-04-05/architecture
 ---
 

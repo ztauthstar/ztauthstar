@@ -3,7 +3,7 @@ title: Manifest
 cascade:
   type: docs
 weight: 1000
-prev: /openprotocolspec/2025-04-05/
+prev: /openprotocolspec/2025-04-05
 next: /openprotocolspec/2025-04-05/architecture
 math: true
 ---

@@ -4,7 +4,7 @@ cascade:
   type: docs
 weight: 3200
 prev: /openprotocolspec/2025-04-05/base-protcol/domains-zones
-next: /openprotocolspec/2025-04-05/base-protcol/authstar-models/manifest
+next: /openprotocolspec/2025-04-05/base-protcol/authstar-models/ledgers
 ---
 
 The `ZTAuth*` security model requires specific models for `AuthZ` (authorization) and `Trust Models`. These are referred to as `Auth*` models. They are designed to follow `Zero Trust` principles and form the foundation of the `ZTAuth*` protocol.

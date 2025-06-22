@@ -2,12 +2,12 @@
 title: Manifest
 cascade:
   type: docs
-weight: 3201
-prev: /openprotocolspec/2025-04-05/base-protcol/authstar-models
-next: /openprotocolspec/2025-04-05/base-protcol/authstar-models/object-model
+weight: 3203
+prev: /openprotocolspec/2025-04-05/base-protcol/authstar-models/object-model
+next: /openprotocolspec/2025-04-05/base-protcol/zts
 ---
 
-An `Auth*` model is linked to a specific runtime, which includes the `engine` and the `language` to be used to interpret and evaluate the model. For this reason, a **manifest** must be provided to describe the model requirements.
+An `Auth*` model is associagted to a specific [`ledger`](/openprotocolspec/2025-04-05/base-protcol/authstar-models/ledgers), moreover it is linked to a specific runtime, which includes the `engine` and the `language` to be used to interpret and evaluate the model. For this reason, a **manifest** must be provided to describe the model requirements.
 
 > [!IMPORTANT]
 > This document uses an `Auth*` model as an example.
