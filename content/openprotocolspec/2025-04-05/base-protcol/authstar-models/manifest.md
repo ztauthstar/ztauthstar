@@ -10,7 +10,7 @@ next: /openprotocolspec/2025-04-05/base-protcol/zts
 An `Auth*` model is associagted to a specific [`ledger`](/openprotocolspec/2025-04-05/base-protcol/authstar-models/ledgers), moreover it is linked to a specific runtime, which includes the `engine` and the `language` to be used to interpret and evaluate the model. For this reason, a **manifest** must be provided to describe the model requirements.
 
 > [!IMPORTANT]
-> This document uses an `Auth*` model as an example.
+> Each `Auth*` model must include a single mandatory `manifest`. This manifest is required for the model to be considered valid and usable within the `ZTAuth*` protocol.
 
 The manifest includes metadata and defines the runtime and other settings for each model.
 
