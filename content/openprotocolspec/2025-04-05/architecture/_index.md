@@ -6,27 +6,27 @@ weight: 2000
 prev: /openprotocolspec/2025-04-05/manifest
 next: /openprotocolspec/2025-04-05/base-protcol
 ---
-ZTAuth* uses a client-host-server architecture:
+**ZTAuth*** uses a client-host-server architecture:
 
-- The **host** is the environment where the client runs, such as a server, container, or edge device.
-- The **client** is either the system, application or workload that needs to be protected and must ensure it has the correct permissions to perform its actions.
-- The **server** is the authorization server that checks the request and returns a decision.
-- The **zero trust token service (zts)** is the service that provides the necessary tokens and models to help the client make authorization decisions.
+- The **host** is where the client runs (for example: a server, container, or edge device).
+- The **client** is the system, application, or workload that needs to be protected. It must have the correct permissions to do its job.
+- The **server** is the authorization server. It checks requests and returns decisions.
+- The **Transaction Token Service** follows the [OAuth Transaction Token specification](https://datatracker.ietf.org/doc/draft-ietf-oauth-transaction-tokens/). It gives the client the tokens needed to make authorization decisions.
 
 In this setup:
 
-- The **client** is also called the **policy enforcement point (pep)**. It sends the request and applies the decision.
-- The **server** is also called the **policy decision point (pdp)**. It checks the policies and makes the decision.
+- The **client** is also called the **Policy Enforcement Point (PEP)**. It sends requests and applies the decisions.
+- The **server** is also called the **Policy Decision Point (PDP)**. It checks the policies and makes the decisions.
 - The **host** is where the client runs.
 
-The PDP can be deployed in two ways:
+The PDP can run in two ways:
 
-- As a **central authorization server**, running remotely and shared across clients.
-- As a **proximity pdp**, running close to the workload on the same node or local network. This enables low-latency checks and local decision-making, even in offline or degraded environments.
+- As a **central authorization server**, shared across multiple clients.
+- As a **proximity PDP**, running close to the workload (on the same machine or local network). This allows fast decisions and works even if disconnected.
 
-> In hardware-constrained setups, the PEP and PDP can run on the same node to reduce latency and simplify deployment.
+> In small or limited environments, the PEP and PDP can run together on the same host to make things simpler and faster.
 
-ZTAuth* supports disconnected or partially connected environments. It is therefore designed to be **eventually consistent**: authorization and trust models — also known as `Auth* Models` — are periodically synchronized from the central authorization server.
+**ZTAuth*** works well in systems that are disconnected or only sometimes connected. It is **eventually consistent**: the authorization and trust models — called `Auth* Models` — are updated from the central server regularly.
 
 ```mermaid
 graph LR
@@ -45,44 +45,49 @@ graph LR
     end
 
     subgraph "Remote Node"
-        ZTS["Zero Trust Token Service<br>ZTS"]
+        OTT["OAuth Transaction Token Service"]
         MR[("Auth* Models")]
         DL[(Decision Logs)]
 
-        C1 --> ZTS
-        C2 --> ZTS
-        S1 <-- "NOTP" -->  MR
+        C1 --> OTT
+        C2 --> OTT
+        S1 <-- "NOTP" --> MR
         S1 --> DL
     end
 ```
 
-The **Proximity PDP** must synchronize the **Auth\*** models using the **Negotiated Object Transfer Protocol (NOTP)**. This ensures it always has the latest models and can make decisions based on them.
+The **Proximity PDP** syncs the **Auth\*** models using the **Negotiated Object Transfer Protocol (NOTP)**.  
+This makes sure it always has the latest version of the model for making decisions.
 
-**ZTAuth*** is designed for distributed systems and takes into account the constraints imposed by the CAP Theorem.
+**ZTAuth*** is made for distributed systems and follows the ideas of the **CAP Theorem**.
 
-A common scenario involves an application initiating an asynchronous process that is distributed via a message broker. The application holds the access token of the target identity but cannot propagate it through the broker due to security, isolation, and propagation limitations. Moreover, since the process may be executed at an undefined later time, there is no guarantee that the original token will still be valid when the action takes place.
+``` Delegation Example
 
-Instead, the application **delegates the execution** to a downstream workload. The following steps are performed across the two components:
+Sometimes, an application starts a process that runs later, using a message broker.  
+The application has a token that represents the target identity, but it **cannot send this token** through the broker — for security and isolation reasons.  
+Also, the process might run later, when the token is no longer valid.
 
-1. The **Requesting Application** requests a **ZTS token** from the Zero Trust Token Service (ZTS), scoped to the intended request context.
-2. It performs an **authorization check** locally via its own PDP.
-3. It sends an **asynchronous message** to the downstream **Delegated Workload**.
-4. The delegated **Workload Client** requests a **ZTS token** from the ZTS for the incoming request, authenticating with its own non-human identity.
-5. The **Workload PDP** performs an **authorization check**, reconstructing the appropriate authorization context based on the ZTS token and relevant Auth\* models.
+To handle this, the application **delegates** the work to another system. Here’s what happens:
 
-This mechanism ensures that authorization is applied securely and consistently across asynchronous and decoupled components. It enables safe and verifiable delegation without the need to propagate end-user credentials or tokens.
+1. The **Requesting Application** asks the Transaction Token Service for a token, with the right scope.
+2. It does a local **authorization check** using its own PDP.
+3. It sends a **message** to the **Delegated Workload**.
+4. The **Delegated Workload Client** asks for a transaction token, using its own non-human identity.
+5. The **Workload PDP** checks authorization using the token and the correct Auth\* models.
+
+This allows safe and consistent authorization without needing to share the original token.
 
 ```mermaid
 graph LR
-    subgraph "Requesting Application "
+    subgraph "Requesting Application"
         C1[Application Client <br> PEP]
         S1[Server <br> PDP]
         C1 -- (2) authz check --> S1
     end
 
-    ZTS["Zero Trust Token Service<br>ZTS"]
-    C1 -- (1) request zts-token --> ZTS
-    C2 -- (4) request zts-token --> ZTS
+    OTT["OAuth Transaction Token Service"]
+    C1 -- (1) request transaction token --> OTT
+    C2 -- (4) request transaction token --> OTT
 
     subgraph "Delegated Workload"
         C2[Workload Client <br> PEP]
@@ -91,14 +96,15 @@ graph LR
     end
 
     C1 -- (3) send message --> C2
-    
 ```
 
-Every decision made by the PDP is recorded in the **decision logs**. These logs should be sent to the **Remote Node** for storage, so they can be used later for **auditing** and **compliance**.
+All decisions from the PDP must be saved in **Decision Logs**. These logs should go to the **Remote Node**, where they can be used for **auditing** and **compliance**.
 
-Centralized management of **Auth\*** models and decision logs enables:
+``` Why Centralized Management Helps
 
-- **Governance**: Policies are applied consistently across distributed components.
-- **Compliance**: Facilitates adherence to regulatory and organizational requirements.
-- **Auditing**: All authorization decisions are traceable and verifiable.
-- **Risk Management**: Historical data supports detection and mitigation of security or operational risks.
+Having central control of **Auth\*** models and logs brings many benefits:
+
+- **Governance**: The same rules are used everywhere.
+- **Compliance**: Helps meet internal and external rules.
+- **Auditing**: All decisions can be tracked and reviewed.
+- **Risk Management**: Old data can help find and reduce problems.
