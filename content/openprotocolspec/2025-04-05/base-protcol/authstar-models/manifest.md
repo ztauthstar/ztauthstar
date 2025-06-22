@@ -31,7 +31,7 @@ A manifest has to include metadata such as `name`, `description`, `author`, and 
 
 ## Partitions
 
-Models are designed to contain `objects`, and each `model` can be divided into `partitions`. The `root` partition, defined as `/`, is used for all paths where no specific partition is provided.
+Models are designed to contain `blobs`, and each `model` can be divided into `partitions`. The `root` partition, defined as `/`, is used for all paths where no specific partition is provided.
 
 ```json
 {
