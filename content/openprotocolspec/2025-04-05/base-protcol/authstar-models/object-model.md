@@ -4,7 +4,7 @@ cascade:
   type: docs
 weight: 3202
 prev: /openprotocolspec/2025-04-05/base-protcol/authstarmodels/ledgers
-next: /openprotocolspec/2025-04-05/base-protcol/authstarmodels/manifest
+next: /openprotocolspec/2025-04-05/base-protcol/authstarmodels/manifest-object
 ---
 
 An `Auth*` model must be **self-consistent**. All data in the model must be saved and kept in a **valid and consistent state**. The data is stored as objects, using a structure similar to **Git**.

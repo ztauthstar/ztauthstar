@@ -1,10 +1,10 @@
 ---
-title: Manifest
+title: Manifest Object
 cascade:
   type: docs
 weight: 3203
 prev: /openprotocolspec/2025-04-05/base-protcol/authstar-models/object-model
-next: /openprotocolspec/2025-04-05/base-protcol/zts
+next: /openprotocolspec/2025-04-05/base-protcol/authstar-models/language-object
 ---
 
 An `Auth*` model is associagted to a specific [`ledger`](/openprotocolspec/2025-04-05/base-protcol/authstar-models/ledgers), moreover it is linked to a specific runtime, which includes the `engine` and the `language` to be used to interpret and evaluate the model. For this reason, a **manifest** must be provided to describe the model requirements.
@@ -12,7 +12,7 @@ An `Auth*` model is associagted to a specific [`ledger`](/openprotocolspec/2025-
 > [!IMPORTANT]
 > Each `Auth*` model must include a single mandatory `manifest`. This manifest is required for the model to be considered valid and usable within the `ZTAuth*` protocol.
 
-The `manifest` is a blob object that contains metadata and defines the runtime configuration and other relevant settings for the model.
+The `manifest` is a `blob` [`object`](/openprotocolspec/2025-04-05/base-protcol/authstar-models/object-model/) that contains metadata and defines the runtime configuration and other relevant settings for the model.
 
 ## Metadata
 
