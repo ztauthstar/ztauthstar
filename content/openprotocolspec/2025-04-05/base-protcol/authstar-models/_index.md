@@ -2,8 +2,8 @@
 title: Auth* Models
 cascade:
   type: docs
-weight: 3300
-prev: /openprotocolspec/2025-04-05/base-protcol/zero-trust-token-service
+weight: 3200
+prev: /openprotocolspec/2025-04-05/base-protcol/domains-zones
 next: /openprotocolspec/2025-04-05/base-protcol/notp/
 ---
 
