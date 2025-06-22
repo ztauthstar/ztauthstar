@@ -4,8 +4,10 @@ cascade:
   type: docs
 weight: 3100
 prev: /openprotocolspec/2025-04-05/base-protcol
-next: /openprotocolspec/2025-04-05/base-protcol/identities-actors
+next: /openprotocolspec/2025-04-05/base-protcol/zero-trust-token-service
 ---
+
+**ZTAuth*** enables the definition of trust domains and zones, and provides a URI-based identifier called `ZTID` to uniquely reference resources within those domains and zones.
 
 ## ZTDomain
 
