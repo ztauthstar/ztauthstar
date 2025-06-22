@@ -88,8 +88,8 @@ graph LR
     end
 
     OTT["OAuth Transaction Token Service"]
-    C1 -- (1) request transaction token --> OTT
-    C2 -- (4) request transaction token --> OTT
+    C1 -- (1) request txn-token --> OTT
+    C2 -- (4) request txn-token --> OTT
 
     subgraph "Delegated Workload"
         C2[Workload Client <br> PEP]
