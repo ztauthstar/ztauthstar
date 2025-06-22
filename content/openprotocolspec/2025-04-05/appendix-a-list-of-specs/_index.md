@@ -1,5 +1,5 @@
 ---
-title: Appendix A. List of Specifications
+title: Appendix A - List of Specifications
 cascade:
   type: docs
 weight: 9000
