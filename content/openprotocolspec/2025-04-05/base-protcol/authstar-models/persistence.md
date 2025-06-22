@@ -1,8 +1,8 @@
 ---
-title: Objects
+title: Persistence
 cascade:
   type: docs
-weight: 3301
+weight: 3202
 prev: /openprotocolspec/2025-04-05/authstarmodels/
 next: /openprotocolspec/2025-04-05/authstarmodels/feature
 ---
