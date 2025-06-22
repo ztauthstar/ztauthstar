@@ -11,7 +11,7 @@ next: /openprotocolspec/2025-04-05/base-protcol
 - The **host** is where the client runs (for example: a server, container, or edge device).
 - The **client** is the system, application, or workload that needs to be protected. It must have the correct permissions to do its job.
 - The **server** is the authorization server. It checks requests and returns decisions.
-- The **transaction token service** implements the [oauth transaction token specification](https://drafts.oauth.net/oauth-transaction-tokens/draft-ietf-oauth-transaction-tokens.html). It gives the client the tokens needed to make authorization decisions.
+- The **txn-token service** implements the [oauth transaction token specification](https://drafts.oauth.net/oauth-transaction-tokens/draft-ietf-oauth-transaction-tokens.html). It gives the client the tokens needed to make authorization decisions.
 
 In this setup:
 
@@ -45,7 +45,7 @@ graph LR
     end
 
     subgraph "Remote Node"
-        TTS["Transaction Token Service"]
+        TTS["Txn-Token Service"]
         MR[("Auth* Models")]
         DL[(Decision Logs)]
 
@@ -71,7 +71,7 @@ Also, the process might run later, when the token is no longer valid.
 
 To handle this, the application **delegates** the work to another system. Here’s what happens:
 
-1. The **Requesting Application** asks the Transaction Token Service for a token, with the right scope.
+1. The **Requesting Application** asks the Txn-Token Service  for a token, with the right scope.
 2. It does a local **authorization check** using its own PDP.
 3. It sends a **message** to the **Delegated Workload**.
 4. The **Delegated Workload Client** asks for a transaction token, using its own non-human identity.
@@ -87,7 +87,7 @@ graph LR
         C1 -- (2) authz check --> S1
     end
 
-    TTS["Transaction Token Service"]
+    TTS["Txn-Token Service"]
     C1 -- (1) request txn-token --> TTS
     C2 -- (4) request txn-token --> TTS
 
