@@ -11,7 +11,7 @@ next: /openprotocolspec/2025-04-05/base-protcol
 - The **host** is where the client runs (for example: a server, container, or edge device).
 - The **client** is the system, application, workload or ai-agent that needs to be protected. It must have the correct permissions to do its job.
 - The **server** is the authorization server. It checks requests and returns decisions.
-- The **txn-token service** complies with the [oauth transaction token specification](https://drafts.oauth.net/oauth-transaction-tokens/draft-ietf-oauth-transaction-tokens.html). It gives the client the tokens needed by the PDP to make authorization decisions.
+- The **txn-token service** complies with the [oauth transaction token specification](https://www.ietf.org/archive/id/draft-ietf-oauth-transaction-tokens-05.html). It gives the client the tokens needed by the PDP to make authorization decisions.
 
 In this setup:
 
