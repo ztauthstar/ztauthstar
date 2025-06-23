@@ -7,8 +7,6 @@ prev: /openprotocolspec/2025-04-05/base-protcol/authstar-models/ledgers
 next: /openprotocolspec/2025-04-05/base-protcol/object-types
 ---
 
-## ZTAuth\* Models
-
 A **ZTAuth\*** `Model` is a structured representation of **Authorization** and **Trust** concepts.
 
 There are several types of models:
