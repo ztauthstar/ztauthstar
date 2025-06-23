@@ -4,7 +4,7 @@ cascade:
   type: docs
 weight: 3201
 prev: /openprotocolspec/2025-04-05/base-protcol/authstar-models
-next: /openprotocolspec/2025-04-05/base-protcol/models
+next: /openprotocolspec/2025-04-05/base-protcol/model-types
 ---
 
 An **Auth\*** model must be stored in a Git-like object storage system. A **ledger** is a collection of `Objects` that conform to specific [`Object Types`](/openprotocolspec/2025-04-05/base-protcol/authstar-models/object-types/).
