@@ -16,3 +16,4 @@ The **ZTAuth\*** protocol is built on a set of specifications that define its co
 - [OpenID Connect](https://openid.net/specs/openid-connect-core-1_0.html)
 - [Workload Identity in Multi System Environments (WIMSE)](https://datatracker.ietf.org/wg/wimse/)
 - [OpenID AuthZen](https://openid.net/specs/authorization-api-1_0-01.html)
+- [Token Status List](https://www.ietf.org/archive/id/draft-ietf-oauth-status-list-10.html)
