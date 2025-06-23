@@ -3,11 +3,11 @@ title: Auth* Models
 cascade:
   type: docs
 weight: 3200
-prev: /openprotocolspec/2025-04-05/base-protcol/identities-actors
-next: /openprotocolspec/2025-04-05/base-protcol/notp/
+prev: /openprotocolspec/2025-04-05/base-protcol/domains-zones
+next: /openprotocolspec/2025-04-05/base-protcol/authstar-models/ledgers
 ---
 
-The `ZTAuth*` security model requires specific models for `AuthN` (authentication) and `AuthZ` (authorization). These are referred to as `Auth*` models. They are designed to follow `Zero Trust` principles and form the foundation of the `ZTAuth*` protocol.
+The `ZTAuth*` security model requires specific models for `AuthZ` (authorization) and `Trust Models`. These are referred to as `Auth*` models. They are designed to follow `Zero Trust` principles and form the foundation of the `ZTAuth*` protocol.
 
 Each model must meet the following requirements:
 

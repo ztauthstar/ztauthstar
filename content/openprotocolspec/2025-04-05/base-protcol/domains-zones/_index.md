@@ -1,18 +1,13 @@
 ---
-title: Specification
+title: Domains and Zones
 cascade:
   type: docs
-weight: 1000
-prev: /openprotocolspec/2025-04-05/
-next: /openprotocolspec/2025-04-05/architecture
+weight: 3100
+prev: /openprotocolspec/2025-04-05/base-protcol
+next: /openprotocolspec/2025-04-05/base-protcol/authstar-models
 ---
 
-**ZTAuth*** redefines authentication (AuthN) and authorization (AuthZ) with models that are:
-
-- **Transferable**, **Versionable**, **Immutable**, and **Resilient**.
-- Enable **Trust Models** and Zero Trust security.
-
-This specification defines several foundational concepts, including, but not limited to, the following.
+**ZTAuth*** enables the definition of trust domains and zones, and provides a URI-based identifier called `ZTID` to uniquely reference resources within those domains and zones.
 
 ## ZTDomain
 

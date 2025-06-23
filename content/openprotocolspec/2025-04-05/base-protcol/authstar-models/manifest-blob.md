@@ -1,18 +1,18 @@
 ---
-title: Manifest
+title: Manifest Blob
 cascade:
   type: docs
-weight: 43
-prev: /openprotocolspec/2025-04-05/authstarmodels/features
-next: /openprotocolspec/2025-04-05/trustedmodels
+weight: 3203
+prev: /openprotocolspec/2025-04-05/base-protcol/authstar-models/object-types
+next: /openprotocolspec/2025-04-05/base-protcol/authstar-models/language-blob
 ---
 
-An `Auth*` model is linked to a specific runtime, which includes the `engine` and the `language` to be used to interpret and evaluate the model. For this reason, a **manifest** must be provided to describe the model requirements.
+An `Auth*` model is associated to a specific [`ledger`](/openprotocolspec/2025-04-05/base-protcol/authstar-models/ledgers), moreover it is linked to a specific runtime, which includes the `engine` and the `language` to be used to interpret and evaluate the model. For this reason, a **manifest** must be provided to describe the model requirements.
 
 > [!IMPORTANT]
-> This document uses an `Auth*` model as an example.
+> Each `Auth*` model must include a single mandatory `manifest`. This manifest is required for the model to be considered valid and usable within the `ZTAuth*` protocol.
 
-The manifest includes metadata and defines the runtime and other settings for each model.
+The `manifest` is a `blob` [`object`](/openprotocolspec/2025-04-05/base-protcol/authstar-models/object-types/) that contains metadata and defines the runtime configuration and other relevant settings for the model.
 
 ## Metadata
 
@@ -31,7 +31,7 @@ A manifest has to include metadata such as `name`, `description`, `author`, and 
 
 ## Partitions
 
-Models are designed to contain `objects`, and each `model` can be divided into `partitions`. The `root` partition, defined as `/`, is used for all paths where no specific partition is provided.
+Models are designed to contain `blobs`, and each `model` can be divided into `partitions`. The `root` partition, defined as `/`, is used for all paths where no specific partition is provided.
 
 ```json
 {
