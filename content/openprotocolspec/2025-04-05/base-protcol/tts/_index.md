@@ -3,7 +3,7 @@ title: Transaction Token Service
 cascade:
   type: docs
 weight: 3400
-prev: /openprotocolspec/2025-04-05/base-protcol/authstar-models/language-blob
+prev: /openprotocolspec/2025-04-05/base-protcol/authstar-bindings
 next: /openprotocolspec/2025-04-05/base-protcol/decision-points
 ---
 

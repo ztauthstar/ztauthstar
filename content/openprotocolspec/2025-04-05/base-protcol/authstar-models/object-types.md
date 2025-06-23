@@ -2,7 +2,7 @@
 title: Object Types
 cascade:
   type: docs
-weight: 3202
+weight: 3203
 prev: /openprotocolspec/2025-04-05/base-protcol/authstarmodels/ledgers
 next: /openprotocolspec/2025-04-05/base-protcol/authstarmodels/manifest-blob
 ---

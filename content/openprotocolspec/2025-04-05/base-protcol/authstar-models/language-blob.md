@@ -2,9 +2,9 @@
 title: Language Blob
 cascade:
   type: docs
-weight: 3204
+weight: 3205
 prev: /openprotocolspec/2025-04-05/base-protcol/authstar-models/manifest-blob
-next: /openprotocolspec/2025-04-05/base-protcol/tts
+next: /openprotocolspec/2025-04-05/base-protcol/authstar-bindings
 ---
 
 A `language` blob [`object`](/openprotocolspec/2025-04-05/base-protcol/authstar-models/object-types/) is a data structure that defines a language-specific element.
