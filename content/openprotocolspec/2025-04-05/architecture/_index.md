@@ -26,7 +26,7 @@ The PDP can run in two ways:
 
 > In small or limited environments, the PEP and PDP can run together on the same host to make things simpler and faster.
 
-**ZTAuth*** works well in systems that are disconnected or only sometimes connected. It is **eventually consistent**: the authorization and trust models — called `Auth* Models` — are updated from the central server regularly.
+**ZTAuth*** works well in systems that are disconnected or only sometimes connected. It is **eventually consistent**: the authz and trust models — called `Auth* Models` — are updated from the central server regularly.
 
 ```mermaid
 graph LR

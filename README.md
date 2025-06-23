@@ -1,4 +1,4 @@
-# ZTAuth*: Zero Trust AuthN/AuthZ and Trust Models
+# ZTAuth*: Zero Trust AuthZ and Trust Models
 
 **ZTAuth*** redefines authorization (authz) and trust models — collectively referred to as `auth* models` — using a framework that is:
 
