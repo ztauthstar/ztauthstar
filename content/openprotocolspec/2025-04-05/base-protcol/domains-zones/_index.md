@@ -54,5 +54,5 @@ ztauth://<trust-domain>/<trusted-zone>/<resource-path>
 Example:
 
 ```plaintext
-ztauth://core-platform.internal/273165098782/ledgers/corporate-compliance
+ztauth://core-platform.internal/273165098782/ledgers/corporate-policies
 ```

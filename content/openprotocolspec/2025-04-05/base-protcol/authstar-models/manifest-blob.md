@@ -22,7 +22,7 @@ A manifest has to include metadata such as `name`, `description`, `author`, and 
 {
     "metadata": {
         "name": "oms-model",
-        "description": "A zero trust auth* model to manage orders.",
+        "description": "A zero trust auth* model to manage the corporate policies.",
         "author": "Nitro Agility Srl",
         "license": "Apache-2.0"
     }
@@ -37,7 +37,7 @@ Models are designed to contain `blobs`, and each `model` can be divided into `pa
 {
     "metadata": {
         "name": "oms-model",
-        "description": "A zero trust auth* model to manage orders.",
+        "description": "A zero trust auth* model to manage the corporate policies.",
         "author": "Nitro Agility Srl",
         "license": "Apache-2.0"
     },
@@ -57,7 +57,7 @@ The runtime has to include the language, its version, and the engine to be used.
 {
     "metadata": {
         "name": "oms-model",
-        "description": "A zero trust auth* model to manage orders.",
+        "description": "A zero trust auth* model to manage the corporate policies.",
         "author": "Nitro Agility Srl",
         "license": "Apache-2.0"
     },

@@ -9,9 +9,9 @@ next: /openprotocolspec/2025-04-05/base-protcol
 **ZTAuth*** uses a client-host-server architecture:
 
 - The **host** is where the client runs (for example: a server, container, or edge device).
-- The **client** is the system, application, or workload that needs to be protected. It must have the correct permissions to do its job.
+- The **client** is the system, application, workload or ai-agent that needs to be protected. It must have the correct permissions to do its job.
 - The **server** is the authorization server. It checks requests and returns decisions.
-- The **txn-token service** implements the [oauth transaction token specification](https://drafts.oauth.net/oauth-transaction-tokens/draft-ietf-oauth-transaction-tokens.html). It gives the client the tokens needed to make authorization decisions.
+- The **txn-token service** complies with the [oauth transaction token specification](https://drafts.oauth.net/oauth-transaction-tokens/draft-ietf-oauth-transaction-tokens.html). It gives the client the tokens needed by the PDP to make authorization decisions.
 
 In this setup:
 
@@ -56,8 +56,7 @@ graph LR
     end
 ```
 
-The **Proximity PDP** syncs the **Auth\*** models using the **Negotiated Object Transfer Protocol (NOTP)**.  
-This makes sure it always has the latest version of the model for making decisions.
+The **Proximity PDP** syncs the **Auth\*** models using the **Negotiated Object Transfer Protocol (NOTP)**. This makes sure it always has the latest version of the model for making decisions.
 
 **ZTAuth*** is made for distributed systems and follows the ideas of the **CAP Theorem**.
 
@@ -66,8 +65,7 @@ All decisions from the PDP must be saved in **Decision Logs**. These logs should
 ### Delegation Example
 
 Sometimes, an application starts a process that runs later, using a message broker.  
-The application has a token that represents the target identity, but it **cannot send this token** through the broker — for security and isolation reasons.  
-Also, the process might run later, when the token is no longer valid.
+The application has a token that represents the target identity, but it **cannot send this token** through the broker — for security and isolation reasons. Also, the process might run later, when the token is no longer valid.
 
 To handle this, the application **delegates** the work to another system. Here’s what happens:
 

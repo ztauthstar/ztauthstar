@@ -26,7 +26,7 @@ A ledger must include the following properties:
   "created_at": "2025-06-20T14:38:43.633Z",
   "updated_at": "2025-06-20T14:44:45.152Z",
   "zone_id": 273165098782,
-  "name": "corporate-compliance",
+  "name": "corporate-policies",
   "ref": "4dcb2492218502302bf10f1ad8826ec7b56ff7e33e8da195cae37676b8789e4b"
 }
 ```
@@ -40,5 +40,5 @@ ztauth://<trust-domain>/<zone-id>/ledgers/<ledger-name>
 Example:
 
 ```plaintext
-ztauth://core-platform.internal/273165098782/ledgers/corporate-compliance
+ztauth://core-platform.internal/273165098782/ledgers/corporate-policies
 ```
