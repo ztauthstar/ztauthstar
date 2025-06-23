@@ -3,8 +3,8 @@ title: Appendix A - List of Specifications
 cascade:
   type: docs
 weight: 9000
-prev: /openprotocolspec/2025-04-05/architecture
-next: /openprotocolspec/2025-04-05/base-protcol/domains-zones
+prev: /openprotocolspec/2025-04-05/base-protcol/decision-points/
+next: /openprotocolspec/versioning
 ---
 
 The **ZTAuth\*** protocol is built on a set of specifications that define its core components and functionalities. Below is a list of the key specifications:
