@@ -7,15 +7,22 @@ prev: /openprotocolspec/2025-04-05/base-protcol/authstar-models/manifest-blob
 next: /openprotocolspec/2025-04-05/base-protcol/authstar-bindings
 ---
 
-A `language` blob [`object`](/openprotocolspec/2025-04-05/base-protcol/authstar-models/object-types/) is a data structure that defines a language-specific element.
+A `language` blob [`object`](/openprotocolspec/2025-04-05/base-protcol/authstar-models/object-types/) represents a language-specific element within an `auth*` model.
 
-For example, it can represent a specific policy written in a supported language such as a `cedar` policy, a `rego` rule, or a schema. 
+These blobs encapsulate content written in a supported policy or trust language.  
 
-The key requirement is that **multiple languages can be used within the same model**, and that each language element must be interpretable.
+Examples include:
 
-There are different types of languages:
+- a `cedar` policy,
+- a `rego` rule,
+- a schema definition.
 
-- **AuthZ languages** such as `cedar`, `rego`, or others.
-- **Trust languages** that define concepts like delegation or identity relationships.
+The `ZTAuth*` model architecture supports **multi-language composition**: A single model **MAY** include multiple languages, provided that each language blob is clearly typed and **MUST** be interpretable by a corresponding runtime engine.
 
-To make the model navigable and interpretable, a [`manifest`](/openprotocolspec/2025-04-05/base-protcol/authstar-models/manifest-blob/) is required. The manifest organizes the objects by language type and provides the necessary metadata to understand how each blob should be processed.
+Language blobs fall into two main categories:
+
+- **Authorization Languages**: Used to express access control logic (e.g., `cedar`, `rego`).
+- **Trust Languages**: Used to define trust semantics such as delegation, elevation, or identity relationships.
+
+To ensure consistent interpretation of language blobs, each model **MUST** include a [`manifest`](/openprotocolspec/2025-04-05/base-protcol/authstar-models/manifest-blob/).  
+The manifest provides metadata that describes how each language blob is to be processed, and it **MUST** map each blob to its runtime environment and language type.
