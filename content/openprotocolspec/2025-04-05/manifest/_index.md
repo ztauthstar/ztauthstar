@@ -48,7 +48,7 @@ Now, there is a growing need to manage identities for intelligent systems — su
 
 ## Identities and Actions
 
-When a human authenticates, the purpose is not to perform manual actions directly within the system, but to authorize a software component — such as an application or service — to execute actions on their behalf. The authentication process enables the system to verify the human identity and establish a trust relationship that permits delegated execution.
+When a human authenticates, quite often the purpose is not to perform manual actions directly within the system, but to authorize a software component — such as an application or service — to execute actions on their behalf. The authentication process enables the system to verify the human identity and establish a trust relationship that permits delegated execution.
 
 This delegation is by design: software acts as an intermediary, and the actions it performs must be tied back to the identity of the authenticated user. However, in complex distributed environments, this model introduces several challenges.
 
@@ -78,7 +78,7 @@ This model requires an explicit and verifiable mechanism for delegation. It is n
 
 To support this, the system must implement trust models capable of validating that a non-human identity is authorized to elevate its execution context to that of the target identity.
 
-The authorization model of the target identity must be constructed as if it were executed directly by the human, and this logic must be replicated at each point of execution. This introduces requirements for authorization models to be:
+The authorization model of the target identity must be constructed as if it were executed directly by the target identity, and this logic must be replicated at each point of execution. This introduces requirements for authorization models to be:
 
 - Transferable across systems,
 - Versioned to ensure consistency,
@@ -117,7 +117,7 @@ In federated ecosystems such as Data Spaces, organizations must enforce **precis
 
 **ZTAuth*** enables enforcement of **data access policies at the source**, ensuring that authorization decisions reflect the originator’s intent, regardless of where the request is executed. This enhances data control, transparency, and trust in multi-party environments.
 
-As systems evolve toward **autonomous, decentralized architectures** — including AI agents, event-driven pipelines, and microservice-based applications — there is a growing need to move beyond simple service integration.
+As systems evolve toward **autonomous, distributed architectures** — including AI agents, event-driven pipelines, and microservice-based applications — there is a growing need to move beyond simple service integration.
 
 What is required is **orchestration that is aware of authorization**, where workflows are governed not just by system logic but by identity, trust, and policy.
 
