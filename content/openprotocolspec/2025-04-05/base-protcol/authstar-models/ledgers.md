@@ -7,18 +7,18 @@ prev: /openprotocolspec/2025-04-05/base-protcol/authstar-models
 next: /openprotocolspec/2025-04-05/base-protcol/model-types
 ---
 
-An **Auth\*** model must be stored in a Git-like object storage system. A **ledger** is a collection of `Objects` that conform to specific [`Object Types`](/openprotocolspec/2025-04-05/base-protcol/authstar-models/object-types/).
+An `auth* model` **MUST** be stored in a Git-like object storage system. A **ledger** represents a collection of versioned `Objects` that conform to specific [Object Types](/openprotocolspec/2025-04-05/base-protcol/authstar-models/object-types/).
 
 > Each `ZTZone` contains one or more ledgers.
 
-A ledger must include the following properties:
+A valid ledger **MUST** include the following properties:
 
-- **Ledger ID**: A unique identifier for the ledger.
-- **Created At**: The timestamp indicating when the ledger was created.
-- **Updated At**: The timestamp of the most recent update to the ledger.
-- **Zone ID**: The identifier of the `ZTZone` to which the ledger belongs.
-- **Name**: A human-readable name for the ledger, which must be unique within its zone.
-- **Ref**: A reference to the root commit object of the ledger, represented by a hash that uniquely identifies the current state.
+- **Ledger ID**: A unique, opaque identifier that distinguishes the ledger globally.
+- **Created At**: A timestamp indicating when the ledger was initially created.
+- **Updated At**: A timestamp indicating the most recent modification to the ledger.
+- **Zone ID**: The identifier of the `ZTZone` to which this ledger is assigned.
+- **Name**: A human-readable name that **MUST** be unique within the scope of the associated `ZTZone`.
+- **Ref**: A reference to the root commit object representing the current state of the ledger. This **MUST** be a hash-based identifier (e.g., SHA-256) that uniquely identifies the latest committed version.
 
 ```json
 {
@@ -31,7 +31,7 @@ A ledger must include the following properties:
 }
 ```
 
-A ledger can be referenced using its `Zone ID` and either its name or ledger ID, following the URI format:
+A ledger can be referenced using its `Zone ID` and either its `Name` or `Ledger ID`, using the following URI format:
 
 ```plaintext
 ztauth://<trust-domain>/<zone-id>/ledgers/<ledger-name>

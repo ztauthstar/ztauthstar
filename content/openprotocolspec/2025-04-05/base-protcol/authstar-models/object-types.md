@@ -7,20 +7,20 @@ prev: /openprotocolspec/2025-04-05/base-protcol/authstarmodels/model-types
 next: /openprotocolspec/2025-04-05/base-protcol/authstarmodels/manifest-blob
 ---
 
-An `Auth*` model must be **self-consistent**. All data in the model must be saved and kept in a **valid and consistent state**. The data is stored as objects, using a structure similar to **Git**.
+An `auth*` models **MUST** be self-consistent. All data within the model **MUST** be stored and maintained in a valid and internally consistent state. Data is persisted as immutable objects using a Git-like object model.
 
 > [!IMPORTANT]
-> Git itself is not suitable for production use in this context. It allows any kind of file and does not check structure or content. For this reason, a **custom Git-like object model** is used. This model accepts only valid `Auth*` models and rejects anything invalid.
+> Standard Git implementations are **NOT** suitable for production use in this context. Git permits arbitrary file types and lacks structural validation. Therefore, `ZTAuth*` uses a **custom Git-like object model** that strictly enforces schema correctness and rejects invalid or malformed content.
 
-There are three types of objects:
+The object model defines three object types:
 
-- **Commit**: A **snapshot** of the `Auth*` model. It links to one or more trees and usually to a previous commit, unless it is the first one.
-- **Tree**: A **group of blobs** that together represent part of the model.
-- **Blob**: Holds **domain-specific data**, like a policy, schema, [manifest](/openprotocolspec/2025-04-05/base-protcol/authstarmodels/manifest), or other valid element in the model.
+- **Commit**: Represents a **snapshot** of the `auth*` models. A commit object references one or more tree objects, and optionally a `parent` commit (absent in the case of the initial commit).
+- **Tree**: Represents a **logical grouping of blob objects**. A tree object maps names to blobs (or other trees) and defines part of the model structure.
+- **Blob**: Contains **domain-specific content**, such as a policy, schema, [manifest](/openprotocolspec/2025-04-05/base-protcol/authstarmodels/manifest), or other valid model element.
 
-The `ledger` points to the **root commit object**, which shows the **initial state** of the model and is used to get the **current state**. The root commit is **immutable** and **cannot be changed**.
+Each `ledger` **MUST** reference a **root commit object**, which defines the initial state of the model and is used to derive the current state. The root commit is **immutable** and **MUST NOT** be altered after creation.
 
-You can rebuild the full **history** of the model by **tracing the commit chain**, starting from the root and following each commit's `parent` link to go back in time.
+The full **history** of the model **MAY** be reconstructed by traversing the commit chain, starting from the root and following the `parent` references in each commit object.
 
 ```json
 {

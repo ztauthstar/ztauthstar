@@ -7,11 +7,12 @@ prev: /openprotocolspec/2025-04-05/base-protcol/domains-zones
 next: /openprotocolspec/2025-04-05/base-protcol/authstar-models/ledgers
 ---
 
-The `ZTAuth*` security model requires specific models for `AuthZ` (authorization) and `Trust Models`. These are referred to as `Auth*` models. They are designed to follow `Zero Trust` principles and form the foundation of the `ZTAuth*` protocol.
+**ZTAuth*** defines an authorization model and a trust model — collectively referred to as `auth* models`.
+These models are designed in alignment with the core principles of Zero Trust and form the foundation of the `ZTAuth*` protocol.
 
-Each model must meet the following requirements:
+Each `auth* model` **MUST** satisfy the following properties:
 
-- **Transferable**: It can be moved easily between systems and locations without issues.
-- **Versionable and Immutable**: It must be tamper-proof, versioned, reviewable at any time.
-- **Model-Compliant**: The model must follow the defined structure and contain only valid, well-formed data.
-- **Resilient to Disconnection**: It must stay available even when offline and sync later to stay consistent. This means being eventually consistent.
+- **Model-Compliant**: The model **MUST** adhere to the defined schema and contain only valid and well-formed data structures.
+- **Transferable**: The model **MUST** be portable across systems and locations without loss of integrity or fidelity.
+- **Versionable and Immutable**: The model **MUST** support immutable versioning, allowing any revision to be identified, verified, and reviewed at any point in time.
+- **Resilient to Disconnection**: The model **MUST** remain available in offline scenarios and **MUST** support asynchronous synchronization to maintain consistency. This implies conformance to an **eventual consistency** model.

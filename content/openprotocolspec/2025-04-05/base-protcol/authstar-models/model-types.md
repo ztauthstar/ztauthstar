@@ -7,16 +7,22 @@ prev: /openprotocolspec/2025-04-05/base-protcol/authstar-models/ledgers
 next: /openprotocolspec/2025-04-05/base-protcol/object-types
 ---
 
-A **ZTAuth\*** `Model` is a structured representation of **authorization** and **trust** concepts.
+A `ZTAuth*` **Model** is a structured representation of either **authorization** or **trust** semantics within a defined context.
 
-A model is a collection of **objects** that define the rules and relationships governing access and trust within a specific context. It is designed to be **extensible**, allowing for the inclusion of multiple policy languages and evaluation models.
+Each model belongs to one of two primary categories:
 
-A model can have different **types**, each serving a specific purpose in authorization and trust management:
+- **AuthZ Models**: Define the rules and decisions that determine access to resources.
+- **Trust Models**: Define how trust is established, delegated, or elevated across identities and systems.
 
-- **Policy**: Defines the rules that determine *who* is authorized to do *what*. Policies can be written in various languages, such as `cedar`, `rego`, or others.
+A model consists of a collection of **Objects** that express rules, constraints, and relationships relevant to its category. Models are designed to be **extensible**, supporting multiple policy languages and evaluation strategies.
 
-- **Trusted Elevation**: Describes the process of elevating an identity from one **authorization context** to another. These models can include custom policy languages and be stored within the model.
+Each model may define one or more **types**, serving specific roles within its category:
 
-- **Trusted Delegation**: Describes how one identity can act **on behalf of another** under specific conditions. These models can also include custom policy languages and be stored within the model.
+- **Policy**: Specifies access control rules — determining *who* is authorized to perform *which actions*. Policies may be written in various languages (e.g., `cedar`, `rego`, or others).
+- **Trusted Elevation**: Describes how an identity may be elevated from one **authorization context** to another under controlled conditions.
+- **Trusted Delegation**: Describes how one identity may act **on behalf of another**, subject to constraints defined within the model.
 
-Each model type can be further **specialized**, and may include a **policy language** and an **evaluation model** to define how decisions are made at runtime.
+Each model type **MAY** be further specialized and **MAY** include:
+
+- a **Policy Language**, indicating the syntax and semantics of the policy definitions.
+- an **Evaluation Model**, specifying how decisions are computed at runtime.
