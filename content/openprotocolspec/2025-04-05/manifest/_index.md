@@ -15,7 +15,7 @@ math: true
 - **Immutable**
 - **Resilient**
 
-It supports the implementation of `auth* models` aligned with the core principles of Zero Trust, enabling the construction of **Zero Trust security models**.
+This protocol is designed in alignment with Zero Trust principles, supporting the creation of security models that are identity-aware, context-sensitive, and enforce least privilege by default.
 
 **ZTAuth*** does not aim to replace existing standards. Rather, it defines an open protocol specification that builds upon them, addressing their limitations through a dedicated layer for consistent and fine-grained authorization for both human and non-human identities.
 
