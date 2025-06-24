@@ -22,7 +22,7 @@ In this architecture:
 The Policy Decision Point (PDP) supports two deployment models:
 
 - **Central Authorization Server**: A shared PDP instance serving multiple Policy Enforcement Points (PEPs) across a distributed system.
-- **Proximity PDP**: A local PDP instance deployed close to the workload (e.g., on the same machine or within the same local network), enabling low-latency authorization decisions and continued operation in the event of network disconnection.
+- **Proximity Authorization Server**: A dedicated PDP instance deployed close to the protected entity, enabling low-latency authorization decisions and continued operation in the event of network disconnection.
 
 > In constrained or resource-limited environments, the PEP and PDP may be co-located on the same host to reduce complexity and improve performance.
 
@@ -56,7 +56,7 @@ graph LR
     end
 ```
 
-The **Proximity PDP** synchronizes the `auth* models` using the **Negotiated Object Transfer Protocol (NOTP)**, ensuring that it maintains the latest version required for accurate authorization decisions.
+The **Proximity Authorization Server** synchronizes the `auth* models` using the **Negotiated Object Transfer Protocol (NOTP)**, ensuring that it maintains the latest version required for accurate authorization decisions.
 
 **ZTAuth*** is designed for distributed systems and adheres to the principles of the **CAP Theorem**.
 
