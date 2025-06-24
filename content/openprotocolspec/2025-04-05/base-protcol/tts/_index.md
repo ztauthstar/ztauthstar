@@ -7,8 +7,19 @@ prev: /openprotocolspec/2025-04-05/base-protcol/authstar-bindings
 next: /openprotocolspec/2025-04-05/base-protcol/decision-points
 ---
 
-The `transaction token service` must comply with the [OAuth Transaction Token](https://www.ietf.org/archive/id/draft-ietf-oauth-transaction-tokens-05.html) specification and implement a defined profile and schema.
+The `transaction token service` **MUST** comply with the [OAuth Transaction Token specification](https://www.ietf.org/archive/id/draft-ietf-oauth-transaction-tokens-05.html) and **MUST** implement a defined profile and schema consistent with the requirements of the `ZTAuth*` protocol.
 
-A **Transaction Token (tnx token)** is used to encapsulate an **authorization context** for a specific action or request. It is typically created by the **initiating identity** — often a **workload identity** — on behalf of a **target identity** (the audience) that is intended to execute the operation.
+A **Transaction Token** (abbreviated as **tnx token**) encapsulates an **authorization context** for a specific action or request.  
+It is typically issued by the **initiating identity** — often a **workload identity** — on behalf of a **target identity** (the *audience*) that is authorized to execute the operation.
 
-This token carries verifiable information about the **who**, **what**, and **under which context** the operation is authorized. It enables a clear separation between the system initiating the transaction and the entity actually executing it, supporting patterns like **delegation**, **traceability**, and **Zero Trust Authorization**.
+The tnx token carries verifiable claims that describe:
+
+- **Who** initiated the transaction,
+- **What** action or resource is being requested,
+- **Under which context** the authorization was granted.
+
+This structure enables a clear separation between the entity that initiates a transaction and the one that executes it, supporting key features such as:
+
+- **Delegation** of authority,
+- **Traceability** of authorization flow,
+- Enforcement of **Zero Trust** principles.
