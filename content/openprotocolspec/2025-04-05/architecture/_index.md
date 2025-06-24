@@ -6,27 +6,27 @@ weight: 2000
 prev: /openprotocolspec/2025-04-05/manifest
 next: /openprotocolspec/2025-04-05/base-protcol
 ---
-**ZTAuth*** uses a client-host-server architecture:
+**ZTAuth*** employs a client–host–server architecture, defined as follows:
 
-- The **host** is where the client runs (for example: a server, container, or edge device).
-- The **client** is the system, application, workload or ai-agent that needs to be protected. It must have the correct permissions to do its job.
-- The **server** is the authorization server. It checks requests and returns decisions.
-- The **txn-token service** complies with the [oauth transaction token specification](https://www.ietf.org/archive/id/draft-ietf-oauth-transaction-tokens-05.html). It gives the client the tokens needed by the PDP to make authorization decisions.
+- **Host**: The environment where the client operates (e.g., a server, container, or edge device).
+- **Client**: The protected entity (e.g., application, workload, or AI agent) requiring authorization to perform operations. It must possess valid permissions to function correctly.
+- **Server**: The authorization server responsible for evaluating access requests and issuing authorization decisions.
+- **Transaction Token Service**: A component conforming to the [OAuth Transaction Token specification](https://www.ietf.org/archive/id/draft-ietf-oauth-transaction-tokens-05.html), responsible for issuing tokens to clients. These tokens are used by the PDP to evaluate and authorize specific transactions.
 
-In this setup:
+In this architecture:
 
-- The **client** is also called the **Policy Enforcement Point (PEP)**. It sends requests and applies the decisions.
-- The **server** is also called the **Policy Decision Point (PDP)**. It checks the policies and makes the decisions.
-- The **host** is where the client runs.
+- The **Client** acts as the **Policy Enforcement Point (PEP)**. It initiates authorization requests and enforces the decisions received.
+- The **Server** functions as the **Policy Decision Point (PDP)**. It evaluates policies and returns authorization decisions.
+- The **Host** serves as the runtime environment for the PEP.
 
-The PDP can run in two ways:
+The Policy Decision Point (PDP) supports two deployment models:
 
-- As a **central authorization server**, shared across multiple clients.
-- As a **proximity PDP**, running close to the workload (on the same machine or local network). This allows fast decisions and works even if disconnected.
+- **Central Authorization Server**: A shared PDP instance serving multiple Policy Enforcement Points (PEPs) across a distributed system.
+- **Proximity PDP**: A local PDP instance deployed close to the workload (e.g., on the same machine or within the same local network), enabling low-latency authorization decisions and continued operation in the event of network disconnection.
 
-> In small or limited environments, the PEP and PDP can run together on the same host to make things simpler and faster.
+> In constrained or resource-limited environments, the PEP and PDP may be co-located on the same host to reduce complexity and improve performance.
 
-**ZTAuth*** works well in systems that are disconnected or only sometimes connected. It is **eventually consistent**: the authz and trust models — called `Auth* Models` — are updated from the central server regularly.
+**ZTAuth*** is designed to operate reliably in environments with intermittent or absent network connectivity. It employs an **eventual consistency** model in which authorization and trust data — collectively referred to as `auth* models` — are periodically synchronized from a central server.
 
 ```mermaid
 graph LR
@@ -56,26 +56,26 @@ graph LR
     end
 ```
 
-The **Proximity PDP** syncs the **Auth\*** models using the **Negotiated Object Transfer Protocol (NOTP)**. This makes sure it always has the latest version of the model for making decisions.
+The **Proximity PDP** synchronizes the `auth* models` using the **Negotiated Object Transfer Protocol (NOTP)**, ensuring that it maintains the latest version required for accurate authorization decisions.
 
-**ZTAuth*** is made for distributed systems and follows the ideas of the **CAP Theorem**.
+**ZTAuth*** is designed for distributed systems and adheres to the principles of the **CAP Theorem**.
 
-All decisions from the PDP must be saved in **Decision Logs**. These logs should go to the **Remote Node**, where they can be used for **auditing** and **compliance**.
+All authorization decisions issued by the PDP **MUST** be recorded in **Decision Logs**. These logs **SHOULD** be transmitted to a **Remote Node** for purposes of **auditing** and **regulatory compliance**.
 
 ### Delegation Example
 
-Sometimes, an application starts a process that runs later, using a message broker.  
-The application has a token that represents the target identity, but it **cannot send this token** through the broker — for security and isolation reasons. Also, the process might run later, when the token is no longer valid.
+In some scenarios, an application initiates a process that is executed asynchronously, often through a message broker.  
+The initiating application possesses a token representing the target identity; however, for security and isolation reasons, this token **MUST NOT** be transmitted via the message broker. Furthermore, the execution may occur at a later time when the original token is no longer valid.
 
-To handle this, the application **delegates** the work to another system. Here’s what happens:
+To address this, the initiating application performs a **delegation** to a secondary system. The following steps outline the delegation workflow:
 
-1. The **Requesting Application** asks the Txn-Token Service  for a token, with the right scope.
-2. It does a local **authorization check** using its own PDP.
-3. It sends a **message** to the **Delegated Workload**.
-4. The **Delegated Workload Client** asks for a transaction token, using its own non-human identity.
-5. The **Workload PDP** checks authorization using the token and the correct Auth\* models.
+1. The **Requesting Application** requests a transaction token from the **Txn-Token Service**, specifying the intended scope.
+2. It performs a local **authorization check** using its own Policy Decision Point (PDP).
+3. It sends a **message** to the **Delegated Workload** via the broker.
+4. The **Delegated Workload Client** requests a transaction token using its own non-human identity.
+5. The **Workload PDP** validates the request using the transaction token and the appropriate `auth* models`.
 
-This allows safe and consistent authorization without needing to share the original token.
+This mechanism enables secure, auditable, and context-aware delegation without requiring the transmission of the original identity token across systems.
 
 ```mermaid
 graph LR
@@ -98,11 +98,11 @@ graph LR
     C1 -- (3) send message --> C2
 ```
 
-### Why Centralized Management Helps
+### Centralized Management Benefits
 
-Having central control of **Auth\*** models and logs brings many benefits:
+Centralized control of `auth* models` and decision logs provides several key advantages:
 
-- **Governance**: The same rules are used everywhere.
-- **Compliance**: Helps meet internal and external rules.
-- **Auditing**: All decisions can be tracked and reviewed.
-- **Risk Management**: Old data can help find and reduce problems.
+- **Governance**: Ensures consistent application of policies across all components and environments.
+- **Compliance**: Facilitates adherence to internal policies and external regulatory requirements.
+- **Auditing**: Enables complete traceability and retrospective analysis of authorization decisions.
+- **Risk Management**: Supports the identification and mitigation of security or operational issues through historical data analysis.
