@@ -64,8 +64,7 @@ All authorization decisions issued by the PDP **MUST** be recorded in **Decision
 
 ### Delegation Example
 
-In some scenarios, an application initiates a process that is executed asynchronously, often through a message broker.  
-The initiating application possesses a token representing the target identity; however, for security and isolation reasons, this token **MUST NOT** be transmitted via the message broker. Furthermore, the execution may occur at a later time when the original token is no longer valid.
+In some scenarios, an application initiates a process that is executed asynchronously, often through a message broker. The initiating application possesses a token representing the target identity; however, for security and isolation reasons, this token **MUST NOT** be transmitted via the message broker. Furthermore, the execution may occur at a later time when the original token is no longer valid.
 
 To address this, the initiating application performs a **delegation** to a secondary system. The following steps outline the delegation workflow:
 
