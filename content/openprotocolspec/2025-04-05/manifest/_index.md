@@ -8,16 +8,19 @@ next: /openprotocolspec/2025-04-05/architecture
 math: true
 ---
 
-**ZTAuth*** redefines authorization (authz) and trust models — collectively referred to as `auth* models` — using a framework that is:
+**ZTAuth*** defines an authorization model and a trust model — collectively referred to as `auth* models` — through a protocol-level specification that is:
 
 - **Transferable**
 - **Versionable**
 - **Immutable**
 - **Resilient**
 
-It supports the implementation of **Trust Models** and Zero Trust security.
+It supports the implementation of `auth* models` aligned with the core principles of Zero Trust, enabling the construction of **Zero Trust security models**.
 
-**ZTAuth*** does not replace existing standards. Instead, it enhances them by adding a dedicated layer for fine-grained, reproducible authorization across both human and non-human identities.
+**ZTAuth*** does not aim to replace existing standards. Rather, it defines an open protocol specification that builds upon them, addressing their limitations through a dedicated layer for consistent and fine-grained authorization for both human and non-human identities.
+
+> [!DEFINITION]
+> **ZTAuth\*** is a Zero Trust–compliant protocol that provides secure, identity-driven access to resources, enforcing least privilege at the application edge. Designed for eventual consistency, it maintains the security state during network disruptions and automatically synchronizes when connectivity is restored.
 
 ## Context and Motivation
 

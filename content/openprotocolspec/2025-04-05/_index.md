@@ -11,7 +11,7 @@ prev: /openprotocolspec
 next: /openprotocolspec/2025-04-05/manifest
 ---
 
-**ZTAuth\*** is a Zero Trust-compliant protocol designed to provide secure, identity-driven access to resources, with least privilege enforced at the application edge. Built for eventual consistency, it keeps the security state available during disconnection and syncs automatically when connectivity is restored.
+**ZTAuth\*** is a Zero Trust–compliant protocol that provides secure, identity-driven access to resources, enforcing least privilege at the application edge. Designed for eventual consistency, it maintains the security state during network disruptions and automatically synchronizes when connectivity is restored.
 
 ## Learn More
 

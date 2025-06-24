@@ -1,13 +1,13 @@
 # ZTAuth*: Zero Trust AuthZ and Trust Models
 
-**ZTAuth*** redefines authorization (authz) and trust models — collectively referred to as `auth* models` — using a framework that is:
+**ZTAuth*** defines an authorization model and a trust model — collectively referred to as `auth* models` — through a protocol-level specification that is:
 
 - **Transferable**
 - **Versionable**
 - **Immutable**
 - **Resilient**
 
-It supports the implementation of **Trust Models** and Zero Trust security.
+It supports the implementation of `auth* models` aligned with the core principles of Zero Trust, enabling the construction of **Zero Trust security models**.
 
 **ZTAuth*** does not replace existing standards. Instead, it enhances them by adding a dedicated layer for fine-grained, reproducible authorization across both human and non-human identities.
 
