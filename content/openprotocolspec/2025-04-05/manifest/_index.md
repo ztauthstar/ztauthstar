@@ -123,6 +123,6 @@ As systems evolve toward **autonomous, distributed architectures** — including
 
 What is required is **orchestration that is aware of authorization**, where workflows are governed not just by system logic but by identity, trust, and policy.
 
-**ZTAuth*** enables this shift by introducing a unified model for **identity-driven orchestration**. It makes it possible to define **who can initiate, modify, or propagate** a workflow, based on **delegated authorization and verifiable trust relationships**.
+**ZTAuth*** enables this shift by introducing a unified model for **identity-driven orchestration**. It makes it possible to define **who can initiate, modify, or propagate** a workflow, based on **impersonated/delegated authorization and verifiable trust relationships**.
 
 This represents a foundational step toward **secure-by-design orchestration** in distributed environments — where actions are authorized contextually, policies are portable and auditable, and both human and non-human identities are treated consistently.
