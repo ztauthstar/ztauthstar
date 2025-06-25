@@ -24,5 +24,4 @@ Language blobs fall into two main categories:
 - **Authorization Languages**: Used to express access control logic (e.g., `cedar`, `rego`).
 - **Trust Languages**: Used to define trust semantics such as delegation, elevation, or identity relationships.
 
-To ensure consistent interpretation of language blobs, each model **MUST** include a [`manifest`](/openprotocolspec/2025-04-05/base-protcol/authstar-models/manifest-blob/).  
-The manifest provides metadata that describes how each language blob is to be processed, and it **MUST** map each blob to its runtime environment and language type.
+To ensure consistent interpretation of language blobs, each model **MUST** include a [`manifest`](/openprotocolspec/2025-04-05/base-protcol/authstar-models/manifest-blob/). The manifest provides metadata that describes how each language blob is to be processed, and it **MUST** map each blob to its runtime environment and language type.
