@@ -30,9 +30,9 @@ This highlights a long-standing issue: in a **distributed world**, traditional *
 
 We already see this in **critical systems**, such as **public service integration**, where **delegation** and **central authorization** are still not standardized.
 
-Until now, this problem has often been hidden by running systems inside a single environment, like a **cloud** or **private data center**.
+Until now, this problem has often been hidden by running systems inside a single environment, such as a **cloud** or **private data center**, or by establishing implicit trust through **certificate-based federation** between entities — an approach that introduces its own security risks, such as key compromise, uncontrolled trust propagation, and limited auditability.
 
-The challenge is shared with **digital sovereignty** and **decentralized architectures**, but **AI agents** make the need for a new **authorization and trust model** much more urgent.
+The challenge is shared with **digital sovereignty** and **distributed architectures**, but **AI agents** make the need for a new **authorization and trust model** much more urgent.
 
 Infrastructure is moving towards **Zero Trust security** using models like **Zero Trust Network Access (ZTNA)**.  
 
@@ -48,9 +48,9 @@ Now, there is a growing need to manage identities for intelligent systems — su
 
 ## Identities and Actions
 
-When a human authenticates, quite often the purpose is not to perform manual actions directly within the system, but to authorize a software component — such as an application or service — to execute actions on their behalf. The authentication process enables the system to verify the identity and establish a trust relationship that permits delegated execution.
+When a human authenticates, the purpose is often not to interact manually with the system, but to authorize a software component — such as an application or service — to act **on their behalf**. The authentication process enables the system to verify the user's identity and establish a trust relationship that authorizes **delegated execution** within a constrained identity context derived from the user.
 
-This delegation is by design: software acts as an intermediary, and the actions it performs must be tied back to the identity of the authenticated user. However, in complex distributed environments, this model introduces several challenges.
+In some environments, this may involve **impersonation**, where the delegated component temporarily assumes the user's identity. In others, the component retains its own identity but operates under an explicitly authorized and verifiable delegation model.
 
 ### Distributed Execution Challenges
 
@@ -78,12 +78,14 @@ This model requires an explicit and verifiable mechanism for delegation. It is n
 
 To support this, the system must implement trust models capable of validating that a non-human identity is authorized to elevate its execution context to that of the target identity.
 
-The authorization model of the target identity must be constructed as if it were executed directly by the target identity, and this logic must be replicated at each point of execution. This introduces requirements for authorization models to be:
+The authorization model of the target identity must be constructed to reflect the permissions that would apply **if the action were executed directly by the target identity**. This logic must be preserved across execution boundaries and consistently enforced, regardless of the identity performing the operation.
+
+This introduces requirements for authorization models to be:
 
 - Transferable across systems,
 - Versioned to ensure consistency,
 - Immutable to guarantee integrity,
-- Resilient to support reliable delegation in distributed environments.
+- Resilient to support reliable impersonation and delegation in distributed environments.
 
 ### Non-Human as Target Identity
 
