@@ -70,9 +70,9 @@ To address this, each participating component in the system should:
 2. Request authorization to perform actions on behalf of the human (target identity).
 3. Establish a delegated authorization context that:
    - Verifies the non-human identity is permitted to represent the human identity,
-   - Ensures the resulting authorization context reflects the permissions and constraints of the original identity.
+   - Ensures the resulting authorization context reflects the permissions and constraints of the original human identity.
 
-This model requires an explicit and verifiable mechanism for delegation. It is not simple impersonation, but a structured approach where authorization is granted and enforced according to defined rules and trust relationships.
+This model requires an explicit and verifiable mechanism for impersonation and delegation. It is a structured approach where authorization is granted and enforced according to defined rules and trust relationships.
 
 ### Trust Models and Authorization Contexts
 
@@ -97,7 +97,7 @@ Today, identity and access standards [OpenID Connect](https://openid.net/specs/o
 
 However, these standards **do not define a complete ecosystem** for:
 
-- **Modeling delegation** across distributed systems,
+- Modeling **impersonation** and **delegation** across distributed systems,
 - Defining and enforcing **Trust Models** that govern which identities can act on behalf of others,
 - Creating and propagating **Authorization Contexts** tied to the target identity.
 
@@ -105,7 +105,7 @@ This is the gap that **ZTAuth*** fills.
 
 **ZTAuth*** introduces a structured framework for defining and enforcing:
 
-- A **delegation model**, where identities (human or non-human) can securely act on behalf of others,
+- An **impersonation** and **delegation model**, where identities (human or non-human) can securely act on behalf of others,
 - A **trust model**, where systems can verify whether such delegation is permitted,
 - A consistent **authorization context**, which reproduces the policies, permissions, and constraints of the original target identity — even when execution happens elsewhere.
 
