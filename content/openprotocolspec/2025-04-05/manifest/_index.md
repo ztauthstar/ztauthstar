@@ -106,7 +106,7 @@ This is the gap that **ZTAuth*** fills.
 **ZTAuth*** introduces a structured framework for defining and enforcing:
 
 - An **impersonation** and **delegation model**, where identities (human or non-human) can securely act on behalf of others,
-- A **trust model**, where systems can verify whether such delegation is permitted,
+- A **trust model**, where systems can verify whether such impersonation/delegation is permitted,
 - A consistent **authorization context**, which reproduces the policies, permissions, and constraints of the original target identity — even when execution happens elsewhere.
 
 In doing so, **ZTAuth*** enables secure, auditable delegation in distributed environments, where traditional identity propagation is either impractical or insecure.
