@@ -48,7 +48,7 @@ Now, there is a growing need to manage identities for intelligent systems — su
 
 ## Identities and Actions
 
-When a human authenticates, the purpose is often not to interact manually with the system, but to authorize a software component — such as an application or service — to act **on their behalf**. The authentication process enables the system to verify the user's identity and establish a trust relationship that authorizes **delegated execution** within a constrained identity context derived from the user.
+When a human authenticates, the purpose is often not to interact manually with the system, but to authorize a software component — such as an application or service — to act **on their behalf**. The authentication process enables the system to verify the user's identity and establish a trust relationship that authorizes **impersonated execution** within a constrained identity context derived from the human identity.
 
 In some environments, this may involve **impersonation**, where the delegated component temporarily assumes the user's identity. In others, the component retains its own identity but operates under an explicitly authorized and verifiable delegation model.
 
