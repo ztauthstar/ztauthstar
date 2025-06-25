@@ -9,7 +9,7 @@ next: /openprotocolspec/2025-04-05/base-protcol/authstar-models/language-blob
 
 An `auth*` model is associated with a specific [`ledger`](/openprotocolspec/2025-04-05/base-protcol/authstar-models/ledgers) and is bound to a defined **runtime**, which includes both the **engine** and **policy language** used for interpretation and evaluation.
 
-To declare the runtime requirements and configuration, each model **MUST** include a **manifest**.
+To declare the runtime requirements and configuration, each model **MUST** include a single **manifest**.
 
 > [!IMPORTANT]
 > A valid `auth*` model **MUST** include exactly one manifest. The manifest is required for the model to be considered valid and operational within the `ZTAuth*` protocol.
