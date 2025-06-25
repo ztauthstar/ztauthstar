@@ -68,23 +68,12 @@ In certain scenarios, an application initiates a process that is executed asynch
 
 For security, isolation, and auditability reasons, the original token **MUST NOT** be transmitted over the message broker with its signature. Moreover, execution may occur at a later time, when the original token is expired or otherwise invalid.
 
-To address this, the system enables **authorized impersonation**, allowing the asynchronous workload to execute within a constrained and verifiable identity context derived from the initiating identity, without directly possessing its credentials.
+To address this, the system enables **authorized impersonation (aka trusted elevation)**, allowing the asynchronous workload to execute within a constrained and verifiable authorization context derived from the initiating identity, without directly possessing its credentials.
 
 The flow proceeds as follows:
 
-## 1. Transaction Token Request by Requesting Application
-
-The *Requesting Application* **SHALL** request a **Transaction Token** from the **Transaction Token Service**.  
-The request **MUST** explicitly declare the intended `scope`, `audience`, and `authorization context`.
-
-## 2. Local Authorization with Context Elevation
-
-The *Requesting Application* **SHALL** elevate its non-human identity to the authorization context of the *target identity*  
-and perform a local authorization check using its own **Policy Decision Point (PDP)** to validate whether the requested operation is permitted.
-
 1. **Transaction Token Request by Requesting Application**: The *Requesting Application* **SHALL** request a **Transaction Token** from the **Transaction Token Service**. The request **MUST** explicitly declare the intended `scope`, `audience`, and `authorization context`.
-2. **Local Authorization with Context Elevation**: The *Requesting Application* **SHALL** elevate its non-human identity to the authorization context of the *target identity*  
-and perform a local authorization check using its own **Policy Decision Point (PDP)** to validate whether the requested operation is permitted.
+2. **Local Authorization with Context Elevation**: The *Requesting Application* **SHALL** elevate its non-human identity to the authorization context of the *target identity* and perform a local authorization check using its own **Policy Decision Point (PDP)** to validate whether the requested operation is permitted.
 3. **Message Dispatch to Asynchronous Workload**: The *Requesting Application* **SHALL** dispatch a message via a broker to the **Async Workload**. This message **MUST NOT** include any token issued to the original identity.
 4. **Transaction Token Request by Async Workload**: Upon message receipt, the **Async Workload** **SHALL** use its own non-human identity to request a **Transaction Token**  
 from the **Transaction Token Service**.
