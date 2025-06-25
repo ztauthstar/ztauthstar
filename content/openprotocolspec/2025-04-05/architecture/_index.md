@@ -73,11 +73,10 @@ To address this, the system enables **authorized impersonation (aka trusted elev
 The flow proceeds as follows:
 
 1. **Transaction Token Request by Requesting Application**: The *Requesting Application* **SHALL** request a **Transaction Token** from the **Transaction Token Service**. The request **MUST** explicitly declare the intended `scope`, `audience`, and `authorization context`.
-2. **Local Authorization with Context Elevation**: The *Requesting Application* **SHALL** elevate its non-human identity to the authorization context of the *target identity* and perform a local authorization check using its own **Policy Decision Point (PDP)** to validate whether the requested operation is permitted.
+2. **Application Authorization with Trusted Elevation**: The *Requesting Application* **SHALL** elevate its non-human identity to the authorization context of the *target identity* and perform a local authorization check using its own **Policy Decision Point (PDP)** to validate whether the requested operation is permitted.
 3. **Message Dispatch to Asynchronous Workload**: The *Requesting Application* **SHALL** dispatch a message via a broker to the **Async Workload**. This message **MUST NOT** include any token issued to the original identity.
-4. **Transaction Token Request by Async Workload**: Upon message receipt, the **Async Workload** **SHALL** use its own non-human identity to request a **Transaction Token**  
-from the **Transaction Token Service**.
-5. **Authorization Evaluation by Workload PDP**:The **Workload PDP** **SHALL** elevate the non-human identity of the **Async Workload** to the authorization context of the *target identity*. It **SHALL** evaluate the request using the **Transaction Token** and applicable `auth*` models, enforcing all impersonation and scope-based policies.
+4. **Transaction Token Request by Async Workload**: Upon message receipt, the **Async Workload** **SHALL** use its own non-human identity to request a **Transaction Token** from the **Transaction Token Service**.
+5. **Async Workload Authorization with Trusted Elevation**: The **Workload** **SHALL** elevate its non-human identity to the authorization context of the *target identity*. It **SHALL** evaluate the request using the **Transaction Token** and applicable `auth*` models, enforcing all impersonation and scope-based policies.
 
 This model supports **secure context propagation** in asynchronous systems without compromising identity integrity or token security.
 
