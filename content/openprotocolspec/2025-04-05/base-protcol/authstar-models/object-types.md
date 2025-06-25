@@ -7,7 +7,7 @@ prev: /openprotocolspec/2025-04-05/base-protcol/authstarmodels/model-types
 next: /openprotocolspec/2025-04-05/base-protcol/authstarmodels/manifest-blob
 ---
 
-An `auth*` models **MUST** be self-consistent. All data within the model **MUST** be stored and maintained in a valid and internally consistent state. Data is persisted as immutable objects using a Git-like object model.
+`Auth*` models **MUST** be self-consistent. All data within the model **MUST** be stored and maintained in a valid and internally consistent state. Data is persisted as immutable objects using a Git-like object model.
 
 > [!IMPORTANT]
 > Standard Git implementations are **NOT** suitable for production use in this context. Git permits arbitrary file types and lacks structural validation. Therefore, `ZTAuth*` uses a **custom Git-like object model** that strictly enforces schema correctness and rejects invalid or malformed content.
