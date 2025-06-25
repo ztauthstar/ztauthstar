@@ -26,7 +26,7 @@ The Policy Decision Point (PDP) supports two deployment models:
 
 > In constrained or resource-limited environments, the PEP and PDP may be co-located on the same host to reduce complexity and improve performance.
 
-**ZTAuth*** is designed to operate reliably in environments with intermittent or absent network connectivity. It employs an **eventual consistency** model in which authorization and trust data — collectively referred to as `auth* models` — are periodically synchronized from a central server.
+**ZTAuth*** is designed to operate reliably in environments with intermittent or absent network connectivity. It employs an **eventual consistency** model in which authorization and trust models — collectively referred to as `auth* models` — are periodically synchronized from a central server.
 
 ```mermaid
 graph LR
