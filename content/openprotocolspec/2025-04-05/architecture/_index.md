@@ -62,19 +62,35 @@ The **Proximity Authorization Server** synchronizes the `auth* models` using the
 
 All authorization decisions issued by the PDP **MUST** be recorded in **Decision Logs**. These logs **SHOULD** be transmitted to a **Remote Node** for purposes of **auditing** and **regulatory compliance**.
 
-### Delegation Example
+### Trust Example
 
-In some scenarios, an application initiates a process that is executed asynchronously, often through a message broker. The initiating application possesses a token representing the target identity; however, for security and isolation reasons, this token **MUST NOT** be transmitted via the message broker. Furthermore, the execution may occur at a later time when the original token is no longer valid.
+In certain scenarios, an application initiates a process that is executed asynchronously, often via a message broker or event stream. The initiating application (the *Requesting Application*) holds a token representing the **target identity**—the entity on whose behalf an action should eventually be performed.
 
-To address this, the initiating application performs a **delegation** to a secondary system. The following steps outline the delegation workflow:
+For security, isolation, and auditability reasons, the original token **MUST NOT** be transmitted over the message broker with its signature. Moreover, execution may occur at a later time, when the original token is expired or otherwise invalid.
 
-1. The **Requesting Application** requests a transaction token from the **Txn-Token Service**, specifying the intended scope.
-2. It performs a local **authorization check** using its own Policy Decision Point (PDP).
-3. It sends a **message** to the **Delegated Workload** via the broker.
-4. The **Delegated Workload Client** requests a transaction token using its own non-human identity.
-5. The **Workload PDP** validates the request using the transaction token and the appropriate `auth* models`.
+To address this, the system enables **authorized impersonation**, allowing the asynchronous workload to execute within a constrained and verifiable identity context derived from the initiating identity, without directly possessing its credentials.
 
-This mechanism enables secure, auditable, and context-aware delegation without requiring the transmission of the original identity token across systems.
+The flow proceeds as follows:
+
+## 1. Transaction Token Request by Requesting Application
+
+The *Requesting Application* **SHALL** request a **Transaction Token** from the **Transaction Token Service**.  
+The request **MUST** explicitly declare the intended `scope`, `audience`, and `authorization context`.
+
+## 2. Local Authorization with Context Elevation
+
+The *Requesting Application* **SHALL** elevate its non-human identity to the authorization context of the *target identity*  
+and perform a local authorization check using its own **Policy Decision Point (PDP)** to validate whether the requested operation is permitted.
+
+1. **Transaction Token Request by Requesting Application**: The *Requesting Application* **SHALL** request a **Transaction Token** from the **Transaction Token Service**. The request **MUST** explicitly declare the intended `scope`, `audience`, and `authorization context`.
+2. **Local Authorization with Context Elevation**: The *Requesting Application* **SHALL** elevate its non-human identity to the authorization context of the *target identity*  
+and perform a local authorization check using its own **Policy Decision Point (PDP)** to validate whether the requested operation is permitted.
+3. **Message Dispatch to Asynchronous Workload**: The *Requesting Application* **SHALL** dispatch a message via a broker to the **Async Workload**. This message **MUST NOT** include any token issued to the original identity.
+4. **Transaction Token Request by Async Workload**: Upon message receipt, the **Async Workload** **SHALL** use its own non-human identity to request a **Transaction Token**  
+from the **Transaction Token Service**.
+5. **Authorization Evaluation by Workload PDP**:The **Workload PDP** **SHALL** elevate the non-human identity of the **Async Workload** to the authorization context of the *target identity*. It **SHALL** evaluate the request using the **Transaction Token** and applicable `auth*` models, enforcing all impersonation and scope-based policies.
+
+This model supports **secure context propagation** in asynchronous systems without compromising identity integrity or token security.
 
 ```mermaid
 graph LR
@@ -88,7 +104,7 @@ graph LR
     C1 -- (1) request txn-token --> TTS
     C2 -- (4) request txn-token --> TTS
 
-    subgraph "Delegated Workload"
+    subgraph "Async Workload"
         C2[Workload Client <br> PEP]
         S2[Server <br> PDP]
         C2 -- (5) authz check --> S2
