@@ -15,6 +15,6 @@ To support the requirements of the ZTAuth\* protocol, the request is extended wi
 
 - `zone_id`: An identifier representing the Zero Trust zone relevant to the request.
 - `ledger_id`: A reference to the specific ledger or model repository where authorization policies are stored.
-- `tx_-_token`: A transaction token create by the transaction token service
+- `tx_token`: A transaction token create by the transaction token service
 
 These fields are illustrative and intended to demonstrate how the `authorization_model` can be extended to carry protocol-specific context for ZTAuth\*. Their presence and structure may vary depending on implementation needs.
