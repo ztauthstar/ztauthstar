@@ -43,3 +43,15 @@ The Transaction Token Service **MUST** issue a `Txn Token` only if a valid chain
 > This is similar to **Certified Mail** or a **Notarized Email System**, where the legal system recognizes the channel as trusted, and the presence of the message itself, with delivery metadata, acts as proof. In these systems, the identity is not verified by a bearer token but by the **trust in the certified delivery infrastructure**.
 
 The resulting decision **MUST** reflect the trust context derived from the constructed Chain Ring and respect the Zero Trust principles.
+
+### Breaking the Chain
+
+Consider a scenario where a request is processed through a chain of three workloads:
+
+- The first workload receives and processes the request, then forwards it to the second workload.
+- The second workload performs additional processing and forwards the request to the third workload.
+- At some point, the security team flags the second workload as compromised and removes it from its previously assigned Trust Level.
+
+The third workload, which in this case acts as the Policy Enforcement Point (PEP), is unaware of the trust revocation. However, during the **Trust Elevation** phase, the Policy Decision Point (PDP) evaluates the full Trust Chain. Upon detecting that the second workload no longer belongs to a valid Trust Level, the PDP halts the transaction and returns an error, indicating that the trust requirements are no longer satisfied and the operation cannot proceed.
+
+This illustrates how ZTAuth\* ensures **runtime enforcement of trust**, even when the state of the system changes dynamically. Any compromise or invalidation of a Chain Ring results in a rejection of the overall authorization, thereby preserving the integrity of the distributed transaction.
