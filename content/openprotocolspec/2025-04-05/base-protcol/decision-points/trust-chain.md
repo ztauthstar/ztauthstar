@@ -9,9 +9,9 @@ next: /openprotocolspec/2025-04-05/appendix-a-list-of-specs
 
 ### Trust Chain and Chain Rings
 
-The **ZTAuth\*** protocol introduces the concept of a **Trust Chain**, which represents the runtime flow of a distributed transaction. A `Trust Chain` consists of one or more `Chain Rings`.
+The **ZTAuth\*** protocol introduces the concept of a **Trust Chain**, which represents the runtime flow of a distributed transaction. A `Trust Chain` consists of one or more **Chain Rings**.
 
-A **Chain Ring** is the atomic authorization unit within a Trust Chain. It represents a single point of trust in the distributed transaction,  a point where an authorization decision is made between the Policy Enforcement Point (PEP) and the Policy Decision Point (PDP) to either continue or terminate the operation. Each ring reflects an isolated decision boundary, contributing to the integrity and traceability of the overall transaction flow.
+A `Chain Ring` is the atomic authorization unit within a `Trust Chain`. It represents a single point of trust in the distributed transaction,  a point where an authorization decision is made between the Policy Enforcement Point (PEP) and the Policy Decision Point (PDP) to either continue or terminate the operation. Each ring reflects an isolated decision boundary, contributing to the integrity and traceability of the overall transaction flow.
 
 To better illustrate this concept, consider the following examples:
 
