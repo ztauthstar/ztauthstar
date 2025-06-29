@@ -39,8 +39,9 @@ The Policy Enforcement Point (PEP) **MUST** construct a valid Trust Chain Ring i
 
 The Transaction Token Service **MUST** issue a `Txn Token` only if a valid chain of trust can be established between the subject and the actor, in accordance with the configured policies and its `trust levels`. Once the token is issued, the PEP proceeds to send the full authorization request to the PDP for evaluation.
 
-> [!DEFINITION]
+> [!IMPORTANT]
 > This is similar to **Certified Mail** or a **Notarized Email System**, where the legal system recognizes the channel as trusted, and the presence of the message itself, with delivery metadata, acts as proof. In these systems, the identity is not verified by a bearer token but by the **trust in the certified delivery infrastructure**.
+> That’s why a token is just one form of trust — not the only one. A system should be able to handle multiple types of trust to authorize actions on behalf of a subject.
 
 The resulting decision **MUST** reflect the trust context derived from the constructed Chain Ring and respect the Zero Trust principles.
 
