@@ -27,7 +27,7 @@ A **Trust Chain Ring** includes the following key components:
 
 - **Subject Trust Proof**: An assertion that establishes the identity and trustworthiness of the subject (i.e., the original initiator of the transaction). For example:
   - In a human-initiated request, this might be a JWT access token issued via OAuth 2.0.
-  - For workload-initiated flows, it may be a token issued via WIMSE or SPIFFE.
+  - For workload-initiated flows, it may be a token issued via SPIFFE (WIMSE).
   - In asynchronous systems (e.g., Kafka), it may be a signed message that cryptographically binds the request to the original subject, even in the absence of the original token.
 - **Actor Identity**: The identity of the current workload or component responsible for handling the request at this step in the flow.
 - **Authorization Request**: The input authorization request, including details such as requested scope and action.
@@ -37,6 +37,6 @@ A **Trust Chain Ring** includes the following key components:
 
 The Policy Enforcement Point (PEP) **MUST** construct a valid Trust Chain Ring in order to request an authorization decision from the Policy Decision Point (PDP). To do so, the PEP **MUST** contact the **Transaction Token Service**, requesting a `Txn Token` scoped to the operation, and including both the **Subject Trust Proof** and the **Actor Identity**.
 
-The Transaction Token Service **MUST** issue a `Txn Token` only if a valid chain of trust can be established between the subject and the actor, in accordance with the configured policies. Once the token is issued, the PEP proceeds to send the full authorization request to the PDP for evaluation.
+The Transaction Token Service **MUST** issue a `Txn Token` only if a valid chain of trust can be established between the subject and the actor, in accordance with the configured policies and its `trust levels`. Once the token is issued, the PEP proceeds to send the full authorization request to the PDP for evaluation.
 
-The resulting decision **MUST** reflect the trust context derived from the constructed Chain Ring and respect the Zero Trust principle of least privilege.
+The resulting decision **MUST** reflect the trust context derived from the constructed Chain Ring and respect the Zero Trust principles.
