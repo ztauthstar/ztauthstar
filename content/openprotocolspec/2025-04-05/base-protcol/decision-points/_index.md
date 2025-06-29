@@ -4,7 +4,7 @@ cascade:
   type: docs
 weight: 3500
 prev: /openprotocolspec/2025-04-05/base-protcol/tts
-next: /openprotocolspec/2025-04-05/appendix-a-list-of-specs/
+next: /openprotocolspec/2025-04-05/base-protcol/decision-points/authz-check
 ---
 
 In `ZTAuth*`, authorization decisions are made through the interaction of two core components:
