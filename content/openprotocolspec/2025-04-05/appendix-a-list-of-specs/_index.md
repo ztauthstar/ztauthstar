@@ -3,7 +3,7 @@ title: Appendix A - List of Specifications
 cascade:
   type: docs
 weight: 9000
-prev: /openprotocolspec/2025-04-05/base-protcol/decision-points/authz-check
+prev: /openprotocolspec/2025-04-05/base-protcol/decision-points/trust-chain
 next: /openprotocolspec/versioning
 ---
 

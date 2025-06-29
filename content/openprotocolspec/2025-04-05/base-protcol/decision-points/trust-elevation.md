@@ -1,5 +1,5 @@
 ---
-title: Authorization Context
+title: Trust Elevation
 cascade:
   type: docs
 weight: 3502
