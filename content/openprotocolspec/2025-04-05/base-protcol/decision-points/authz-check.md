@@ -13,7 +13,7 @@ The payload structure follows the format defined in the [OpenID AuthZEN specific
 
 To support the requirements of the ZTAuth\* protocol, the request is extended with an additional field named `authorization_model`. This object provides contextual data required for Zero Trust evaluation and may include the following fields:
 
-- `zone_id`: An identifier representing the Zero Trust zone relevant to the request.
+- `zone_id`: An identifier representing the [ztzone](/openprotocolspec/2025-04-05/base-protcol/domains-zones/#ztzone) relevant to the request.
 - `ledger_id`: A reference to the specific ledger or model repository where authorization policies are stored.
 - `tx_token`: A transaction token create by the transaction token service
 
