@@ -4,7 +4,7 @@ cascade:
   type: docs
 weight: 3501
 prev: /openprotocolspec/2025-04-05/base-protcol/decision-points
-next: /openprotocolspec/2025-04-05/base-protcol/decision-points/authz-check
+next: /openprotocolspec/2025-04-05/base-protcol/decision-points/authorization-context
 ---
 
 In the **ZTAuth\*** protocol, the Policy Decision Point (PDP) is responsible for evaluating authorization requests based on contextual information carried along with Transaction Token (Txn Token).
