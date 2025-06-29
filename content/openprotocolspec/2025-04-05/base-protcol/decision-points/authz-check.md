@@ -7,7 +7,7 @@ prev: /openprotocolspec/2025-04-05/base-protcol/decision-points
 next: /openprotocolspec/2025-04-05/appendix-a-list-of-specs/
 ---
 
-The `Authorization Endpoint` is a key component of the **ZTAuth*** protocol. It is responsible for evaluating authorization requests and producing decisions based on the auth* models and contextual information.
+The `Authorization Endpoint` is a key component of the **ZTAuth\*** protocol. It is responsible for evaluating authorization requests and producing decisions based on the auth* models and contextual information.
 
 The payload structure follows the format defined in the [OpenID AuthZEN specification](https://openid.net/specs/authorization-api-1_0-01.html), ensuring compatibility with existing authorization flows.
 
