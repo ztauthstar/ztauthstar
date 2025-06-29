@@ -4,7 +4,7 @@ cascade:
   type: docs
 weight: 3501
 prev: /openprotocolspec/2025-04-05/base-protcol/decision-points
-next: /openprotocolspec/2025-04-05/base-protcol/decision-points/authorization-context
+next: /openprotocolspec/2025-04-05/base-protcol/decision-points/trust-elevation
 ---
 The `Authorization Endpoint` is a key component of the **ZTAuth\*** protocol. It is responsible for evaluating authorization requests and producing decisions based on the auth* models and contextual information.
 

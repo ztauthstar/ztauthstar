@@ -1,10 +1,10 @@
 ---
-title: Trust Levels
+title: Trust Level
 cascade:
   type: docs
 weight: 3503
 prev: /openprotocolspec/2025-04-05/base-protcol/decision-points/authz-check
-next: /openprotocolspec/2025-04-05/appendix-a-list-of-specs
+next: /openprotocolspec/2025-04-05/base-protcol/decision-points/trust-chain
 ---
 
 In the **ZTAuth\*** protocol, identities may be organized into **Security Groups**, specifically referred to as **Trust Levels**. These groupings provide a structured mechanism for categorizing identities based on attributes such as trustworthiness, operational capabilities, or assigned roles within the system.
