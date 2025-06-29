@@ -67,7 +67,7 @@ Propagating the user’s token across a distributed system risks violating funda
 To address this, each participating component in the system should:
 
 1. Authenticate using its own identity, typically a non-human identity (e.g., service, machine, or agent).
-2. Request authorization to perform actions on behalf of the human (target identity).
+2. Request authorization to perform actions on behalf of the human (subject identity).
 3. Establish a delegated authorization context that:
    - Verifies the non-human identity is permitted to represent the human identity,
    - Ensures the resulting authorization context reflects the permissions and constraints of the original human identity.
@@ -76,9 +76,9 @@ This model requires an explicit and verifiable mechanism for impersonation and d
 
 ### Trust Models and Authorization Contexts
 
-To support this, the system must implement trust models capable of validating that a non-human identity is authorized to elevate its execution context to that of the target identity.
+To support this, the system must implement trust models capable of validating that a non-human identity is authorized to elevate its execution context to that of the subject identity.
 
-The authorization model of the target identity must be constructed to reflect the permissions that would apply **if the action were executed directly by the target identity**. This logic must be preserved across execution boundaries and consistently enforced, regardless of the identity performing the operation.
+The authorization model of the subject identity must be constructed to reflect the permissions that would apply **if the action were executed directly by the subject identity**. This logic must be preserved across execution boundaries and consistently enforced, regardless of the identity performing the operation.
 
 This introduces requirements for authorization models to be:
 
@@ -87,9 +87,9 @@ This introduces requirements for authorization models to be:
 - Immutable to guarantee integrity,
 - Resilient to support reliable impersonation and delegation in distributed environments.
 
-### Non-Human as Target Identity
+### Non-Human as Subject identity
 
-If the target identity itself is non-human — such as an autonomous agent or machine — the same principles apply. The identity must be authenticated and explicitly authorized to act within the intended scope, either independently or on behalf of another identity.
+If the subject identity itself is non-human — such as an autonomous agent or machine — the same principles apply. The identity must be authenticated and explicitly authorized to act within the intended scope, either independently or on behalf of another identity.
 
 ### Role of ZTAuth*
 
@@ -99,7 +99,7 @@ However, these standards **do not define a complete ecosystem** for:
 
 - Modeling **impersonation** and **delegation** across distributed systems,
 - Defining and enforcing **Trust Models** that govern which identities can act on behalf of others,
-- Creating and propagating **Authorization Contexts** tied to the target identity.
+- Creating and propagating **Authorization Contexts** tied to the subject identity.
 
 This is the gap that **ZTAuth*** fills.
 
@@ -107,7 +107,7 @@ This is the gap that **ZTAuth*** fills.
 
 - An **impersonation** and **delegation model**, where identities (human or non-human) can securely act on behalf of others,
 - A **trust model**, where systems can verify whether such impersonation/delegation is permitted,
-- A consistent **authorization context**, which reproduces the policies, permissions, and constraints of the original target identity — even when execution happens elsewhere.
+- A consistent **authorization context**, which reproduces the policies, permissions, and constraints of the original subject identity — even when execution happens elsewhere.
 
 In doing so, **ZTAuth*** enables secure, auditable delegation in distributed environments, where traditional identity propagation is either impractical or insecure.
 
