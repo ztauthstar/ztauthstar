@@ -50,29 +50,23 @@ Standards like [OpenID Connect](https://openid.net/specs/openid-connect-core-1_0
 
 ## Foundational Concepts
 
-ZTAuth* is built on four core pillars that define how authorization is governed, delegated, and enforced across distributed systems.  
-These pillars provide the foundation for a consistent and secure authorization model, aligned with Zero Trust principles.
+**ZTAuth\*** is built on four core pillars that define how authorization is governed, delegated, and enforced across distributed systems. These pillars provide the foundation for a consistent and secure authorization model, aligned with `Zero Trust principles`.
 
 ### Policy Governance
 
-Authorization logic is often hardcoded inside applications, making it difficult to update, audit, or share.  
-ZTAuth* introduces a centralized governance layer for policy management.  
-This allows external control over how policies are applied and enables integration with risk and compliance processes.
+`Authorization logic` is often hardcoded inside applications, making it difficult to update, audit, or share.
+**ZTAuth\*** introduces a centralized governance layer for policy management. This allows external control over how policies are applied and enables integration with risk and compliance processes.
 
 ### Workload Governance
 
-Tokens are usually processed by the workload receiving the request, without guarantees on validation or trust.  
-ZTAuth* allows workloads to be grouped into **security groups** with defined **trust levels**, and controls which workloads can act **on behalf of** a subject.  
-This enables secure and auditable workload-level authorization.
+Tokens are usually processed by the workload receiving the request, without guarantees on validation or trust. **ZTAuth\*** allows workloads to be grouped into **security groups** with defined **trust levels**, and controls which workloads can act **on behalf of** a subject. This enables secure and `auditable workload-level authorization`.
 
 ### Security Model
 
-ZTAuth* builds a complete **authorization context** using both the subject and workload identities.  
-Trust and policy data are stored in a **Git-like structure**, ensuring immutability, versioning, and portability.  
-This context can be materialized as a **Transaction Token (TxToken)**, issued by a Transaction Token Service working with a Policy Decision Point.
+**ZTAuth\*** builds a complete **authorization context** using both the subject and workload identities. Trust and policy data are stored in a **Git-like structure**, ensuring immutability, versioning, and portability.
+This context can be materialized as a **Transaction Token (TxToken)**, issued by a `Transaction Token Service` and evaluated by a `Policy Decision Point`.
 
 ### Delegation-First Model
 
-Delegation is a primary element in ZTAuth*, not a secondary feature.  
-The protocol supports **explicit delegation** using verifiable consent from the subject.  
+Delegation is a primary element in **ZTAuth\***, not a secondary feature. The protocol supports **explicit delegation** using verifiable consent from the subject.
 Mechanisms like **Trust Elevation** and **Trust Delegation** allow controlled access to different authorization contexts in a secure and auditable way.
