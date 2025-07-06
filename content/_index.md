@@ -9,7 +9,7 @@ Pronounce it `Zee-Tee-Auth-Star`. The `star` is a wildcard, hinting at extras li
 
 For short, use `ZTAStar` (`Zee-Tee-Ei-Star`).
 
-**ZTAuth\*** does not replace existing standards. It adds a separate layer for fine-grained and repeatable authorization, supporting both human and non-human identities, and meeting Zero Trust security requirements.
+**ZTAuth\*** does not replace existing standards. It adds a separate layer for fine-grained and repeatable authorization, supporting both human and non-human identities, and meeting `Zero Trust` security requirements.
 
 ## Explore
 
