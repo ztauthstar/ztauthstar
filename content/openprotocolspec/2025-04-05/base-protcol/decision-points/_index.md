@@ -3,8 +3,8 @@ title: Decision Points
 cascade:
   type: docs
 weight: 3500
-prev: /openprotocolspec/2025-04-05/base-protcol/tts
-next: /openprotocolspec/2025-04-05/appendix-a-list-of-specs/
+prev: /openprotocolspec/2025-04-05/base-protcol/tts/tx-token
+next: /openprotocolspec/2025-04-05/base-protcol/decision-points/authorization-request
 ---
 
 In `ZTAuth*`, authorization decisions are made through the interaction of two core components:
