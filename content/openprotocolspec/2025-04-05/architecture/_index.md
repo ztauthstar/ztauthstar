@@ -100,6 +100,6 @@ graph LR
 
 The diagram above illustrates an authorization flow that includes a communication pattern between nodes, where each node performs its operation independently.
 
-The mechanism used to exchange messages is out of scope for the ****ZTAuth\***** protocol. For example, if communication occurs via API, a token may be regenerated using [OAuth 2.0 Token Exchange](https://datatracker.ietf.org/doc/html/rfc8693). If the message is delivered through a broker or event stream, a different transport mechanism may be used.
+The mechanism used to exchange messages is out of scope for the **ZTAuth\*** protocol. For example, if communication occurs via API, a token may be exchanged before being forwarded using [OAuth 2.0 Token Exchange](https://datatracker.ietf.org/doc/html/rfc8693). If the message is delivered through a broker or event stream, a different transport mechanism may be used.
 
-This does not affect the authorization flow or semantics defined by ****ZTAuth\*****, which are independent of the communication mechanism and the format used to transmit proofs.
+This does not affect the authorization flow or the overall behavior of the **ZTAuth\*** protocol, which remains independent of the communication mechanism and the format used to transmit proofs.
