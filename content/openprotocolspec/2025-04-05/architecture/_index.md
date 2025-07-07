@@ -6,6 +6,9 @@ weight: 2000
 prev: /openprotocolspec/2025-04-05/manifest
 next: /openprotocolspec/2025-04-05/base-protcol
 ---
+
+## Client-Host-Server Architecture
+
 **ZTAuth*** employs a client–host–server architecture, defined as follows:
 
 - **Host**: The environment where the client operates (e.g., a server, container, or edge device).
@@ -62,23 +65,17 @@ The **Proximity Authorization Server** synchronizes the `auth* models` using the
 
 All authorization decisions issued by the PDP **MUST** be recorded in **Decision Logs**. These logs **SHOULD** be transmitted to a **Remote Node** for purposes of **auditing** and **regulatory compliance**.
 
-### Trust Example
+## Authorization Flow
 
-In certain scenarios, an application initiates a process that is executed asynchronously, often via a message broker or event stream. The initiating application (the *Requesting Application*) holds a token representing the **subject identity**—the entity on whose behalf an action should eventually be performed.
+The **Application Client**, acting as a Policy Enforcement Point (PEP), must ensure that the subject's request can be authorized.
 
-For security, isolation, and auditability reasons, the original token **MUST NOT** be transmitted over the message broker with its signature. Moreover, execution may occur at a later time, when the original token is expired or otherwise invalid.
+As a first step, the PEP generates a **Transaction Token (Tx-Token)** by invoking the `Transaction Token Service (TTS)`. The request includes the **subject proof** (typically a token) and the **workload proof** (also typically a token).
 
-To address this, the system enables **authorized impersonation (aka trusted elevation)**, allowing the asynchronous workload to execute within a constrained and verifiable authorization context derived from the initiating identity, without directly possessing its credentials.
+The `TTS` uses the Trust Model to validate both proofs. The resulting Tx-Token is then sent to the `Policy Decision Point (PDP)` for evaluation, along with an authorization payload describing the access request.  
 
-The flow proceeds as follows:
+The authorization payload is an extended structure that is compatible with the [OpenID AuthZEN specification](https://openid.net/specs/authorization-api-1_0-01.html).
 
-1. **Transaction Token Request by Requesting Application**: The *Requesting Application* **SHALL** request a **Transaction Token** from the **Transaction Token Service**. The request **MUST** explicitly declare the intended `scope`, `audience`, and `authorization context`.
-2. **Application Authorization with Trusted Elevation**: The *Requesting Application* **SHALL** elevate its non-human identity to the authorization context of the *subject identity* and perform a local authorization check using its own **Policy Decision Point (PDP)** to validate whether the requested operation is permitted.
-3. **Message Dispatch to Asynchronous Workload**: The *Requesting Application* **SHALL** dispatch a message via a broker to the **Async Workload**. This message **MUST NOT** include any token issued to the original identity.
-4. **Transaction Token Request by Async Workload**: Upon message receipt, the **Async Workload** **SHALL** use its own non-human identity to request a **Transaction Token** from the **Transaction Token Service**.
-5. **Async Workload Authorization with Trusted Elevation**: The **Workload** **SHALL** elevate its non-human identity to the authorization context of the *subject identity*. It **SHALL** evaluate the request using the **Transaction Token** and applicable `auth*` models, enforcing all impersonation and scope-based policies.
-
-This model supports **secure context propagation** in asynchronous systems without compromising identity integrity or token security.
+The `PDP` evaluates the request by accessing the Auth\* Models, which include both the Authorization Model and the Trust Model.
 
 ```mermaid
 graph LR
@@ -101,11 +98,8 @@ graph LR
     C1 -- (3) send message --> C2
 ```
 
-### Centralized Management Benefits
+The diagram above illustrates an authorization flow that includes a communication pattern between nodes, where each node performs its operation independently.
 
-Centralized control of `auth* models` and decision logs provides several key advantages:
+The mechanism used to exchange messages is out of scope for the ****ZTAuth\***** protocol. For example, if communication occurs via API, a token may be regenerated using [OAuth 2.0 Token Exchange](https://datatracker.ietf.org/doc/html/rfc8693). If the message is delivered through a broker or event stream, a different transport mechanism may be used.
 
-- **Governance**: Ensures consistent application of policies across all components and environments.
-- **Compliance**: Facilitates adherence to internal policies and external regulatory requirements.
-- **Auditing**: Enables complete traceability and retrospective analysis of authorization decisions.
-- **Risk Management**: Supports the identification and mitigation of security or operational issues through historical data analysis.
+This does not affect the authorization flow or semantics defined by ****ZTAuth\*****, which are independent of the communication mechanism and the format used to transmit proofs.
