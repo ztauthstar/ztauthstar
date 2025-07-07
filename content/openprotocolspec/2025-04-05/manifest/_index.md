@@ -70,9 +70,9 @@ Workloads can be grouped into **security groups** with assigned [**Trust Levels*
 
 ### Zero Trust Security Model
 
-ZTAuth\* builds a full **authorization context** based on both the identity of the subject and the identity of the workload. This dual identity model allows access decisions to consider not only *who* initiated the action, but also *what* is executing it.
+ZTAuth\* builds a full **Authorization Request Context** based on both the identity of the subject and the identity of the workload. This dual identity model allows access decisions to consider not only *who* initiated the action, but also *what* is executing it.
 
-The authorization context can be materialized as a **Transaction Token (TxToken)**, issued by a `Transaction Token Service` and evaluated by a `Policy Decision Point`. This enables consistent, portable, and auditable enforcement across distributed environments.
+The **Authorization Request Context** can be materialized as a **Transaction Token (TxToken)**, issued by a `Transaction Token Service` and evaluated by a `Policy Decision Point`. This enables consistent, portable, and auditable enforcement across distributed environments.
 
 ZTAuth\* also supports [**Trust Elevation**](/openprotocolspec/2025-04-05/base-protcol/decision-points/trust-elevation), a process in which a workload may request access to the **authorization context of another identity**, under specific conditions. This is commonly used when a workload needs to temporarily act with the privileges of a different subject — for example, a service operating on behalf of a user or another system.
 
@@ -81,7 +81,7 @@ This makes it suitable for dynamic and delegated access, while remaining aligned
 
 ### Delegation-First Model
 
-**Delegation** is a core feature in ZTAuth\*, not an optional add-on. By explicitly modeling both the subject and the workload in the authorization context, ZTAuth\* naturally supports **on-behalf-of execution**.
+**Delegation** is a core feature in ZTAuth\*, not an optional add-on. By explicitly modeling both the subject and the workload in the **Authorization Request Context**, ZTAuth\* naturally supports **on-behalf-of execution**.
 
 Delegation is made explicit and verifiable through [**Trust Delegation**](/openprotocolspec/2025-04-05/base-protcol/decision-points/trust-delegation), where a subject can authorize another identity, such as a workload or service, to act within a specific scope. Delegation requires proof of subject consent and is enforced by policy at runtime.
 

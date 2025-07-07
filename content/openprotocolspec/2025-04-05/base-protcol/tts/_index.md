@@ -9,7 +9,7 @@ next: /openprotocolspec/2025-04-05/base-protcol/tts/tx-token
 
 The `transaction token service` **MUST** comply with the [OAuth Transaction Token specification](https://www.ietf.org/archive/id/draft-ietf-oauth-transaction-tokens-05.html) and **MUST** implement a defined profile and schema consistent with the requirements of the `ZTAuth*` protocol.
 
-A **Transaction Token** (abbreviated as **tnx token**) encapsulates an **authorization context** for a specific action or request. It is typically issued by the **initiating identity** — often a **workload identity** — on behalf of a **subject identity** (the *audience*) that is authorized to execute the operation.
+A **Transaction Token** (abbreviated as **tnx token**) encapsulates an **Authorization Request Context** for a specific action or request. It is typically issued by the **initiating identity** — often a **workload identity** — on behalf of a **subject identity** (the *audience*) that is authorized to execute the operation.
 
 The tnx token carries verifiable claims that describe:
 
