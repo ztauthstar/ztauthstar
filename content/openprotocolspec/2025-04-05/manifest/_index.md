@@ -16,7 +16,7 @@ Examples include `OAuth 2.0` access tokens (for authorization), `SAML` assertion
 
 These tokens are presented to workloads to request access.
 
-However, not all communication flows are token-based. While many interactions between services use tokens, especially in synchronous API calls — other patterns such as **asynchronous messaging**, **event streaming**, or **batch processing** may not support token propagation.
+However, not all communication flows are token-based. While many interactions between services use tokens, especially in synchronous API calls - other patterns such as **asynchronous messaging**, **event streaming**, or **batch processing** may not support token propagation.
 
 In these cases, systems often rely on **secure channels**, **pre-established trust**, or **inferred identity**, but without a shared protocol to verify or audit authorization decisions.
 
@@ -30,7 +30,7 @@ Even when tokens are used, there is **no standard protocol** to guarantee that:
 
 In practice, this means that enforcement happens inside the application code, often inconsistently and without external visibility.
 
-> OAuth is a typical example: it issues a valid token, and while it recommends that the resource server validates the token, it does not define what must happen after the token is delivered — including how scopes are enforced, how delegation is handled, or how access is audited.
+> OAuth is a typical example: it issues a valid token, and while it recommends that the resource server validates the token, it does not define what must happen after the token is delivered, including how scopes are enforced, how delegation is handled, or how access is audited.
 
 This model leads to **security gaps**, **lack of enforcement guarantees**, and **risk of silent delegation**.
 
@@ -60,7 +60,7 @@ Standards like [OpenID Connect](https://openid.net/specs/openid-connect-core-1_0
 
 Authorization logic is often hardcoded inside applications, making it difficult to control how access decisions are made or to track them for auditing. **ZTAuth\*** separates policy from application code by introducing a centralized layer for defining and enforcing authorization rules.
 
-Policies are stored in a **Git-like structure**, ensuring immutability, versioning, and portability. This enables consistent access control and supports integration with auditing, risk management, and compliance processes.
+Policies are stored in a **Git-like structure**, ensuring **immutability**, **versioning**, **correctness**, and **portability**. This enables consistent access control and supports integration with auditing, risk management, and compliance processes.
 
 ### Workload Governance
 
@@ -74,7 +74,10 @@ ZTAuth\* builds a full **authorization context** based on both the identity of t
 
 The authorization context can be materialized as a **Transaction Token (TxToken)**, issued by a `Transaction Token Service` and evaluated by a `Policy Decision Point`. This enables consistent, portable, and auditable enforcement across distributed environments.
 
-ZTAuth\* also supports [**Trust Elevation**](/openprotocolspec/2025-04-05/base-protcol/decision-points/trust-elevation), a process in which a workload may request access to a higher-privilege context under specific conditions. Trust Elevation is always subject to policy evaluation and limited by predefined rules, making it suitable for dynamic access scenarios without compromising Zero Trust principles.
+ZTAuth\* also supports [**Trust Elevation**](/openprotocolspec/2025-04-05/base-protcol/decision-points/trust-elevation), a process in which a workload may request access to the **authorization context of another identity**, under specific conditions. This is commonly used when a workload needs to temporarily act with the privileges of a different subject — for example, a service operating on behalf of a user or another system.
+
+**Trust Elevation** is always subject to policy evaluation and must follow predefined rules, including proof of consent when applicable.  
+This makes it suitable for dynamic and delegated access, while remaining aligned with Zero Trust principles.
 
 ### Delegation-First Model
 
