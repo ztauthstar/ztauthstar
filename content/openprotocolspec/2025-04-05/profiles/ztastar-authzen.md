@@ -1,5 +1,5 @@
 ---
-title: ZTAuth* Profile for AuthZen Spec
+title: Authorization API - ZTAuth* Profile Spec
 cascade:
   type: docs
 weight: 1003
