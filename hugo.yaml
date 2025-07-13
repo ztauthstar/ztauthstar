@@ -80,6 +80,6 @@ menu:
         type: separator
       weight: 2
     - identifier: mediun
-      name: "Medium ↗"
-      url: "https://medium.com/ztauth"
+      name: "Nitro Agility Srl↗"
+      url: "https://www.nitroagility.com"
       weight: 3

@@ -20,12 +20,7 @@ Explore the detailed specification for each protocol component:
 
 {{< cards >}}
 {{< card link="manifest" title="Manifest" icon="manifest" >}}
-{{< card link="architecture" title="Architecture" icon="template" >}}
-<!-- {{< card link="identities" title="Identities" icon="finger-print" >}}
-{{< card link="actormodels" title="Actor Models" icon="color-swatch" >}} -->
-{{< card link="base-protcol/authstar-models" title="Auth* Models" icon="authstar-model" >}}
-<!-- {{< card link="trustedmodels" title="Trust Models" icon="cube-transparent" >}} -->
-{{< card link="base-protcol/decision-points" title="Decision Points" icon="decision-point" >}}
-<!-- {{< card link="federation" title="Federation" icon="federation" >}}
-{{< card link="dataspaces" title="Data Spaces" icon="dataspace" >}}-->
+{{< card link="ztastar-framework-spec" title="ZTAuth* Framework" icon="template" >}}
+{{< card link="ztastar-models-spec" title="ZTAuth* Models" icon="authstar-model" >}}
+{{< card link="profiles" title="ZTAuth* Profiles" icon="color-swatch" >}}
 {{< /cards >}}
