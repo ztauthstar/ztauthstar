@@ -16,6 +16,8 @@ math: true
 ### 2.1. Normative References
 
 - `[OAuthTransactionTokens]` OAuth Transaction Tokens, OAuth Workgroup, 4 September 2025, <https://www.ietf.org/archive/id/draft-ietf-oauth-transaction-tokens-05.html>.
+- `[ZTAStar-Framework]` ZTAuth* Framework, Version 1.0, April 2025, <https://spec.ztauthstar.com/openprotocolspec/2025-04-05/ztastar-framework-spec/>.
+- `[ZTAStar-Models]` ZTAuth* Models, Version 1.0, April 2025, <https://spec.ztauthstar.com/openprotocolspec/2025-04-05/ztastar-models-spec/>.
 
 ## Appendix A - Terminology
 
