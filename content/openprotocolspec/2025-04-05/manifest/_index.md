@@ -4,7 +4,7 @@ cascade:
   type: docs
 weight: 1000
 prev: /openprotocolspec/2025-04-05
-next: /openprotocolspec/2025-04-05/ztastar-framework-spec/
+next: /openprotocolspec/2025-04-05/ztastar-core-spec
 math: true
 ---
 

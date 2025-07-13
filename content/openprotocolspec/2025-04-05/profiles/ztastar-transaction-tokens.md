@@ -2,8 +2,8 @@
 title: ZTAuth* Transaction Tokens Spec
 cascade:
   type: docs
-weight: 1003
-prev: /openprotocolspec/2025-04-05/ztastar-core-spec
+weight: 1002
+prev: /openprotocolspec/2025-04-05/ztastar-framework-spec
 next: /openprotocolspec/2025-04-05/architecture
 math: true
 ---
