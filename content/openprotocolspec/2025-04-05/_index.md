@@ -20,7 +20,7 @@ Explore the detailed specification for each protocol component:
 
 {{< cards >}}
 {{< card link="manifest" title="Manifest" icon="manifest" >}}
-{{< card link="ztastar-framework-spec" title="ZTAuth* Framework" icon="template" >}}
 {{< card link="ztastar-core-spec" title="ZTAuth* Core" icon="authstar-model" >}}
+{{< card link="ztastar-framework-spec" title="ZTAuth* Framework" icon="template" >}}
 {{< card link="profiles" title="ZTAuth* Profiles" icon="color-swatch" >}}
 {{< /cards >}}
