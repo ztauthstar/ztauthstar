@@ -3,7 +3,7 @@ title: Transaction Token Service
 cascade:
   type: docs
 weight: 3400
-prev: /openprotocolspec/2025-04-05/base-protcol/authstar-bindings/trust-relationships/
+prev: /openprotocolspec/2025-04-05/base-protcol/authstar-bindings/trust-relationships
 next: /openprotocolspec/2025-04-05/base-protcol/tts/tx-token
 ---
 

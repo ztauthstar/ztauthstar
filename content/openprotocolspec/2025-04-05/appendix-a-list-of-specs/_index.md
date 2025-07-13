@@ -3,7 +3,7 @@ title: Appendix A - List of Specifications
 cascade:
   type: docs
 weight: 5000
-prev: /openprotocolspec/2025-04-05/profiles/ztastar-authzen/
+prev: /openprotocolspec/2025-04-05/profiles/ztastar-authzen
 next: /openprotocolspec/versioning
 ---
 

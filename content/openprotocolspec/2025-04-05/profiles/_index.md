@@ -3,7 +3,7 @@ title: Profiles
 cascade:
   type: docs
 weight: 4000
-prev: /openprotocolspec/2025-04-05/ztastar-core-spec/
+prev: /openprotocolspec/2025-04-05/ztastar-core-spec
 next: /openprotocolspec/2025-04-05/architecture
 math: true
 ---

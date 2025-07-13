@@ -1,7 +1,7 @@
 ---
 title: Versioning
 type: docs
-prev: /openprotocolspec/2025-04-05/appendix-a-list-of-specs/
+prev: /openprotocolspec/2025-04-05/appendix-a-list-of-specs
 weight: 501
 ---
 
