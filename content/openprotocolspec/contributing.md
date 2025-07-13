@@ -29,7 +29,8 @@ To contribute to the project, follow the steps below:
 
 ## Writing assistance
 
-You may optionally use a Large Language Model (LLM) to improve the clarity and tone of your contributions.  
+You may optionally use a Large Language Model (LLM) to improve the clarity and tone of your contributions.
+
 This is allowed for both documentation and spec text, provided that the technical content remains accurate and verifiable.
 
 ## Committing changes
