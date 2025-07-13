@@ -1,5 +1,5 @@
 ---
-title: Transaction Tokens - ZTAuth* Profile Spec
+title: ZTAuth* Transaction Tokens Spec
 cascade:
   type: docs
 weight: 1003

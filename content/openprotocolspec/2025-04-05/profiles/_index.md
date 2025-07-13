@@ -10,5 +10,5 @@ math: true
 
 **ZTAuth\*** defines multiple profiles. Each profile extends one or more existing specifications to support specific use cases.
 
-- [Authorization API - ZTAuth* Profile Spec](/openprotocolspec/2025-04-05/profiles/ztastar-authzen): Extends the OpenID AuthZen Authorization API specification
-- [Transaction Tokens - ZTAuth* Profile Spec](/openprotocolspec/2025-04-05/profiles/ztastar-transaction-tokens): Extends the OAuth Transaction Tokens.
+- [ZTAStar Authorization API](/openprotocolspec/2025-04-05/profiles/ztastar-authzen): Extends the OpenID AuthZen Authorization API specification
+- [ZTAStar Transaction Tokens](/openprotocolspec/2025-04-05/profiles/ztastar-transaction-tokens): Extends the OAuth Transaction Tokens.
