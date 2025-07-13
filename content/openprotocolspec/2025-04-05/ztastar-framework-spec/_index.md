@@ -2,9 +2,9 @@
 title: ZTAuth* Framework Spec
 cascade:
   type: docs
-weight: 2000
+weight: 3000
 prev: /openprotocolspec/2025-04-05/manifest
-next: /openprotocolspec/2025-04-05/ztastar-models-spec/
+next: /openprotocolspec/2025-04-05/ztastar-core-spec/
 math: true
 ---
 ## Abstract
@@ -18,10 +18,9 @@ math: true
 - `[RFC8693]` OAuth 2.0 Token Exchange, IETF, January 2020, <https://datatracker.ietf.org/doc/html/rfc8693>
 - `[OAuthTransactionTokens]` OAuth Transaction Tokens, OAuth Workgroup, 4 September 2025, <https://www.ietf.org/archive/id/draft-ietf-oauth-transaction-tokens-05.html>.
 - `[AuthZEN API]` Authorization API 1.0, OpenID AuthZEN Workgroup, 6 September 2024, <https://openid.net/specs/authorization-api-1_0-01.html>.
-- `[ZTAStar-Framework]` ZTAuth* Framework, Version 1.0, April 2025, <https://spec.ztauthstar.com/openprotocolspec/2025-04-05/ztastar-framework-spec/>.
-- `[ZTAStar-Models]` ZTAuth* Models, Version 1.0, April 2025, <https://spec.ztauthstar.com/openprotocolspec/2025-04-05/ztastar-models-spec/>.
-- `[ZTAStar-Authorization-API]` ZTAuth* Authorization API Profile, Version 1.0, April 2025, <https://spec.ztauthstar.com/openprotocolspec/2025-04-05/profiles/ztastar-authzen>.
-- `[ZTAStar-Transaction-Tokens]` Transaction Tokens - ZTAuth* Profile, Version 1.0, April 2025, <https://spec.ztauthstar.com/openprotocolspec/2025-04-05/profiles/ztastar-transaction-tokens/>.
+- `[ZTAStar-Core]` ZTAuth* Core, Version 1.0, April 2025, <https://spec.ztauthstar.com/openprotocolspec/2025-04-05/ztastar-core-spec/>.
+- `[ZTAStar-Authorization-API]` ZTAuth* Authorization API, Version 1.0, April 2025, <https://spec.ztauthstar.com/openprotocolspec/2025-04-05/profiles/ztastar-authzen>.
+- `[ZTAStar-Transaction-Tokens]` ZTAuth* Transaction Tokens, Version 1.0, April 2025, <https://spec.ztauthstar.com/openprotocolspec/2025-04-05/profiles/ztastar-transaction-tokens/>.
 
 ## Appendix A - Terminology
 

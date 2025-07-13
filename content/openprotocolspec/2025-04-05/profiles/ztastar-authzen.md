@@ -16,8 +16,7 @@ math: true
 ### 2.1. Normative References
 
 - `[AuthZEN API]` Authorization API 1.0, OpenID AuthZEN Workgroup, 6 September 2024, <https://openid.net/specs/authorization-api-1_0-01.html>.
-- `[ZTAStar-Framework]` ZTAuth* Framework, Version 1.0, April 2025, <https://spec.ztauthstar.com/openprotocolspec/2025-04-05/ztastar-framework-spec/>.
-- `[ZTAStar-Models]` ZTAuth* Models, Version 1.0, April 2025, <https://spec.ztauthstar.com/openprotocolspec/2025-04-05/ztastar-models-spec/>.
+- `[ZTAStar-Core]` ZTAuth* Core, Version 1.0, April 2025, <https://spec.ztauthstar.com/openprotocolspec/2025-04-05/ztastar-core-spec/>.
 
 ## Appendix A - Terminology
 

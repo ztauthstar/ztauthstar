@@ -1,8 +1,8 @@
 ---
-title: ZTAuth* Models Spec
+title: ZTAuth* Core Spec
 cascade:
   type: docs
-weight: 3000
+weight: 2000
 prev: /openprotocolspec/2025-04-05/ztastar-framework-spec/
 next: /openprotocolspec/2025-04-05/profiles/ztastar-transaction-tokens/
 math: true
