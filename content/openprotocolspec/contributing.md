@@ -16,11 +16,6 @@ To get any help or get help:
 
 - Email us at [opensource@nitroagility.com](mailto:opensource@nitroagility.com)
 
-### Writing assistance
-
-You may optionally use a Large Language Model (LLM) to improve the clarity and tone of your contributions.  
-This is allowed for both documentation and spec text, provided that the technical content remains accurate and verifiable.
-
 ## Contribution Steps
 
 To contribute to the project, follow the steps below:
@@ -31,6 +26,11 @@ To contribute to the project, follow the steps below:
 - Make necessary changes and commit those changes. Make sure to test your changes.
 - Push changes to your branch.
 - Submit your changes for review.
+
+## Writing assistance
+
+You may optionally use a Large Language Model (LLM) to improve the clarity and tone of your contributions.  
+This is allowed for both documentation and spec text, provided that the technical content remains accurate and verifiable.
 
 ## Committing changes
 
