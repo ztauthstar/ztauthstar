@@ -1,27 +1,34 @@
 # NOTICE
 
-This project is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/).
+This specification is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/).
 
-> The work is attributed to Nitro Agility Srl as the sole author and responsible entity, except for referenced content, patterns, or other widely recognized knowledge attributed to their respective authors or sources.
-> All content, concepts, and implementation were conceived, designed, and executed by Nitro Agility Srl.
-> Any disputes or claims regarding this project should be addressed exclusively to Nitro Agility Srl.
-> Nitro Agility Srl assumes no responsibility for any errors or omissions in referenced content, which remain the responsibility of their respective authors or sources.
+It is intended to support multiple independent and interoperable implementations.
 
-[![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
+This document defines a model and protocol for fine-grained, auditable authorization in Zero Trust environments, with support for both human and non-human identities.
 
----
+> This work is authored and maintained by **Nitro Agility S.r.l.**, which holds sole responsibility for its content, structure, and distribution. Unless otherwise stated, all contributions—past, present, and future—are made on behalf of Nitro Agility S.r.l.
+> The project may include references to third-party standards, publicly recognized patterns, or external content. These elements remain the intellectual property of their respective authors or organizations and are acknowledged accordingly.
+> Nitro Agility S.r.l. is not liable for inaccuracies, omissions, or changes in such referenced material.
 
-> All contributors to this project, including its current and future authors, act strictly as representatives of Nitro Agility Srl.
-> Nitro Agility Srl retains full ownership, responsibility, and liability for the content, actions, and implications arising from this work.
-> Under no circumstances shall listed authors or any other contributors, past, present, or future, be held personally liable for any disputes, claims, or liabilities related to this document or its usage.
-> All such matters shall be addressed exclusively to Nitro Agility Srl.
+### Contributor & Liability Statement
 
----
+> All contributors to this repository act in their capacity as representatives of **Nitro Agility S.r.l.**, unless explicitly and formally declared otherwise.
+> Nitro Agility S.r.l. retains full ownership, authorship, and liability over this work. No individual contributor, including authors listed by name, may be held personally responsible for any claim, dispute, or legal matter arising from the content or its use.
+> This liability exemption applies equally to the company’s **founders, officers, employees, contractors, and legal agents**, who shall not be held personally responsible in connection with this work under any circumstance.
+> All communications and legal notices related to this work must be addressed **exclusively** to Nitro Agility S.r.l.
 
-The trademark `ZTAuth*` and its associated logo(s), as contained in this repository, are the exclusive intellectual property of Nitro Agility Srl.
+### Trademark Statement
 
-All rights reserved. Unauthorized use, reproduction, or distribution of the `ZTAuth*` trademark and its associated logo(s) is strictly prohibited.
+The name `ZTAuth*`, along with its associated logos, visual marks, and identifiers, is the exclusive intellectual property of **Nitro Agility S.r.l.**, and may be protected as a registered or unregistered trademark under applicable law.
 
-For inquiries regarding the use of the `ZTAuth*` trademark and its associated logo(s), please contact Nitro Agility S.r.l. at <opensource@nitroagility.com>.
+> You may use the `ZTAuth*` name solely to refer to this open specification, or to describe software or systems that faithfully implement the standard, provided that:
+>
+> - You do not modify the core specification in a way that changes its meaning or behavior;
+> - You do not misrepresent your work as officially maintained, approved, or endorsed by Nitro Agility S.r.l.;
+> - You clearly indicate any forks, extensions, or deviations from the official specification;
+> - You do not use the `ZTAuth*` name or logo in a way that may confuse, mislead, or imply affiliation with Nitro Agility S.r.l. where none exists.
 
-Copyright © 2024 Nitro Agility S.r.l. All Rights Reserved.
+Unauthorized use, reproduction, or distribution of the `ZTAuth*` trademark or its associated branding outside of the terms above is strictly prohibited.
+
+For trademark permissions, licensing, or related inquiries, please contact:  
+📧 [opensource@nitroagility.com](mailto:opensource@nitroagility.com)

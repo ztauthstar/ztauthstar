@@ -19,7 +19,11 @@ math: true
 
 ## Appendix C - Notices
 
-This project is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/).
+This specification is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/).
+
+It is intended to support multiple independent and interoperable implementations.
+
+This document defines a model and protocol for fine-grained, auditable authorization in Zero Trust environments, with support for both human and non-human identities.
 
 > This work is authored and maintained by **Nitro Agility S.r.l.**, which holds sole responsibility for its content, structure, and distribution. Unless otherwise stated, all contributions—past, present, and future—are made on behalf of Nitro Agility S.r.l.
 > The project may include references to third-party standards, publicly recognized patterns, or external content. These elements remain the intellectual property of their respective authors or organizations and are acknowledged accordingly.
