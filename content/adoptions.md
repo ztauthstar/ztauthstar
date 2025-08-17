@@ -7,7 +7,7 @@ Below is a list of `ZTAuth*` protocol adoptions, sorted by date.
 
 | **Project**  | **Link**                                   |
 |--------------|--------------------------------------------|
-| **Permguard**| [permguard.com](https://www.permguard.com) |
+| **Permguard**| [permguard.com](https://community.permguard.com) |
 
 For questions or ideas, open a thread in the [GitHub](https://github.com/ztauthstar/ztauthstar/issues) repo that fits your use case.
 
