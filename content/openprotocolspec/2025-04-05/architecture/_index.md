@@ -4,7 +4,7 @@ cascade:
   type: docs
 weight: 2000
 prev: /openprotocolspec/2025-04-05/manifest
-next: /openprotocolspec/2025-04-05/base-protcol
+next: /openprotocolspec/2025-04-05/appendix-a-list-of-specs
 ---
 
 ## ZTAuth\* Architectural Model
