@@ -2,6 +2,7 @@
 title: Model Types
 cascade:
   type: docs
+draft: true
 weight: 3202
 prev: /openprotocolspec/2025-04-05/base-protcol/authstar-models/ledgers
 next: /openprotocolspec/2025-04-05/base-protcol/object-types

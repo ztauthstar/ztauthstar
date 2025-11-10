@@ -2,6 +2,7 @@
 title: Ledgers
 cascade:
   type: docs
+draft: true
 weight: 3201
 prev: /openprotocolspec/2025-04-05/base-protcol/authstar-models
 next: /openprotocolspec/2025-04-05/base-protcol/model-types

@@ -2,6 +2,7 @@
 title: Decision Points
 cascade:
   type: docs
+draft: true
 weight: 3500
 prev: /openprotocolspec/2025-04-05/base-protcol/tts/tx-token
 next: /openprotocolspec/2025-04-05/base-protcol/decision-points/authorization-request

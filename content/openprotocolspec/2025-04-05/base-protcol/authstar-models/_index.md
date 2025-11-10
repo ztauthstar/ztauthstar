@@ -2,6 +2,7 @@
 title: Auth* Models
 cascade:
   type: docs
+draft: true
 weight: 3200
 prev: /openprotocolspec/2025-04-05/base-protcol/domains-zones
 next: /openprotocolspec/2025-04-05/base-protcol/authstar-models/ledgers

@@ -2,6 +2,7 @@
 title: Domains and Zones
 cascade:
   type: docs
+draft: true
 weight: 3100
 prev: /openprotocolspec/2025-04-05/base-protcol
 next: /openprotocolspec/2025-04-05/base-protcol/authstar-models

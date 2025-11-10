@@ -2,6 +2,7 @@
 title: Trust Level
 cascade:
   type: docs
+draft: true
 weight: 3503
 prev: /openprotocolspec/2025-04-05/base-protcol/decision-points/authz-check
 next: /openprotocolspec/2025-04-05/base-protcol/decision-points/trust-chain

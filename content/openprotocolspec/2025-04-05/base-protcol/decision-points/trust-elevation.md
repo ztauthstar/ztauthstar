@@ -2,6 +2,7 @@
 title: Trust Elevation
 cascade:
   type: docs
+draft: true
 weight: 3502
 prev: /openprotocolspec/2025-04-05/base-protcol/decision-points/authz-check
 next: /openprotocolspec/2025-04-05/base-protcol/decision-points/trust-levels

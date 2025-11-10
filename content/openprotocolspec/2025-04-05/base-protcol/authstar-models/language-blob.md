@@ -2,6 +2,7 @@
 title: Language Blob
 cascade:
   type: docs
+draft: true
 weight: 3205
 prev: /openprotocolspec/2025-04-05/base-protcol/authstar-models/manifest-blob
 next: /openprotocolspec/2025-04-05/base-protcol/authstar-bindings

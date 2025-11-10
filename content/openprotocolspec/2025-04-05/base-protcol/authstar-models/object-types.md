@@ -2,6 +2,7 @@
 title: Object Types
 cascade:
   type: docs
+draft: true
 weight: 3203
 prev: /openprotocolspec/2025-04-05/base-protcol/authstarmodels/model-types
 next: /openprotocolspec/2025-04-05/base-protcol/authstarmodels/manifest-blob

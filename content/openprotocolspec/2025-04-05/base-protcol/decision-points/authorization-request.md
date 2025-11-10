@@ -2,6 +2,7 @@
 title: Authorization Request
 cascade:
   type: docs
+draft: true
 weight: 3501
 prev: /openprotocolspec/2025-04-05/base-protcol/decision-points
 next: /openprotocolspec/2025-04-05/base-protcol/decision-points/trust-elevation
