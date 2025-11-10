@@ -58,9 +58,11 @@ Standards like [OpenID Connect](https://openid.net/specs/openid-connect-core-1_0
 
 ### Policy Governance
 
-Authorization logic is often hardcoded inside applications, making it difficult to control how access decisions are made or to track them for auditing. **ZTAuth\*** separates policy from application code by introducing a centralized layer for defining and enforcing authorization rules.
+Authorization logic is often hardcoded inside applications, making it difficult to control how access decisions are made or to track them for auditing. **ZTAuth\*** separates policy from application code by introducing a **policy layer** — which can be **centralized or decentralized** — for defining authorization rules.  
 
-Policies are stored in a **Git-like structure**, ensuring **immutability**, **versioning**, **correctness**, and **portability**. This enables consistent access control and supports integration with auditing, risk management, and compliance processes.
+Policies are stored in a **Git-like structure**, ensuring **immutability**, **versioning**, **correctness**, and **portability**. This enables consistent access control and supports integration with auditing, risk management, and compliance processes.  
+
+**Enforcement happens in a distributed way**, closely paired with the policy store.
 
 ### Workload Governance
 
@@ -70,14 +72,16 @@ Workloads can be grouped into **security groups** with assigned [**Trust Levels*
 
 ### Zero Trust Security Model
 
-ZTAuth\* builds a full **Authorization Request Context** based on both the identity of the subject and the identity of the workload. This dual identity model allows access decisions to consider not only *who* initiated the action, but also *what* is executing it.
+**ZTAuth\*** builds a complete **Authorization Request Context** by combining both the **subject identity** and the **workload identity**.  
+This dual-identity model allows authorization decisions to consider not only *who* initiated an action, but also *what* is executing it — ensuring that trust is evaluated across both human and machine boundaries.
 
-The **Authorization Request Context** can be materialized as a **Transaction Token (TxToken)**, issued by a `Transaction Token Service` and evaluated by a `Policy Decision Point`. This enables consistent, portable, and auditable enforcement across distributed environments.
+The **Authorization Request Context** is processed by a **Policy Decision Point (PDP)**, which evaluates the request under active **Trust Statements**.
 
-ZTAuth\* also supports [**Trust Elevation**](/openprotocolspec/2025-04-05/base-protcol/decision-points/trust-elevation), a process in which a workload may request access to the **authorization context of another identity**, under specific conditions. This is commonly used when a workload needs to temporarily act with the privileges of a different subject — for example, a service operating on behalf of a user or another system.
+**ZTAuth\*** also supports [**Trust Elevation**](/openprotocolspec/2025-04-05/base-protcol/decision-points/trust-elevation), a controlled process that allows a workload to operate within the **authorization context of another identity** — provided that all required **Trust Level conditions** are met.  
+This typically occurs when a service needs to perform an operation **on behalf of** a user or another workload, but only after the **target context’s policy** explicitly permits such elevation under verified conditions.
 
-**Trust Elevation** is always subject to policy evaluation and must follow predefined rules, including proof of consent when applicable.  
-This makes it suitable for dynamic and delegated access, while remaining aligned with Zero Trust principles.
+Each **Trust Elevation** is evaluated against policy-defined rules, which may include **context validation**, **attestation checks**, or **proof of consent**.  
+This ensures that elevated privileges are always **justified, auditable, and reversible**, maintaining full alignment with **Zero Trust principles** and enabling **dynamic, verifiable delegation** across distributed workloads.
 
 ### Delegation-First Model
 
