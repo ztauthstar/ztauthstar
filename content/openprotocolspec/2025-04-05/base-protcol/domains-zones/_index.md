@@ -8,7 +8,7 @@ prev: /openprotocolspec/2025-04-05/base-protcol
 next: /openprotocolspec/2025-04-05/base-protcol/authstar-models
 ---
 
-**ZTAuth*** enables the definition of trust domains and zones, and introduces a URI-based identifier called a **ZTID** to uniquely reference resources within those domains and zones.
+**ZTAuth\*** enables the definition of trust domains and zones, and introduces a URI-based identifier called a **ZTID** to uniquely reference resources within those domains and zones.
 
 ## ZTDomain
 

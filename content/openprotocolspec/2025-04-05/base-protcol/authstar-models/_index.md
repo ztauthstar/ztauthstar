@@ -8,7 +8,7 @@ prev: /openprotocolspec/2025-04-05/base-protcol/domains-zones
 next: /openprotocolspec/2025-04-05/base-protcol/authstar-models/ledgers
 ---
 
-**ZTAuth*** defines an authorization model and a trust model — collectively referred to as `auth* models`.
+**ZTAuth\*** defines an authorization model and a trust model — collectively referred to as `auth* models`.
 These models are designed in alignment with the core principles of Zero Trust and form the foundation of the `ZTAuth*` protocol.
 
 Each `auth* model` **MUST** satisfy the following properties:
