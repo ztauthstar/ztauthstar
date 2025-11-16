@@ -81,7 +81,7 @@ The PDP emits **Trusted Decisions** and records **Decision Logs**, enabling full
 
 ### 5. Trust Governance
 
-**Trust Governance** defines the overarching control plane for authoring, distributing, and auditing trust relationships and policies.  
+**Trust Governance** defines the overarching control-plane for authoring, distributing, and auditing trust relationships and policies.  
 It provides the governance framework that aligns technical authorization with organizational intent.
 
 This layer includes:
