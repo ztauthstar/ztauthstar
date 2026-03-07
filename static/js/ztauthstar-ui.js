@@ -185,5 +185,52 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
+    // ─── Mobile Menu Detection ────────────────────────────────
+    // Toggle body.zt-menu-open class to hide floating UI via CSS
+    (function() {
+      // Hextra hamburger: button with aria-controls or the menu toggle in nav
+      document.addEventListener('click', function(e) {
+        var btn = e.target.closest('button');
+        if (!btn) return;
+
+        // Detect hamburger open button (contains svg lines / hamburger icon)
+        var nav = btn.closest('nav, header, .nav-container');
+        if (!nav) return;
+
+        var svgPaths = btn.querySelectorAll('path, line, rect');
+        var ariaLabel = (btn.getAttribute('aria-label') || '').toLowerCase();
+        var isMenuBtn = ariaLabel.includes('menu') ||
+                        ariaLabel.includes('toggle') ||
+                        ariaLabel.includes('navigation') ||
+                        (svgPaths.length >= 2 && svgPaths.length <= 4);
+
+        // Also detect close button (×)
+        var isCloseBtn = btn.textContent.trim() === '×' ||
+                         btn.textContent.trim() === '✕' ||
+                         ariaLabel.includes('close');
+
+        if (isMenuBtn) {
+          // Toggle: if already open, close; otherwise open
+          document.body.classList.toggle('zt-menu-open');
+        } else if (isCloseBtn) {
+          document.body.classList.remove('zt-menu-open');
+        }
+      });
+
+      // Also remove class when clicking any link in the sidebar (navigating away)
+      document.addEventListener('click', function(e) {
+        if (e.target.closest('.hextra-sidebar-container a, .sidebar-container a')) {
+          document.body.classList.remove('zt-menu-open');
+        }
+      });
+
+      // Remove class on resize to desktop
+      window.addEventListener('resize', function() {
+        if (window.innerWidth >= 768) {
+          document.body.classList.remove('zt-menu-open');
+        }
+      });
+    })();
+
   });
 })();

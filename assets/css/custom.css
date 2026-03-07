@@ -1426,6 +1426,13 @@ html:not(.dark) nav.hextra-sidebar-container a[aria-current="page"] {
   color: #0284c7 !important;
 }
 
+/* ---------- MOBILE MENU — hide floating UI when open ---------- */
+body.zt-menu-open #zt-reading-time,
+body.zt-menu-open #zt-scroll-top,
+body.zt-menu-open #zt-scroll-progress {
+  display: none !important;
+}
+
 /* ---------- PRINT ---------- */
 @media print {
   body {
