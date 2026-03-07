@@ -46,17 +46,12 @@ body {
   letter-spacing: -0.011em;
 }
 
-/* ---------- TECHY GRID BACKGROUND ---------- */
-/* Grid + dot pattern for circuit-board feel */
+/* ---------- TECHY DOT BACKGROUND ---------- */
+/* Pure dot pattern — subtle, clean, no visible grid frames */
 body {
   background-image:
-    radial-gradient(circle, var(--zt-grid-color) 1px, transparent 1px),
-    linear-gradient(var(--zt-grid-color) 1px, transparent 1px),
-    linear-gradient(90deg, var(--zt-grid-color) 1px, transparent 1px);
-  background-size:
-    var(--zt-grid-size) var(--zt-grid-size),
-    var(--zt-grid-size) var(--zt-grid-size),
-    var(--zt-grid-size) var(--zt-grid-size);
+    radial-gradient(circle, var(--zt-grid-color) 1px, transparent 1px);
+  background-size: var(--zt-grid-size) var(--zt-grid-size);
   background-attachment: fixed;
 }
 
