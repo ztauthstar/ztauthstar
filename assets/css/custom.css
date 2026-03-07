@@ -668,6 +668,24 @@ footer {
   border-top-color: var(--zt-border-dark);
 }
 
+/* Force custom footer centered */
+.hextra-custom-footer {
+  width: 100%;
+  max-width: 100%;
+  text-align: center !important;
+  display: flex !important;
+  justify-content: center !important;
+}
+
+/* Center the "Powered by Hextra" line too */
+.hextra-footer > div {
+  justify-content: center !important;
+}
+
+.hextra-footer > div > div {
+  align-items: center !important;
+}
+
 /* ---------- SELECTION ---------- */
 ::selection {
   background: rgba(14, 165, 233, 0.25);
