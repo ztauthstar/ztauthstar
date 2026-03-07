@@ -112,14 +112,19 @@
       // Insert into content and vertically center with the h1
       var firstH = contentEl.querySelector('h1, h2');
       contentEl.insertBefore(badge, contentEl.firstChild);
+      var badgeOriginalTop = 0;
       if (firstH) {
         var hTop = firstH.offsetTop;
         var hHeight = firstH.offsetHeight;
         var badgeHeight = badge.offsetHeight || 24;
-        badge.style.top = (hTop + (hHeight - badgeHeight) / 2) + 'px';
+        badgeOriginalTop = hTop + (hHeight - badgeHeight) / 2;
+        badge.style.top = badgeOriginalTop + 'px';
       }
 
-      // Update remaining time live on scroll
+      // Sticky behavior: switch to fixed when scrolled past
+      var fixedTopValue = '5.5rem';
+      var contentRect;
+
       function updateReadingTime() {
         var scrollTop = window.scrollY || document.documentElement.scrollTop;
         var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -134,9 +139,27 @@
             readText.textContent = minutesLeft + ' min left';
           }
         }
+
+        // Sticky: when badge's original position scrolls out, make it fixed
+        contentRect = contentEl.getBoundingClientRect();
+        var badgeAbsoluteY = contentRect.top + badgeOriginalTop;
+        var fixedThreshold = parseFloat(getComputedStyle(document.documentElement).fontSize) * 5.5;
+
+        if (badgeAbsoluteY < fixedThreshold) {
+          badge.style.position = 'fixed';
+          badge.style.top = fixedTopValue;
+          badge.style.right = '1.5rem';
+          badge.classList.add('zt-reading-fixed');
+        } else {
+          badge.style.position = 'absolute';
+          badge.style.top = badgeOriginalTop + 'px';
+          badge.style.right = '0';
+          badge.classList.remove('zt-reading-fixed');
+        }
       }
 
       window.addEventListener('scroll', updateReadingTime, { passive: true });
+      updateReadingTime();
       } // end if totalMinutes >= 3
     }
 

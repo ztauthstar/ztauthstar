@@ -1082,16 +1082,28 @@ nav.hextra-sidebar-container a[aria-current="page"]::before {
   border-radius: 20px;
   padding: 0.25rem 0.75rem;
   letter-spacing: 0.03em;
-  transition: all var(--zt-transition);
+  transition: background 0.2s ease, box-shadow 0.2s ease;
   position: absolute;
   right: 0;
   z-index: 10;
+}
+
+/* Fixed/floating state — solid backdrop for readability */
+#zt-reading-time.zt-reading-fixed {
+  background: #f1f5f9;
+  box-shadow: 0 2px 12px rgba(14, 165, 233, 0.15), 0 0 0 4px rgba(241, 245, 249, 1);
+  z-index: 9997;
 }
 
 .dark #zt-reading-time {
   background: linear-gradient(135deg, rgba(14, 165, 233, 0.1), rgba(34, 211, 238, 0.05));
   border-color: rgba(14, 165, 233, 0.2);
   color: var(--zt-cyan);
+}
+
+.dark #zt-reading-time.zt-reading-fixed {
+  background: #0f1524;
+  box-shadow: 0 2px 12px rgba(14, 165, 233, 0.15), 0 0 0 4px #0f1524;
 }
 
 #zt-reading-icon {
