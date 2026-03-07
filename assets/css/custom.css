@@ -46,6 +46,16 @@ body {
   letter-spacing: -0.011em;
 }
 
+/* Consistent font across menu and content */
+.sidebar-container,
+.sidebar-container a,
+nav.hextra-sidebar-container a,
+.nav-container a,
+.hextra-toc,
+.hextra-toc a {
+  font-family: inherit;
+}
+
 /* ---------- TECHY DOT BACKGROUND ---------- */
 /* Pure dot pattern — subtle, clean, no visible grid frames */
 body {
@@ -210,6 +220,60 @@ body.dark::before {
   font-size: 0.85rem;
   line-height: 1.7;
 }
+
+/* VS Code-inspired dark syntax colors */
+.dark .content pre,
+.dark .content pre code {
+  background: #1e1e2e !important;
+}
+
+.content pre,
+.content pre code {
+  background: #f8fafc;
+}
+
+/* Chroma token colors — VS Code Dark+ inspired */
+.dark .chroma { color: #d4d4d4; background: #1e1e2e; }
+.dark .chroma .ln { color: rgba(14, 165, 233, 0.3); }
+.dark .chroma .lnt { color: rgba(14, 165, 233, 0.3); }
+.dark .chroma .k  { color: #569cd6; }  /* Keyword */
+.dark .chroma .kd { color: #569cd6; }  /* KeywordDeclaration */
+.dark .chroma .kn { color: #c586c0; }  /* KeywordNamespace */
+.dark .chroma .kp { color: #569cd6; }  /* KeywordPseudo */
+.dark .chroma .kr { color: #569cd6; }  /* KeywordReserved */
+.dark .chroma .kt { color: #4ec9b0; }  /* KeywordType */
+.dark .chroma .s  { color: #ce9178; }  /* String */
+.dark .chroma .s1 { color: #ce9178; }
+.dark .chroma .s2 { color: #ce9178; }
+.dark .chroma .sa { color: #ce9178; }
+.dark .chroma .sb { color: #ce9178; }
+.dark .chroma .sc { color: #ce9178; }
+.dark .chroma .sd { color: #6a9955; }
+.dark .chroma .se { color: #d7ba7d; }
+.dark .chroma .sh { color: #ce9178; }
+.dark .chroma .si { color: #ce9178; }
+.dark .chroma .sx { color: #ce9178; }
+.dark .chroma .sr { color: #d16969; }
+.dark .chroma .ss { color: #ce9178; }
+.dark .chroma .na { color: #9cdcfe; }  /* NameAttribute */
+.dark .chroma .nb { color: #4ec9b0; }  /* NameBuiltin */
+.dark .chroma .nc { color: #4ec9b0; }  /* NameClass */
+.dark .chroma .nf { color: #dcdcaa; }  /* NameFunction */
+.dark .chroma .nn { color: #4ec9b0; }  /* NameNamespace */
+.dark .chroma .nt { color: #569cd6; }  /* NameTag */
+.dark .chroma .nv { color: #9cdcfe; }  /* NameVariable */
+.dark .chroma .m  { color: #b5cea8; }  /* Number */
+.dark .chroma .mi { color: #b5cea8; }
+.dark .chroma .mf { color: #b5cea8; }
+.dark .chroma .mh { color: #b5cea8; }
+.dark .chroma .mo { color: #b5cea8; }
+.dark .chroma .o  { color: #d4d4d4; }  /* Operator */
+.dark .chroma .p  { color: #d4d4d4; }  /* Punctuation */
+.dark .chroma .c  { color: #6a9955; font-style: italic; }  /* Comment */
+.dark .chroma .c1 { color: #6a9955; font-style: italic; }
+.dark .chroma .cm { color: #6a9955; font-style: italic; }
+.dark .chroma .cp { color: #6a9955; }
+.dark .chroma .err { color: #f44747; }
 
 /* Terminal-style top bar on code blocks */
 .content pre::before {
@@ -420,15 +484,84 @@ body.dark::before {
   font-size: 0.85rem;
 }
 
-/* Tables always full width with equal columns */
+/* Tables always full width — stretch columns evenly */
 .content table {
   width: 100% !important;
-  table-layout: fixed;
+  min-width: 100% !important;
+  table-layout: fixed !important;
 }
 
-.content table th,
-.content table td {
-  width: auto;
+/* ---------- MERMAID DIAGRAMS — Site-Themed ---------- */
+/* Container */
+.mermaid,
+pre.mermaid {
+  background: transparent !important;
+  border: 1px solid rgba(14, 165, 233, 0.12);
+  border-radius: var(--zt-radius);
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  text-align: center;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 0 20px rgba(14, 165, 233, 0.05);
+  transition: border-color var(--zt-transition);
+}
+
+.mermaid:hover,
+pre.mermaid:hover {
+  border-color: rgba(14, 165, 233, 0.25);
+}
+
+/* Mermaid theme overrides for dark mode */
+.mermaid .node rect,
+.mermaid .node polygon,
+.mermaid .node circle {
+  fill: rgba(14, 165, 233, 0.08) !important;
+  stroke: var(--zt-accent) !important;
+  stroke-width: 1.5px !important;
+}
+
+.mermaid .node .label,
+.mermaid text {
+  fill: currentColor !important;
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 0.85rem !important;
+}
+
+.mermaid .edgePath .path {
+  stroke: var(--zt-accent) !important;
+  stroke-width: 1.5px !important;
+}
+
+.mermaid .arrowheadPath {
+  fill: var(--zt-accent) !important;
+}
+
+.mermaid .cluster rect {
+  fill: rgba(14, 165, 233, 0.04) !important;
+  stroke: rgba(14, 165, 233, 0.2) !important;
+}
+
+.mermaid .label {
+  color: currentColor !important;
+}
+
+/* ---------- KATEX / MATH ---------- */
+.katex {
+  font-size: 1.1em;
+}
+
+.katex-display {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  border-left: 3px solid rgba(14, 165, 233, 0.2);
+  border-radius: 0 var(--zt-radius) var(--zt-radius) 0;
+  background: rgba(14, 165, 233, 0.02);
+  overflow-x: auto;
+}
+
+.dark .katex-display {
+  background: rgba(14, 165, 233, 0.04);
+  border-left-color: rgba(14, 165, 233, 0.3);
 }
 
 /* ---------- CARDS ---------- */
@@ -604,8 +737,7 @@ header nav {
 
 /* ---------- TOC (Table of Contents) — Right Sidebar ---------- */
 .hextra-toc {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.78rem;
+  font-size: 0.82rem;
 }
 
 /* "On this page" label */
@@ -732,12 +864,12 @@ footer {
   justify-content: center !important;
 }
 
-/* Center the "Powered by Hextra" line too */
-.hextra-footer > div {
+/* Center only the "Powered by Hextra" line (not the theme toggle) */
+.hextra-footer > div:last-of-type:not(:first-of-type) {
   justify-content: center !important;
 }
 
-.hextra-footer > div > div {
+.hextra-footer > div:last-of-type:not(:first-of-type) > div {
   align-items: center !important;
 }
 
@@ -1132,17 +1264,21 @@ nav.hextra-sidebar-container a[aria-current="page"]::before {
 /* ---------- IMAGE CAPTIONS ---------- */
 .zt-img-caption {
   text-align: center;
-  font-size: 0.78rem;
-  font-family: 'JetBrains Mono', monospace;
-  color: rgba(100, 116, 139, 0.8);
-  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: rgba(100, 116, 139, 0.9);
+  margin-top: 0.6rem;
   margin-bottom: 1.5rem;
-  letter-spacing: 0.02em;
-  font-style: italic;
+  line-height: 1.6;
 }
 
 .dark .zt-img-caption {
-  color: rgba(148, 163, 184, 0.6);
+  color: rgba(148, 163, 184, 0.7);
+}
+
+/* Override bold highlight for captions — keep it plain */
+.zt-img-caption strong {
+  background: none;
+  font-weight: 600;
 }
 
 /* Image hover zoom indicator */

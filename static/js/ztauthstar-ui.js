@@ -61,7 +61,8 @@
       if (e.key === 'Escape') closeLightbox();
     });
 
-    // Attach click handlers + generate captions
+    // Attach click handlers + generate numbered captions
+    var imgCounter = 0;
     var contentImgs = document.querySelectorAll('.content img');
     contentImgs.forEach(function(img) {
       img.style.cursor = 'pointer';
@@ -71,11 +72,12 @@
         openLightbox(img.src, img.alt);
       });
 
-      // Add caption if alt text exists and not already in a figure
+      // Add numbered caption if alt text exists and not already in a figure
       if (img.alt && img.alt.trim() !== '' && !img.closest('figure')) {
+        imgCounter++;
         var caption = document.createElement('div');
         caption.className = 'zt-img-caption';
-        caption.textContent = img.alt;
+        caption.innerHTML = '<strong>Figure ' + imgCounter + '</strong> — ' + img.alt;
         img.parentNode.insertBefore(caption, img.nextSibling);
       }
     });
@@ -97,6 +99,9 @@
       var wordCount = text.trim().split(/\s+/).length;
       var wordsPerMinute = 200;
       var totalMinutes = Math.ceil(wordCount / wordsPerMinute);
+
+      // Only show on pages with significant content (3+ min read)
+      if (totalMinutes >= 3) {
 
       // Create reading time badge
       var badge = document.createElement('div');
@@ -126,6 +131,7 @@
       }
 
       window.addEventListener('scroll', updateReadingTime, { passive: true });
+      } // end if totalMinutes >= 3
     }
 
     // ─── Scroll to Top Button ──────────────────────────────────

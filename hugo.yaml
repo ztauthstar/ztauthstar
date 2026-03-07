@@ -17,6 +17,7 @@ module:
     - path: github.com/imfing/hextra
 
 params:
+  math: true
   navbar:
     displayTitle: false
     displayLogo: true
