@@ -1,9 +1,9 @@
 ---
-title: Architecture
+title: The Governance Model
 cascade:
   type: docs
-weight: 2000
-prev: /openprotocolspec/v0.1
+weight: 3000
+prev: /openprotocolspec/v0.1/governance-stack
 next: /openprotocolspec/v0.1/appendix-a-list-of-specs
 ---
 

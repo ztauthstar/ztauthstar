@@ -8,7 +8,7 @@ weight: 3
 aliases:
   - /draft
 prev: /openprotocolspec
-next: /openprotocolspec/v0.1/architecture
+next: /openprotocolspec/v0.1/governance-stack
 ---
 
 > [!DEFINITION]
