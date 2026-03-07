@@ -101,7 +101,7 @@
       // Create reading time badge
       var badge = document.createElement('div');
       badge.id = 'zt-reading-time';
-      badge.innerHTML = '<span id="zt-reading-icon">📖</span> <span id="zt-reading-text">' + totalMinutes + ' min read</span>';
+      badge.innerHTML = '<svg id="zt-reading-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> <span id="zt-reading-text">' + totalMinutes + ' min read</span>';
 
       // Insert before the first heading in content
       var firstH = contentEl.querySelector('h1, h2');
