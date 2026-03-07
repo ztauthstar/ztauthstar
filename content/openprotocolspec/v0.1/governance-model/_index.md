@@ -3,8 +3,8 @@ title: The Governance Model
 cascade:
   type: docs
 weight: 3000
-prev: /openprotocolspec/v0.1/governance-stack
-next: /openprotocolspec/v0.1/appendix-a-list-of-specs
+prev: /openprotocolspec/v0.1/authority-vs-governance
+next: /openprotocolspec/v0.1/ztauth-spec
 ---
 
 ## ZTAuth\* Architectural Model

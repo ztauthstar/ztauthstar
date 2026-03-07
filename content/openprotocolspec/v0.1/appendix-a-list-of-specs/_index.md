@@ -3,7 +3,7 @@ title: Appendix A - List of Specifications
 cascade:
   type: docs
 weight: 9000
-prev: /openprotocolspec/v0.1/architecture
+prev: /openprotocolspec/v0.1/ztauth-spec
 next: /openprotocolspec/versioning
 ---
 
