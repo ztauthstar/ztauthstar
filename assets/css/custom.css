@@ -18,11 +18,11 @@
   --zt-amber:         #fbbf24;   /* amber-400   */
 
   /* Surfaces */
-  --zt-surface:       #f0f4f8;
+  --zt-surface:       #f1f5f9;
   --zt-surface-dark:  #0a0e1a;
-  --zt-border:        #cbd5e1;
+  --zt-border:        #c7d2e0;
   --zt-border-dark:   #1e293b;
-  --zt-glass:         rgba(240, 244, 248, 0.85);
+  --zt-glass:         rgba(241, 245, 249, 0.88);
   --zt-glass-dark:    rgba(10, 14, 26, 0.75);
   --zt-glow:          0 0 40px rgba(14, 165, 233, 0.12);
   --zt-radius:        10px;
@@ -1096,6 +1096,59 @@ nav.hextra-sidebar-container a[aria-current="page"]::before {
   .content h1::after {
     width: 40px;
   }
+}
+
+/* ---------- LIGHT MODE POLISH ---------- */
+/* Give light mode a subtle bluish-gray tint instead of pure white */
+html:not(.dark) body {
+  background-color: #f8fafc;
+}
+
+html:not(.dark) .nav-container-blur {
+  background: rgba(248, 250, 252, 0.85) !important;
+}
+
+html:not(.dark) .hextra-footer {
+  background-color: #f1f5f9 !important;
+}
+
+/* Light mode callout boxes */
+html:not(.dark) .hx-bg-orange-50 {
+  background-color: rgba(14, 165, 233, 0.04) !important;
+}
+
+html:not(.dark) .hx-border-orange-100 {
+  border-color: rgba(14, 165, 233, 0.15) !important;
+}
+
+html:not(.dark) .hx-text-orange-800 {
+  color: #075985 !important;
+}
+
+/* Light mode cards with subtle shadow */
+html:not(.dark) .hextra-cards .hextra-card {
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+/* Light mode code blocks */
+html:not(.dark) .content pre {
+  background: #f8fafc;
+  border-color: #e2e8f0;
+}
+
+/* Light mode blockquotes */
+html:not(.dark) .content blockquote {
+  background: linear-gradient(135deg, rgba(14, 165, 233, 0.03), rgba(34, 211, 238, 0.02));
+}
+
+/* Light mode sidebar active */
+html:not(.dark) .sidebar-container a[aria-current="true"],
+html:not(.dark) .sidebar-container a[aria-current="page"],
+html:not(.dark) nav.hextra-sidebar-container a[aria-current="true"],
+html:not(.dark) nav.hextra-sidebar-container a[aria-current="page"] {
+  background: linear-gradient(90deg, rgba(14, 165, 233, 0.08), transparent);
+  color: #0284c7 !important;
 }
 
 /* ---------- PRINT ---------- */
