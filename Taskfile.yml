@@ -26,7 +26,7 @@ tasks:
   docs:
     cmds:
       - hugo mod tidy 
-      - hugo server --logLevel debug --disableFastRender -p 1315
+      - hugo server --logLevel debug --disableFastRender -p 1316
   update:
     cmds:
       - hugo mod get -u

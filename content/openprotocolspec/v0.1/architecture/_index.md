@@ -3,8 +3,8 @@ title: Architecture
 cascade:
   type: docs
 weight: 2000
-prev: /openprotocolspec/2025-04-05/manifest
-next: /openprotocolspec/2025-04-05/architecture/ztauthstart-trust-plane
+prev: /openprotocolspec/v0.1
+next: /openprotocolspec/v0.1/appendix-a-list-of-specs
 ---
 
 ## ZTAuth\* Architectural Model
