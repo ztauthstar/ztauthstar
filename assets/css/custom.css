@@ -131,6 +131,7 @@ body.dark::before {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   padding-bottom: 0.3rem;
+  margin-top: 1rem;
   margin-bottom: 1.5rem;
   position: relative;
 }
@@ -153,6 +154,14 @@ body.dark::before {
 }
 
 .content h2::before {
+  content: '';
+  position: relative;
+  color: var(--zt-accent);
+  opacity: 0.5;
+  font-size: 0.9em;
+}
+
+.content h2::after {
   content: '';
   position: absolute;
   left: 0;
@@ -275,21 +284,48 @@ body.dark::before {
 .dark .chroma .cp { color: #6a9955; }
 .dark .chroma .err { color: #f44747; }
 
-/* Terminal-style top bar on code blocks */
-.content pre::before {
-  content: '● ● ●';
-  display: block;
-  font-size: 0.55rem;
-  letter-spacing: 4px;
-  color: rgba(14, 165, 233, 0.25);
-  padding: 0.4rem 0.8rem 0;
-  margin-bottom: -0.3rem;
-  user-select: none;
-}
-
-.dark .content pre::before {
-  color: rgba(14, 165, 233, 0.4);
-}
+/* Chroma token colors — VS Code Light+ inspired */
+.chroma { color: #1e1e1e; background: #f8fafc; }
+.chroma .ln { color: rgba(14, 165, 233, 0.4); }
+.chroma .lnt { color: rgba(14, 165, 233, 0.4); }
+.chroma .k  { color: #0000ff; }  /* Keyword */
+.chroma .kd { color: #0000ff; }  /* KeywordDeclaration */
+.chroma .kn { color: #af00db; }  /* KeywordNamespace */
+.chroma .kp { color: #0000ff; }  /* KeywordPseudo */
+.chroma .kr { color: #0000ff; }  /* KeywordReserved */
+.chroma .kt { color: #267f99; }  /* KeywordType */
+.chroma .s  { color: #a31515; }  /* String */
+.chroma .s1 { color: #a31515; }
+.chroma .s2 { color: #a31515; }
+.chroma .sa { color: #a31515; }
+.chroma .sb { color: #a31515; }
+.chroma .sc { color: #a31515; }
+.chroma .sd { color: #008000; }
+.chroma .se { color: #ee0000; }
+.chroma .sh { color: #a31515; }
+.chroma .si { color: #a31515; }
+.chroma .sx { color: #a31515; }
+.chroma .sr { color: #811f3f; }
+.chroma .ss { color: #a31515; }
+.chroma .na { color: #e50000; }  /* NameAttribute */
+.chroma .nb { color: #267f99; }  /* NameBuiltin */
+.chroma .nc { color: #267f99; }  /* NameClass */
+.chroma .nf { color: #795e26; }  /* NameFunction */
+.chroma .nn { color: #267f99; }  /* NameNamespace */
+.chroma .nt { color: #800000; }  /* NameTag */
+.chroma .nv { color: #001080; }  /* NameVariable */
+.chroma .m  { color: #098658; }  /* Number */
+.chroma .mi { color: #098658; }
+.chroma .mf { color: #098658; }
+.chroma .mh { color: #098658; }
+.chroma .mo { color: #098658; }
+.chroma .o  { color: #000000; }  /* Operator */
+.chroma .p  { color: #000000; }  /* Punctuation */
+.chroma .c  { color: #008000; font-style: italic; }  /* Comment */
+.chroma .c1 { color: #008000; font-style: italic; }
+.chroma .cm { color: #008000; font-style: italic; }
+.chroma .cp { color: #008000; }
+.chroma .err { color: #d00000; }
 
 /* ---------- BLOCKQUOTES ---------- */
 .content blockquote {
@@ -905,6 +941,7 @@ footer {
 /* ---------- PAGE TRANSITION ANIMATION ---------- */
 .content {
   animation: fadeInUp 0.3s ease-out;
+  position: relative;
 }
 
 @keyframes fadeInUp {
@@ -1021,7 +1058,7 @@ nav.hextra-sidebar-container a[aria-current="page"]::before {
 
 /* H3 with subtle monospace prefix — section markers */
 .content h3::before {
-  content: '§ ';
+  content: '';
   color: var(--zt-accent);
   opacity: 0.5;
   font-size: 0.9em;
@@ -1038,15 +1075,17 @@ nav.hextra-sidebar-container a[aria-current="page"]::before {
   align-items: center;
   gap: 0.4rem;
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   color: var(--zt-accent);
   background: linear-gradient(135deg, rgba(14, 165, 233, 0.06), rgba(34, 211, 238, 0.04));
   border: 1px solid rgba(14, 165, 233, 0.15);
   border-radius: 20px;
-  padding: 0.3rem 0.8rem;
-  margin-bottom: 1.5rem;
+  padding: 0.25rem 0.75rem;
   letter-spacing: 0.03em;
   transition: all var(--zt-transition);
+  position: absolute;
+  right: 0;
+  z-index: 10;
 }
 
 .dark #zt-reading-time {
@@ -1058,6 +1097,14 @@ nav.hextra-sidebar-container a[aria-current="page"]::before {
 #zt-reading-icon {
   flex-shrink: 0;
   opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  #zt-reading-time {
+    font-size: 0.6rem;
+    padding: 0.2rem 0.6rem;
+    gap: 0.3rem;
+  }
 }
 
 /* ---------- SCROLL PROGRESS BAR ---------- */
@@ -1174,6 +1221,12 @@ nav.hextra-sidebar-container a[aria-current="page"]::before {
   text-align: center;
   max-width: 600px;
   letter-spacing: 0.02em;
+}
+
+#zt-lightbox-caption strong {
+  background: none;
+  color: var(--zt-cyan);
+  font-weight: 700;
 }
 
 #zt-lightbox-close {

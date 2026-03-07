@@ -39,9 +39,9 @@ This model leads to **security gaps**, **lack of enforcement guarantees**, and *
 > **Note:**  
 > The problem space can be summarized as:
 >
-> ```
-> [Token Issued] → [Token Delivered] → [ ??? ] ← ZTAuth* governs this part
-> ```
+> 
+> `[Token Issued] → [Token Delivered] → [ ??? ] ← ZTAuth* governs this part`
+> 
 >
 > Traditional token systems stop at delivery.  
 > **ZTAuth\*** starts where they end.

@@ -40,11 +40,16 @@
     var lbImg = document.getElementById('zt-lightbox-img');
     var lbCaption = document.getElementById('zt-lightbox-caption');
 
-    function openLightbox(src, alt) {
+    function openLightbox(src, alt, figureLabel) {
       lbImg.src = src;
       lbImg.alt = alt;
-      lbCaption.textContent = alt || '';
-      lbCaption.style.display = alt ? 'block' : 'none';
+      if (figureLabel) {
+        lbCaption.innerHTML = '<strong>' + figureLabel + '</strong> — ' + (alt || '');
+        lbCaption.style.display = 'block';
+      } else {
+        lbCaption.textContent = alt || '';
+        lbCaption.style.display = alt ? 'block' : 'none';
+      }
       overlay.classList.add('zt-lightbox-open');
       document.body.style.overflow = 'hidden';
     }
@@ -61,34 +66,30 @@
       if (e.key === 'Escape') closeLightbox();
     });
 
-    // Attach click handlers + generate numbered captions
+    // Attach click handlers + generate numbered captions (single pass)
     var imgCounter = 0;
-    var contentImgs = document.querySelectorAll('.content img');
-    contentImgs.forEach(function(img) {
+    var allContentImgs = document.querySelectorAll('.content img');
+    allContentImgs.forEach(function(img) {
       img.style.cursor = 'pointer';
       img.setAttribute('title', 'Click to zoom');
 
-      img.addEventListener('click', function() {
-        openLightbox(img.src, img.alt);
-      });
+      var figLabel = null;
 
-      // Add numbered caption if alt text exists and not already in a figure
-      if (img.alt && img.alt.trim() !== '' && !img.closest('figure')) {
+      if (img.alt && img.alt.trim() !== '') {
         imgCounter++;
-        var caption = document.createElement('div');
-        caption.className = 'zt-img-caption';
-        caption.innerHTML = '<strong>Figure ' + imgCounter + '</strong> — ' + img.alt;
-        img.parentNode.insertBefore(caption, img.nextSibling);
-      }
-    });
+        figLabel = 'Figure ' + imgCounter;
 
-    // Also handle figure images
-    var figImgs = document.querySelectorAll('.content figure img');
-    figImgs.forEach(function(img) {
-      img.style.cursor = 'pointer';
-      img.setAttribute('title', 'Click to zoom');
+        // Add visible caption below the image only if NOT inside a <figure>
+        if (!img.closest('figure')) {
+          var caption = document.createElement('div');
+          caption.className = 'zt-img-caption';
+          caption.innerHTML = '<strong>' + figLabel + '</strong> — ' + img.alt;
+          img.parentNode.insertBefore(caption, img.nextSibling);
+        }
+      }
+
       img.addEventListener('click', function() {
-        openLightbox(img.src, img.alt);
+        openLightbox(img.src, img.alt, figLabel);
       });
     });
 
@@ -103,27 +104,32 @@
       // Only show on pages with significant content (3+ min read)
       if (totalMinutes >= 3) {
 
-      // Create reading time badge
+      // Create reading time badge (positioned inline with h1 title)
       var badge = document.createElement('div');
       badge.id = 'zt-reading-time';
-      badge.innerHTML = '<svg id="zt-reading-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> <span id="zt-reading-text">' + totalMinutes + ' min read</span>';
+      badge.innerHTML = '<svg id="zt-reading-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> <span id="zt-reading-text">' + totalMinutes + ' min left</span>';
 
-      // Insert before the first heading in content
+      // Insert into content and vertically center with the h1
       var firstH = contentEl.querySelector('h1, h2');
+      contentEl.insertBefore(badge, contentEl.firstChild);
       if (firstH) {
-        firstH.parentNode.insertBefore(badge, firstH.nextSibling);
+        var hTop = firstH.offsetTop;
+        var hHeight = firstH.offsetHeight;
+        var badgeHeight = badge.offsetHeight || 24;
+        badge.style.top = (hTop + (hHeight - badgeHeight) / 2) + 'px';
       }
 
-      // Update reading time as user scrolls
+      // Update remaining time live on scroll
       function updateReadingTime() {
         var scrollTop = window.scrollY || document.documentElement.scrollTop;
         var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
         var pct = docHeight > 0 ? scrollTop / docHeight : 0;
         var minutesLeft = Math.max(1, Math.ceil(totalMinutes * (1 - pct)));
         var readText = document.getElementById('zt-reading-text');
+
         if (readText) {
           if (pct >= 0.95) {
-            readText.textContent = 'Done reading ✓';
+            readText.textContent = 'Done ✓';
           } else {
             readText.textContent = minutesLeft + ' min left';
           }
