@@ -246,6 +246,7 @@ Authority_{after} \subseteq Authority_{before}
 $$
 
 ## Authority and Governance Together
+
 ```text
   Identity + Intent
            │
@@ -273,15 +274,32 @@ Governance:
 
 ## ZTAuth* Model
 
-ZTAuth* is the governance layer that operates above authority.
+Authority continuity defines what is structurally possible.
+It guarantees that authority cannot expand, cannot be reconstructed,
+and cannot escape its origin.
 
-It introduces structured governance over execution continuity through:
+> Authority continuity is formally defined in the
+> [PIC Model](https://www.pic-protocol.org) — Provenance Identity Continuity.
+> ZTAuth* builds its governance layer above it.
 
-- **Auth* Models** — distributed trust models that define how trust is
-  established, propagated, and evaluated across execution boundaries.
-  Auth* models are not directional by default. Trust can flow across
-  organizational, workload, and identity boundaries in any direction,
-  governed by policy.
+But structural guarantees are not enough for real systems.
+
+Real systems need to answer a different set of questions:
+
+- Is this execution currently permitted under active policy?
+- Does the trust relationship between workloads satisfy governance requirements?
+- Under what conditions can execution operate within another origin's context?
+
+These are governance questions. They sit above authority continuity.
+**ZTAuth* is the governance layer that operates above authority continuity.**
+
+It introduces structured governance through:
+
+- **Auth* Models** — the storage and distribution layer for trust policies.
+  Auth* models define how trust policies, business policies, and trust
+  statements are stored, versioned, and shared across execution boundaries.
+  Trust Elevation and Trust Levels read from Auth* models to evaluate
+  whether conditions for elevation are met.
 
 - **Trust Elevation** — a controlled process that allows execution to
   operate within the authorization context of an origin. That origin
@@ -306,6 +324,24 @@ $$
 
 Governance cannot introduce new privileges.
 It can only restrict what authority already permits.
+
+The relationship between the two layers is fixed:
+
+```text
+    Authority Continuity
+(structural — cannot be violated)
+           │
+           ▼
+    ZTAuth* Governance
+(policy — restricts what authority permits)
+           │
+           ▼
+       Execution
+```
+
+Authority continuity provides the floor.
+ZTAuth* governance operates within it.
+Neither layer can expand authority.
 
 ## Final Principle
 
