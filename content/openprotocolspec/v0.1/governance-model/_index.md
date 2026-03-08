@@ -56,10 +56,10 @@ A **Trusted Input** represents the initial trust material used to start the auth
 
 Accepted examples include, but are not limited to:
 
+- **PIC Causal Authority (PCA)** — the causally derived authority state defined in the [PIC Model specification](https://github.com/pic-protocol/pic-spec/blob/main/draft/0.1/pic-spec.md), carrying origin principal, authorized operations, and verifiable provenance across the execution chain
 - OAuth **Access Tokens**
 - **JWTs** and **X.509 certificates**
-- **ZCAPs**, **UCANs**, or **W3C Verifiable Credentials**
-- **PIC Causal Authority (PCA)** — the causally derived authority state defined in the [PIC Model specification](https://github.com/pic-protocol/pic-spec/blob/main/draft/0.1/pic-spec.md), carrying origin principal, authorized operations, and verifiable provenance across the execution chain
+- **ZCAPs**, **UCANs**, or any other valid capability-based authorization token.
 
 Regardless of format, the Trusted Input must guarantee **authenticity**, **integrity**, and **non-repudiation** under a defined trust model, whether centralized or decentralized.
 
