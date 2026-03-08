@@ -34,13 +34,11 @@ These may also be referred to as **previous peer**, **self**, and **next peer** 
 
 Authority flows from intent to execution. At every step, it can only narrow.
 
----
-
 ## Architectural Model
 
 ZTAuth\* defines a layered architecture for distributed authorization and verifiable trust propagation.
 
-![ZTAuth* Architecture](/images/architecture/ztauthstart-architecture.png)
+![ZTAuth* Architecture](/images/architecture/ztas-gov-model-architecture.png)
 
 The model is composed of five principal layers:
 
