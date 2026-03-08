@@ -26,9 +26,9 @@ From the subject's permissions, an **intent** is expressed. From that intent, **
 
 As execution propagates across workloads, each executor exists in relation to its neighbors:
 
-- The **upstream executor** — the previous peer in the execution chain
-- The **current executor** — the active principal carrying authority at this step
-- The **downstream executor** — the next peer to which authority may be passed
+- The **upstream executor**: the previous peer in the execution chain
+- The **current executor**: the active principal carrying authority at this step
+- The **downstream executor**: the next peer to which authority may be passed
 
 These may also be referred to as **previous peer**, **self**, and **next peer** — or by any equivalent identifiers that make the causal relationship explicit.
 
@@ -100,8 +100,8 @@ The PDP emits **Trusted Decisions** and records **Decision Logs**, enabling full
 
 This layer includes:
 
-- **Business Policies** — Describe application-level logic and permissible behaviors.
-- **Trust Policies** — Define the structure and rules of trust elevation and trust levels.
-- **Trust Statements** — Represent formal cross-domain trust assertions such as delegation, federation, or attestation binding.
+- **Business Policies**: Describe application-level logic and permissible behaviors.
+- **Trust Policies**: Define the structure and rules of trust elevation and trust levels.
+- **Trust Statements**: Represent formal cross-domain trust assertions such as delegation, federation, or attestation binding.
 
 Governance ensures that trust remains **auditable**, **revocable**, and **consistent** across administrative and network boundaries.
