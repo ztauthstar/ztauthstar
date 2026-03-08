@@ -9,9 +9,7 @@ next: /openprotocolspec/v0.1/canonical-execution-model
 ---
 
 Modern distributed systems rely heavily on configuration, policies and tokens to control access.
-However, these mechanisms assume something that is fundamentally incorrect:
-
-- **that authority can be created, transferred and reconstructed from artifacts.**
+However, these mechanisms assume something that is fundamentally incorrect: **that authority can be created, transferred and reconstructed from artifacts.**
 
 This assumption breaks down in distributed execution, microservices, and AI agents.
 To understand why, we must first understand where **authority actually comes from**.
