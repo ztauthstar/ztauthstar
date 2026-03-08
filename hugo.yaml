@@ -32,6 +32,20 @@ markup:
   goldmark:
     renderer:
       unsafe: false
+    extensions:
+      passthrough:
+        enable: true
+        delimiters:
+          block:
+            - - \[
+              - \]
+            - - $$
+              - $$
+          inline:
+            - - \(
+              - \)
+            - - $
+              - $
   extensions:
     definitionList: true
     footnote: true

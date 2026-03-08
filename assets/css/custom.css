@@ -588,14 +588,19 @@ pre.mermaid:hover {
 
 .katex-display {
   margin: 1.5rem 0;
+  padding: 0.5rem 0;
+  overflow-x: auto;
+}
+
+/* Only box-style math when inside a blockquote */
+.content blockquote .katex-display {
   padding: 1rem;
   border-left: 3px solid rgba(14, 165, 233, 0.2);
   border-radius: 0 var(--zt-radius) var(--zt-radius) 0;
   background: rgba(14, 165, 233, 0.02);
-  overflow-x: auto;
 }
 
-.dark .katex-display {
+.dark .content blockquote .katex-display {
   background: rgba(14, 165, 233, 0.04);
   border-left-color: rgba(14, 165, 233, 0.3);
 }
