@@ -46,19 +46,103 @@ The question that remains unanswered:
 Configuration can reduce attack surface.
 It cannot guarantee **authority integrity**.
 
+---
+
+## Identity vs Identifier
+
+Before reasoning about authority, we need to resolve a confusion that affects
+every system that runs code on behalf of a human.
+
+Consider this program:
+```bash
+myagent.sh -user alice -scope read
+```
+
+You run it once. One process, one PID. Alice's identity, Alice's permissions.
+
+Now you scale. You use threads — same PID, multiple threads.
+Nothing changes. Same identity, same permissions.
+
+Now you scale with processes instead. You run it ten times.
+```
+PID 1001 → myagent (alice)
+PID 1002 → myagent (alice)
+...
+PID 1010 → myagent (alice)
+```
+
+Ask yourself: did Alice's relationship to those permissions change
+because you chose processes over threads?
+
+**No.** The PID is just an identifier. It tells you *which* instance is running.
+Not *who* it is running for.
+
+This distinction matters:
+
+- **Identity** — who is responsible. Persistent, singular, the origin of accountability.
+- **Identifier** — which instance. A deployment artifact, not a security primitive.
+
+For identity to be meaningful for trust and accountability, it must be
+unique, singular, universal, and persistent.
+In practice, systems often use identifiers — email addresses, usernames, DIDs —
+as proxies for identity. This works as long as the accountability relationship
+is preserved.
+
+For AI agents, the accountable origin is always the principal that expressed
+the intent — not the agent executing it. The agent only needs an identifier.
+
+If scaling changes identity, your deployment choice is changing your security model.
+That should never happen.
+
+What we actually want:
+```
+1 Identity  (the accountable origin)
+N Identifiers  (one per instance)
+Scoped authority per instance — each gets a subset of the origin's permissions
+```
+```
+Alice (origin)
+ ├─ agent#1  →  read:/docs
+ ├─ agent#2  →  read:/reports
+ └─ agent#3  →  read:/public
+```
+
+Same origin. Different identifiers. Reduced authority at every instance.
+
+The key separation:
+
+- **Identity + intent** → create authority
+- **Proof of continuity** → carry authority
+- **Identifier** → traceability
+
+Authority must survive scaling.
+Identity anchors responsibility.
+The chain carries authority forward.
+
+---
+
 ## Identity + Intent = Authority
 
 Every action in a system begins with a **subject expressing intent**.
 Two elements are required:
 
-- **Identity** — who is responsible for the action
-- **Intent** — what that subject wants to do
+- **Identity** — who is responsible for the action.
+  What matters for authority is not the label, but the origin of responsibility.
+  For AI agents, that origin is always the principal that expressed the intent,
+  not the agent executing it.
+
+- **Intent** — what that subject wants to do.
 
 When an identity expresses intent, **authority is created**.
 
 $$
 Identity + Intent \rightarrow Authority
 $$
+
+> Once authority is created, the origin of the execution chain is established.
+> From that point forward, identity is no longer required to carry authority.
+> What matters is that each step can prove it is a valid continuation of the origin.
+> Identity anchors responsibility. The chain carries authority.
 
 Authority therefore represents a **responsibility-bound capability**:
 
@@ -73,8 +157,8 @@ $$
 
 where:
 
-- $p_0$ = origin principal  
-- $ops_0$ = operations authorized by the expressed intent  
+- $p_0$ = origin principal — the identity that created authority, not the executor carrying it
+- $ops_0$ = operations authorized by the expressed intent
 
 Authority is **not a token** and **not a credential**.
 Authority is a **property of execution originating from an identity and its intent**.
@@ -104,6 +188,8 @@ C_{i+1} \subseteq C_i
 $$
 
 Constraints can only shrink. They cannot expand beyond what was established at origin.
+
+---
 
 ## Authority Flows Through Execution
 
@@ -141,6 +227,8 @@ Authority must remain:
 
 This principle eliminates entire classes of security failures.
 
+---
+
 ## The Configuration Problem
 
 Most security architectures today rely on **configuration-based authorization**.
@@ -161,9 +249,17 @@ But the configuration has no way to answer:
 > Has it only shrunk since then? Or was it reconstructed somewhere along the chain?*
 
 This is where authority and configuration collapse into each other —
-and where structural vulnerabilities emerge:
+and where structural vulnerabilities emerge.
 
-- **Confused Deputy** — a service uses its own authority on behalf of a caller
+A service cannot distinguish between
+*"what the caller is allowed to request"* and *"what the service itself is able to do"*.
+When configuration collapses these two questions into one,
+the service executes using its own authority on behalf of a caller
+that never had that authority.
+
+This produces four structural failure classes:
+
+- **Confused Deputy** — a service acts using its own authority on behalf of a caller
   that never had that authority
 - **Privilege Escalation** — authority expands somewhere in the chain
   because a configuration allows it
@@ -177,6 +273,8 @@ They are **consequences of using configuration as a substitute for authority**.
 
 Configuration can reduce attack surface.
 It cannot guarantee **authority integrity**.
+
+---
 
 ## Authority Is a Separate Primitive
 
@@ -227,6 +325,8 @@ This multi-dimensional model ensures that authority cannot be
 partially reconstructed by expanding along a single dimension
 while appearing to restrict others.
 
+---
+
 ## Governance
 
 If authority defines **what is structurally possible**,
@@ -245,8 +345,9 @@ $$
 Authority_{after} \subseteq Authority_{before}
 $$
 
-## Authority and Governance Together
+---
 
+## Authority and Governance Together
 ```text
   Identity + Intent
            │
@@ -273,6 +374,8 @@ Governance:
 - evaluates execution
 - may restrict or stop it
 - must never expand authority
+
+---
 
 ## ZTAuth* Model
 
@@ -328,7 +431,6 @@ Governance cannot introduce new privileges.
 It can only restrict what authority already permits.
 
 The relationship between the two layers is fixed:
-
 ```text
     Authority Continuity
 (structural — cannot be violated)
@@ -345,10 +447,12 @@ Authority continuity provides the floor.
 ZTAuth* governance operates within it.
 Neither layer can expand authority.
 
+---
+
 ## Final Principle
 
-Authority is not identity.  
-Authority is not possession.  
+Authority is not identity.
+Authority is not possession.
 Authority is **continuity of intent across execution**.
 
 ZTAuth* governs that continuity.
