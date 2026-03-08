@@ -2,8 +2,8 @@
 title: The Governance Model
 cascade:
   type: docs
-weight: 3000
-prev: /openprotocolspec/v0.1/authority-vs-governance
+weight: 4000
+prev: /openprotocolspec/v0.1/canonical-execution-model
 next: /openprotocolspec/v0.1/ztauth-spec
 ---
 

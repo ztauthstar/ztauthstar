@@ -5,7 +5,7 @@ cascade:
   type: docs
 weight: 2000
 prev: /openprotocolspec/v0.1
-next: /openprotocolspec/v0.1/governance-model
+next: /openprotocolspec/v0.1/canonical-execution-model
 ---
 
 Modern distributed systems rely heavily on configuration, policies and tokens to control access.
