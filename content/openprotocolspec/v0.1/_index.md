@@ -12,7 +12,12 @@ next: /openprotocolspec/v0.1/authority-vs-governance
 ---
 
 > [!DEFINITION]
-> **ZTAuth\*** is a Zero Trust compliant protocol for secure, identity-based access at the application edge. It supports eventual consistency and resilient synchronization across network disruptions. Built with a delegation-first model, it is ideal for systems that require secure and auditable delegation.
+> **ZTAuth\*** is a governance protocol that operates above authority continuity.
+> Taking valid authority as given, it ensures execution remains compliant
+> with trust policies through Auth* models — defining how trust policies,
+> business policies, and trust statements are stored, versioned, evaluated,
+> and enforced across execution boundaries, supporting both human and
+> non-human identities.
 
 ## Learn More
 
@@ -22,12 +27,13 @@ Explore the detailed specification for each protocol component:
 {{< card link="authority-vs-governance" title="Authority vs Governance" icon="manifest" >}}
 {{< card link="governance-model" title="The Governance Model" icon="manifest" >}}
 {{< card link="ztauth-spec" title="ZTAuthSpec" icon="manifest" >}}
-<!-- {{< card link="manifest" title="Manifest" icon="manifest" >}}
-{{< card link="zt" title="Architecture" icon="template" >}}
-{{< card link="identities" title="Identities" icon="finger-print" >}}
-{{< card link="base-protcol/authstar-models" title="Auth* Models" icon="authstar-model" >}}
-{{< card link="trustedmodels" title="Trust Models" icon="cube-transparent" >}}
-{{< card link="base-protcol/decision-points" title="Decision Points" icon="decision-point" >}}
-{{< card link="federation" title="Federation" icon="federation" >}}
-{{< card link="dataspaces" title="Data Spaces" icon="dataspace" >}} -->
+<!-- 
+{{< card link="xxxx" title="xxxx" icon="template" >}}
+{{< card link="xxxx" title="xxxx" icon="finger-print" >}}
+{{< card link="xxxx" title="xxxx" icon="authstar-model" >}}
+{{< card link="xxxx" title="xxxx" icon="cube-transparent" >}}
+{{< card link="xxxx" title="xxxx" icon="decision-point" >}}
+{{< card link="xxxx" title="xxxx" icon="federation" >}}
+{{< card link="xxxx" title="xxxx" icon="dataspace" >}} 
+-->
 {{< /cards >}}
