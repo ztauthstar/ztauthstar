@@ -2,8 +2,8 @@
 title: Canonical Execution Model
 cascade:
   type: docs
-weight: 2500
-prev: /openprotocolspec/v0.1/authority-vs-governance
+weight: 4000
+prev: /openprotocolspec/v0.1/intent-execution
 next: /openprotocolspec/v0.1/governance-model
 ---
 
