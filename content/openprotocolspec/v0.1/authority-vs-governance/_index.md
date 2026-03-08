@@ -268,9 +268,10 @@ They are **consequences of using configuration as a substitute for authority**.
 Configuration can reduce attack surface.
 It cannot guarantee **authority integrity**.
 
-## Authority Is a Separate Primitive
+## Authority Is a Composed Concept
 
-Authority must therefore be treated as a **first-class primitive**.
+Authority is not a primitive.
+Authority is a **composed concept** — it emerges from primitives.
 Authority has three fundamental properties:
 
 ### Origin
