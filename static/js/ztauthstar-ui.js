@@ -93,7 +93,7 @@
       });
     });
 
-    // ─── Reading Time Counter ──────────────────────────────────
+    // ─── Reading Time (scroll-only, fixed at top-right) ─────────
     var contentEl = document.querySelector('.content');
     if (contentEl) {
       var text = contentEl.innerText || contentEl.textContent || '';
@@ -101,66 +101,40 @@
       var wordsPerMinute = 200;
       var totalMinutes = Math.ceil(wordCount / wordsPerMinute);
 
-      // Only show on pages with significant content (3+ min read)
       if (totalMinutes >= 3) {
+        var badge = document.createElement('div');
+        badge.id = 'zt-reading-time';
+        badge.classList.add('zt-reading-fixed');
+        badge.innerHTML = '<svg id="zt-reading-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> <span id="zt-reading-text">' + totalMinutes + ' min left</span>';
+        document.body.appendChild(badge);
 
-      // Create reading time badge (positioned inline with h1 title)
-      var badge = document.createElement('div');
-      badge.id = 'zt-reading-time';
-      badge.innerHTML = '<svg id="zt-reading-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> <span id="zt-reading-text">' + totalMinutes + ' min left</span>';
+        // Hidden by default — show when scrolling (same threshold as scroll-to-top)
+        badge.style.opacity = '0';
+        badge.style.pointerEvents = 'none';
 
-      // Insert into content and vertically center with the h1
-      var firstH = contentEl.querySelector('h1, h2');
-      contentEl.insertBefore(badge, contentEl.firstChild);
-      var badgeOriginalTop = 0;
-      if (firstH) {
-        var hTop = firstH.offsetTop;
-        var hHeight = firstH.offsetHeight;
-        var badgeHeight = badge.offsetHeight || 24;
-        badgeOriginalTop = hTop + (hHeight - badgeHeight) / 2;
-        badge.style.top = badgeOriginalTop + 'px';
-      }
+        function updateReadingTime() {
+          var scrollTop = window.scrollY || document.documentElement.scrollTop;
+          var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+          var pct = docHeight > 0 ? scrollTop / docHeight : 0;
+          var minutesLeft = Math.max(1, Math.ceil(totalMinutes * (1 - pct)));
+          var readText = document.getElementById('zt-reading-text');
 
-      // Sticky behavior: switch to fixed when scrolled past
-      var fixedTopValue = '5.5rem';
-      var contentRect;
+          if (readText) {
+            readText.textContent = pct >= 0.95 ? 'Done ✓' : minutesLeft + ' min left';
+          }
 
-      function updateReadingTime() {
-        var scrollTop = window.scrollY || document.documentElement.scrollTop;
-        var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        var pct = docHeight > 0 ? scrollTop / docHeight : 0;
-        var minutesLeft = Math.max(1, Math.ceil(totalMinutes * (1 - pct)));
-        var readText = document.getElementById('zt-reading-text');
-
-        if (readText) {
-          if (pct >= 0.95) {
-            readText.textContent = 'Done ✓';
+          // Show/hide with scroll-to-top button
+          if (scrollTop > 300) {
+            badge.style.opacity = '1';
+            badge.style.pointerEvents = 'all';
           } else {
-            readText.textContent = minutesLeft + ' min left';
+            badge.style.opacity = '0';
+            badge.style.pointerEvents = 'none';
           }
         }
 
-        // Sticky: when badge's original position scrolls out, make it fixed
-        contentRect = contentEl.getBoundingClientRect();
-        var badgeAbsoluteY = contentRect.top + badgeOriginalTop;
-        var fixedThreshold = parseFloat(getComputedStyle(document.documentElement).fontSize) * 5.5;
-
-        if (badgeAbsoluteY < fixedThreshold) {
-          badge.style.position = 'fixed';
-          badge.style.top = fixedTopValue;
-          badge.style.right = '1.5rem';
-          badge.classList.add('zt-reading-fixed');
-        } else {
-          badge.style.position = 'absolute';
-          badge.style.top = badgeOriginalTop + 'px';
-          badge.style.right = '0';
-          badge.classList.remove('zt-reading-fixed');
-        }
+        window.addEventListener('scroll', updateReadingTime, { passive: true });
       }
-
-      window.addEventListener('scroll', updateReadingTime, { passive: true });
-      updateReadingTime();
-      } // end if totalMinutes >= 3
     }
 
     // ─── Scroll to Top Button ──────────────────────────────────
