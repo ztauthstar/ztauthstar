@@ -22,6 +22,8 @@ When the authorization flow originates directly from an identity, that identity 
 
 Between subject and principal there may be a chain of intermediate delegations. The delegation is not required to be direct.
 
+![Intents and Execution](/images/governance-model/intents-execution.png)
+
 From the subject's permissions, an **intent** is expressed. From that intent, **authority is created**. That authority then flows into execution.
 
 As execution propagates across workloads, each executor exists in relation to its neighbors:
@@ -38,7 +40,7 @@ Authority flows from intent to execution. At every step, it can only narrow.
 
 ZTAuth\* defines a layered architecture for distributed authorization and verifiable trust propagation.
 
-![ZTAuth* Architecture](/images/architecture/ztas-gov-model-architecture.png)
+![Architecture](/images/governance-model/architecture.png)
 
 The model is composed of five principal layers:
 
