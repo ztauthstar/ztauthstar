@@ -7,13 +7,15 @@ prev: /openprotocolspec/v0.1/authority-vs-governance
 next: /openprotocolspec/v0.1/ztauth-spec
 ---
 
-The Governance Model defines how **ZTAuth\*** implements distributed authorization across workloads, communication boundaries, and governance domains. It formalizes how trust is **established**, **elevated**, and **enforced** — from the moment an identity expresses intent to the moment an executor carries it out.
+The Governance Model defines how **ZTAuth\*** implements distributed governance for cross-workload execution. It formalizes how trust is **established**, **elevated**, and **enforced** — from the moment an identity expresses intent to the moment an executor carries it out.
 
 ---
 
 ## Intent and Execution
 
 Every authorization flow begins with an identity — either acting directly, or acting as a **delegator** that delegates authority to a **delegate**.
+
+![Intent and Execution](/images/governance-model/intents-execution.png)
 
 When the authorization flow originates directly from an identity, that identity is both the subject and the origin of authority. When delegation is involved, the roles are formally separated:
 
@@ -22,15 +24,25 @@ When the authorization flow originates directly from an identity, that identity 
 
 Between subject and principal there may be a chain of intermediate delegations. The delegation is not required to be direct.
 
-![Intents and Execution](/images/governance-model/intents-execution.png)
-
 From the subject's permissions, an **intent** is expressed. From that intent, **authority is created**. That authority then flows into execution.
+
+### Execution Constraints
+
+Authority alone is not sufficient to govern execution. Every step in the execution chain is also bounded by **constraints** that restrict how, when, and where authority can be exercised:
+
+- **Temporal constraints** — authority valid only within a defined time window
+- **Contextual constraints** — authority valid only under specific environmental or situational conditions
+- **Operational constraints** — authority restricted to a defined subset of permitted operations
+
+Constraints are monotonically non-increasing. They can only narrow at each step. They cannot expand beyond what was established at the origin of the authorization flow.
+
+### Execution Chain
 
 As execution propagates across workloads, each executor exists in relation to its neighbors:
 
-- The **upstream executor**: the previous peer in the execution chain
-- The **current executor**: the active principal carrying authority at this step
-- The **downstream executor**: the next peer to which authority may be passed
+- The **upstream executor** — the previous peer in the execution chain
+- The **current executor** — the active principal carrying authority at this step
+- The **downstream executor** — the next peer to which authority may be passed
 
 These may also be referred to as **previous peer**, **self**, and **next peer** — or by any equivalent identifiers that make the causal relationship explicit.
 
