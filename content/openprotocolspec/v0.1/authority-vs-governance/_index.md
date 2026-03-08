@@ -263,11 +263,13 @@ $$
 ```
 
 Authority:
+
 - originates from identity + intent
 - flows through execution
 - cannot expand across any dimension
 
 Governance:
+
 - evaluates execution
 - may restrict or stop it
 - must never expand authority

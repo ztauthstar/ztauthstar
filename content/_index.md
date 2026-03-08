@@ -5,9 +5,9 @@ Welcome to the official **Zero Trust Auth\*** (`ZTAuth*`) open protocol specific
 
 > **ZTAuth\*** is a governance protocol that operates above authority continuity.
 > Taking valid authority as given, it ensures execution remains compliant
-> with trust policies through Auth* models — defining how trust policies,
-> business policies, and trust statements are stored, versioned, evaluated,
-> and enforced across execution boundaries, supporting both human and
+> with trust policies through Auth* models — enabling selective isolation
+> and governance of execution via Trust Elevation, with runtime restriction
+> through Trust Levels. Supports any origin type, including human and
 > non-human identities.
 
 Pronounce it `Zee-Tee-Auth-Star`. The `star` is a wildcard, hinting at
