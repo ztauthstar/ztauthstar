@@ -20,8 +20,8 @@ Every authorization flow begins with an identity — either acting directly, or 
 
 When the authorization flow originates directly from an identity, that identity is both the subject and the origin of authority. When delegation is involved, the roles are formally separated:
 
-- The **delegator** becomes the **subject** — the origin of authority, the identity whose permissions bound the entire execution.
-- The **delegate** becomes the **principal** — the entity actively exercising the delegated authority.
+- **delegator**: the origin of authority, the identity whose permissions bound the entire execution, becomes the **subject**
+- **delegate**: the entity actively exercising the delegated authority, becomes the **principal**
 
 Between subject and principal there may be a chain of intermediate delegations. The delegation is not required to be direct.
 
@@ -41,9 +41,9 @@ Constraints are monotonically non-increasing. They can only narrow at each step.
 
 As execution propagates across workloads, each executor exists in relation to its neighbors:
 
-- The **upstream executor**: the previous peer in the execution chain
-- The **current executor**: the active principal carrying authority at this step
-- The **downstream executor**: the next peer to which authority may be passed
+- **Upstream executor**: the previous peer in the execution chain
+- **Current executor**: the active principal carrying authority at this step
+- **Downstream executor**: the next peer to which authority may be passed
 
 These may also be referred to as **previous peer**, **self**, and **next peer** — or by any equivalent identifiers that make the causal relationship explicit.
 
@@ -69,12 +69,14 @@ A **Trusted Input** represents the initial trust material used to start the auth
 
 Accepted examples include, but are not limited to:
 
-- **PIC Causal Authority (PCA)** — the causally derived authority state defined in the [PIC Model specification](https://github.com/pic-protocol/pic-spec/blob/main/draft/0.1/pic-spec.md), carrying origin principal, authorized operations, and verifiable provenance across the execution chain
-- OAuth **Access Tokens**
-- **JWTs** and **X.509 certificates**
-- **ZCAPs**, **UCANs**, or any other valid capability-based authorization token.
+- **PIC Causal Authority (PCA)**: the causally derived authority state defined in the [PIC Model specification](https://github.com/pic-protocol/pic-spec/blob/main/draft/0.1/pic-spec.md), carrying origin principal, authorized operations, and verifiable provenance across the execution chain
+- **OAuth Access Tokens**: bearer tokens issued by an authorization server
+- **JWTs and X.509 certificates**: signed identity and claims documents
+- **ZCAPs, UCANs**: capability-based authorization tokens
 
 Regardless of format, the Trusted Input must guarantee **authenticity**, **integrity**, and **non-repudiation** under a defined trust model, whether centralized or decentralized.
+
+Before the authorization flow can be processed, the Trusted Input must be converted into the canonical authorization schema used by ZTAuth\*. This conversion is the responsibility of the caller and happens at the boundary between the external trust material and the ZTAuth\* execution context. The schema normalization logic is defined in the ZTAuth\* Protocol Specification.
 
 ### Trusted Channel
 
@@ -82,9 +84,9 @@ The **Trusted Channel** is the transport layer that ensures confidential, integr
 
 A channel is considered trusted if it provides:
 
-- Endpoint authentication (e.g., via **mTLS**, **SPIFFE/SVID**)
-- Replay protection and integrity checks
-- Optional forward secrecy or attestation chaining
+- **Endpoint authentication**: e.g., via **mTLS**, **SPIFFE/SVID**
+- **Replay protection and integrity checks**: binding requests to their transport context
+- **Forward secrecy or attestation chaining**: optional, for higher assurance environments
 
 Protocols such as **HTTPS**, **gRPC**, **message buses**, **DDS**, or **DIDComm** can serve as valid trusted channels, provided they meet these guarantees. The trust model also supports **asynchronous and disconnected** environments, where trust continuity must persist beyond live sessions.
 
@@ -100,8 +102,8 @@ The **Policy Decision Point** is responsible for computing authorization decisio
 
 The PDP can be centralized or distributed depending on deployment, but its semantics remain identical. It processes **Authorization Request Contexts** and supports two key mechanisms:
 
-- **Trust Elevation** — The controlled transition from one authorization context to another, for example when a workload acts on behalf of another identity. The PDP evaluates whether elevation is permitted under the target context's policies and only grants it when all Trust Level conditions are satisfied.
-- **Trust Levels** — The formal assurance tiers defining when and under which guarantees a trust elevation may occur. Trust Levels specify contextual, cryptographic, and procedural requirements such as attestation freshness, provenance, or explicit consent.
+- **Trust Elevation**: the controlled transition from one authorization context to another, for example when a workload acts on behalf of another identity. The PDP evaluates whether elevation is permitted under the target context's policies and only grants it when all Trust Level conditions are satisfied
+- **Trust Levels**: the formal assurance tiers defining when and under which guarantees a trust elevation may occur. Trust Levels specify contextual, cryptographic, and procedural requirements such as attestation freshness, provenance, or explicit consent
 
 Together, these mechanisms ensure that every authorization decision is policy-driven, verifiable, and bound to contextual evidence.
 
@@ -115,8 +117,8 @@ The PDP emits **Trusted Decisions** and records **Decision Logs**, enabling full
 
 This layer includes:
 
-- **Business Policies**: Describe application-level logic and permissible behaviors.
-- **Trust Policies**: Define the structure and rules of trust elevation and trust levels.
-- **Trust Statements**: Represent formal cross-domain trust assertions such as delegation, federation, or attestation binding.
+- **Business Policies**: describe application-level logic and permissible behaviors
+- **Trust Policies**: define the structure and rules of trust elevation and trust levels
+- **Trust Statements**: represent formal cross-domain trust assertions such as delegation, federation, or attestation binding
 
 Governance ensures that trust remains **auditable**, **revocable**, and **consistent** across administrative and network boundaries.

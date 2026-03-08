@@ -17,9 +17,9 @@ When Workload n receives a message at time *x*, Workload n+1 is provisioned at t
 
 This has three consequences:
 
-- **Authority flows from origin — never re-created**: There is no moment where a new workload can bootstrap its own authority. Authority must arrive causally from what came before.
-- **Every hop must prove continuity, not possession**: Holding a token is not enough. The workload must demonstrate it is a valid continuation of the execution chain.
-- **Execution is temporal and causal, not positional**: The chain is defined by what happened and when — not by topology or configuration.
+- **Authority flows from origin — never re-created**: there is no moment where a new workload can bootstrap its own authority. Authority must arrive causally from what came before.
+- **Every hop must prove continuity, not possession**: holding a token is not enough. The workload must demonstrate it is a valid continuation of the execution chain.
+- **Execution is temporal and causal, not positional**: the chain is defined by what happened and when — not by topology or configuration.
 
 This is why possession-based models fail in distributed execution. They assume the chain is synchronous and positional. It is not.
 
@@ -29,9 +29,9 @@ The formal model that enforces these properties across distributed execution is 
 
 PIC defines three invariants that must hold at every execution hop:
 
-- **Provenance** — the causal chain is always traceable from origin to current state, unbroken.
-- **Identity** — the origin principal `p₀` is immutable throughout the chain.
-- **Continuity** — authority can only decrease at each hop. It never expands.
+- **Provenance**: the causal chain is always traceable from origin to current state, unbroken.
+- **Identity**: the origin principal `p₀` is immutable throughout the chain.
+- **Continuity**: authority can only decrease at each hop. It never expands.
 
 Under these invariants, authority cannot be re-created mid-chain, cannot escape its origin, and cannot expand across any dimension. The confused deputy problem becomes structurally inexpressible — not mitigated, but impossible by construction.
 
