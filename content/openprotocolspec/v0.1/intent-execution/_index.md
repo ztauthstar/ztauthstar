@@ -9,7 +9,7 @@ next: /openprotocolspec/v0.1/canonical-execution-model
 
 Every authorization flow begins with an identity — either acting directly, or acting as a **delegator** that delegates authority to a **delegate**.
 
-![Intent and Execution](/images/governance-model/intents-execution.png)
+![Intent and Execution](/images/governance-model/intent-execution.png)
 
 When the authorization flow originates directly from an identity, that identity is both the subject and the origin of authority. When delegation is involved, the roles are formally separated:
 
