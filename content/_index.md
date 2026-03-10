@@ -21,9 +21,11 @@ authority continuity — ensuring that execution, once structurally valid,
 remains compliant with active trust policies through the full lifecycle
 of every request.
 
-Authority continuity is formally defined in the
-[PIC Model](https://www.pic-protocol.org) — Provenance Identity Continuity.
-ZTAuth\* builds its governance layer above it.
+> Authority continuity is formally defined in the [PIC Model](https://www.pic-protocol.org) — Provenance Identity Continuity.
+> `ZTAuth*` is designed to operate above authority continuity.
+> If PIC is in use, that guarantee is structural.
+> If it is not, `ZTAuth*` operates on the trust material it receives,
+> and authority integrity is the responsibility of the calling system.
 
 ## Explore
 
