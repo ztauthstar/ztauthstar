@@ -97,3 +97,8 @@ public/
 resources/
 .hugo_build.lock
 
+
+# Go debugger / test build artifacts (never commit — workspace size policy)
+__debug_bin*
+*.test
+*.out
